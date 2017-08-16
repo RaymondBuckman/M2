@@ -1,4 +1,4 @@
-# new-repo
+# M2
 Unofficial BMW M2 promo website using React.js, Sass, Boostrap3, jQuery, & Webpack.
 
 Run by downloading /dist folder & opening index.html in the browser. 

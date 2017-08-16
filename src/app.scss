@@ -175,14 +175,6 @@ h1{
     color: #fff;
 }
 
-.top{
-    height: auto;
-    background: url("./img/simonpuschmann-BMW-M2-03.jpg") $nrf 50% 50%;
-    background-size: 1600px;
-    padding: 5px 0px 1px 0px;
-    //border: transparent 0px solid;
-    animation: occasional-brightness 8s infinite;
-}
 
 #App-logo {
     position: relative;
@@ -207,7 +199,6 @@ h1{
     
     #arrow-group{
         position: relative;
-        //background: red;
         top: 82vh;
         left: 0vw;
         width: 70px;
@@ -501,7 +492,7 @@ h1{
     background: url("./img/simonpuschmann-BMW-M2-06-blurred.jpg") $nrf 0% 0%;
     background-size: cover;
     @include occasional-brightness;
-    z-index: 3;  
+    z-index: 5;  
     
     .flex-container {
         padding: 20px 5vw;

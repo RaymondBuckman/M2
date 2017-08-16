@@ -501,7 +501,7 @@ h1{
     background: url("./img/simonpuschmann-BMW-M2-06-blurred.jpg") $nrf 0% 0%;
     background-size: cover;
     @include occasional-brightness;
-    z-index: 2;  
+    z-index: 3;  
     
     .flex-container {
         padding: 20px 5vw;

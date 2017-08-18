@@ -12,14 +12,14 @@ class Intro extends Component {
         <div>
             <div className="One">
               <div id="arrow-group">
-                <img src={arrowLightBlue} height={"30"} width={"70"}/> 
-                <img src={arrowDarkBlue} height={"30"} width={"70"}/>
-                <img src={arrowRed} height={"30"} width={"70"}/>
+                        <a href="#arrow-dest"><img src={arrowLightBlue} height={"30"} width={"70"}/></a>
+                        <a href="#arrow-dest"><img src={arrowDarkBlue} height={"30"} width={"70"}/></a>
+                        <a href="#arrow-dest"><img src={arrowRed} height={"30"} width={"70"}/></a>
               </div>
               <h1 id="title">BMW M2</h1>
               <h2 id="slogan">Freude am Fahren</h2>
             </div>
-            <div className="Two">
+            <div className="Two" id="arrow-dest">
                 <ul className="flex-container">
                     <li className="flex-item">
                         <h1>Pure Adrenaline</h1><br/>

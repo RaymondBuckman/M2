@@ -25,8 +25,18 @@ ReactDOM.render(
     </div>,
     document.getElementById('root')
 );
+/*
+$(document).ready(function(){
+     $("#arrow-group").on("click", function( e ) {
+    
+        e.preventDefault();
 
-
+        $("body, html").animate({ 
+            scrollTop: $( $(this).attr('href') ).offset().top 
+        }, 600);
+    
+     });
+})*/
 
 $(window).scroll(function(){
     var wScroll = $(this).scrollTop();

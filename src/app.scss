@@ -95,7 +95,6 @@ $color-hover: color 0.3s ease-in-out;
     display: flex;
 }
 
-/* @media (max-width: 991px) */
 
 @mixin for-small-phone-portrait {
     @media (max-width: 399px){ @content; }

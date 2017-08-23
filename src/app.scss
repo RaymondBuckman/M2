@@ -47,7 +47,7 @@ $color-hover: color 0.3s ease-in-out;
 
 @keyframes moveArrows{
     0% { transform: translateY(0px);}
-    50% {transform: translateY(30px);}
+    50% {transform: translateY(10px);}
 }
 
 //mixins
@@ -200,14 +200,20 @@ h1{
         position: relative;
         top: 82vh;
         left: 0vw;
-        width: 90px;
+        width: 70px;
         opacity: 1;
+        text-align: left;
         animation: moveArrows 3s infinite;
         
-        img{
-            margin: -5px;
+        &:hover{
+            cursor: pointer;
+        }
+        
+        
+        img{        
             
             &:nth-child(1){
+                z-index: 99;
                 transition: $arrow-rotate-out;
             }
             
@@ -223,11 +229,11 @@ h1{
     
     #title{
         position: relative;
-        top: 61vh;
+        top: 60vh;
         color: $secondary-color;
         @include secondary-font;
         font-size: 6em;
-        transform: rotate(-7.6deg);
+        transform: rotate(-8deg);
         text-align: center; 
         z-index: 99;
     }
@@ -1819,7 +1825,7 @@ h1{
         }
     
         #title{
-            top: 69vh;
+            top: 68vh;
             font-size: 8em;
             transform: rotate(-22deg);
             text-align: center;
@@ -2298,7 +2304,7 @@ h1{
         }
     
         #title{
-            top: 66vh;
+            top: 65vh;
             font-size: 7em;
             transform: rotate(-12.5deg);
             text-align: center;

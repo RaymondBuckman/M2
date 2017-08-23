@@ -4,15 +4,17 @@ import arrowLightBlue from '../../img/arrow-light-blue.png';
 import arrowDarkBlue from '../../img/arrow-dark-blue.png';
 
 
+
+
 class Intro extends Component {
     render() {
         return(
         <div>
             <div className="One">
               <div id="arrow-group">
-                        <a href="#arrow-dest"><img src={arrowLightBlue} height={"30"} width={"70"}/></a>
-                        <a href="#arrow-dest"><img src={arrowDarkBlue} height={"30"} width={"70"}/></a>
-                        <a href="#arrow-dest"><img src={arrowRed} height={"30"} width={"70"}/></a>
+                        <img src={arrowLightBlue} height={"25"} width={"60"}/>
+                        <img src={arrowDarkBlue} height={"25"} width={"60"}/>
+                        <img src={arrowRed} height={"25"} width={"60"}/>
               </div>
               <h1 id="title">BMW M2</h1>
               <h2 id="slogan">Freude am Fahren</h2>

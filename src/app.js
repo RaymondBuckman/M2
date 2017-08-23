@@ -25,18 +25,13 @@ ReactDOM.render(
     </div>,
     document.getElementById('root')
 );
-/*
-$(document).ready(function(){
-     $("#arrow-group").on("click", function( e ) {
-    
-        e.preventDefault();
 
-        $("body, html").animate({ 
-            scrollTop: $( $(this).attr('href') ).offset().top 
-        }, 600);
-    
-     });
-})*/
+$("#arrow-group").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".Two").offset().top
+    }, 2000);
+});
+
 
 $(window).scroll(function(){
     var wScroll = $(this).scrollTop();
@@ -46,19 +41,20 @@ $(window).scroll(function(){
     
     if(largeDesktop.matches){
         
-        if(wScroll > 100) {
-            $('#arrow-group > img:nth-child(1)').css({
-                'transform': 'rotateY(90deg)'
+        if(wScroll > 100){
+            $('#arrow-group img:nth-child(1)').css({
+                'transform' : 'rotateY(90deg)'
             })
-
-            $('#arrow-group > img:nth-child(2)').css({
-                'transform': 'rotateY(90deg)'
+            
+            $('#arrow-group img:nth-child(2)').css({
+                'transform' : 'rotateY(90deg)'
             })
-
-            $('#arrow-group > img:nth-child(3)').css({
-                'transform': 'rotateY(90deg)'
+            
+            $('#arrow-group img:nth-child(3)').css({
+                'transform' : 'rotateY(90deg)'
             })
-        }   
+        }
+        
         
         
         $('.One, .Header').css({

@@ -1,7 +1,5 @@
 /*----  IMAGES FROM http://www.simonpuschmann.com/portfolio/ 
-        Check out his work! ----*/  
-
-/*clickable area for down arrow on top div is still too small. No fix found yet*/
+        Check out his work! ----*/      
     
 
 @import url('https://fonts.googleapis.com/css?family=Aldrich');
@@ -204,7 +202,7 @@ h1{
         left: 0vw;
         width: 70px;
         opacity: 1;
-        text-align: left;
+        //text-align: left;
         animation: moveArrows 3s infinite;
         
         &:hover{
@@ -231,22 +229,22 @@ h1{
     
     #title{
         position: relative;
-        top: 60vh;
+        top: 72vh;
         color: $secondary-color;
         @include secondary-font;
         font-size: 6em;
         transform: rotate(-8deg);
-        text-align: center; 
+        //text-align: center; 
         z-index: 99;
     }
     
     #slogan{
         position: relative;
-        top: 63vh;
+        top: 66vh;
         color: $secondary-color;
         font-family: $main-font, Arial, Helvetica, serif;
         font-size: 3em;
-        text-align: right;
+        //text-align: right;
         z-index: 99;
         //margin-right: 10vw;
         animation: occasionalBlurOnHover 4s infinite;
@@ -847,27 +845,27 @@ h1{
             //background: red;
             top: 72vh;
             left: 0vw;
-            width: 70px;
+            //width: 70px;
             opacity: 0;
         }
     
         #title{
             position: relative;
-            top: 65vh;
+            top: 82vh;
             color: $secondary-color;
             @include secondary-font;
-            font-size: 3em;
+            font-size: 2.1em;
             transform: rotate(-28deg);
-            text-align: center;
+            //text-align: center;
         }
 
         #slogan{
             position: relative;
-            top: 74vh;
+            top: 82vh;
             color: $secondary-color;
             font-family: $main-font, Arial, Helvetica, serif;
             font-size: 1.1em;
-            text-align: right;
+            //text-align: right;
             //margin-right: 10vw;
             animation: occasionalBlurOnHover 4s infinite;
         }
@@ -1099,17 +1097,17 @@ h1{
     
         #title{
             position: relative;
-            top: 66vh;
+            top: 82vh;
             color: $secondary-color;
             @include secondary-font;
-            font-size: 3.5em;
+            font-size: 2.4em;
             transform: rotate(-27deg);
             text-align: center;
         }
 
         #slogan{
             position: relative;
-            top: 72vh;
+            top: 82vh;
             color: $secondary-color;
             font-family: $main-font, Arial, Helvetica, serif;
             font-size: 1.2em;
@@ -1342,14 +1340,14 @@ h1{
         }
     
         #title{
-            top: 67vh;
-            font-size: 6em;
+            top: 72vh;
+            font-size: 4.5em;
             transform: rotate(-22deg);
             text-align: center;
         }
 
         #slogan{
-            top: 75vh;
+            top: 67vh;
             font-size: 2.5em;
             text-align: right;
         }
@@ -1579,14 +1577,14 @@ h1{
         }
     
         #title{
-            top: 47vh;
+            top: 70vh;
             font-size: 4em;
-            transform: rotate(-10deg);
+            transform: rotate(-9.5deg);
             text-align: center;
         }
 
         #slogan{
-            top: 50vh;
+            top: 60vh;
             font-size: 1.5em;
             text-align: right;
         }
@@ -1827,14 +1825,14 @@ h1{
         }
     
         #title{
-            top: 68vh;
-            font-size: 8em;
-            transform: rotate(-22deg);
+            top: 74vh;
+            font-size: 6.5em;
+            transform: rotate(-21.5deg);
             text-align: center;
         }
 
         #slogan{
-            top: 76vh;
+            top: 70vh;
             font-size: 3em;
             text-align: right;
         }
@@ -2066,15 +2064,15 @@ h1{
         }
     
         #title{
-            top: 61vh;
+            top: 64vh;
             font-size: 6em;
-            transform: rotate(-13deg);
+            transform: rotate(-12.5deg);
             text-align: center;
         }
 
         #slogan{
-            top: 66vh;
-            font-size: 3em;
+            top: 60vh;
+            font-size: 2.5em;
             text-align: right;
         }
     }
@@ -2306,14 +2304,14 @@ h1{
         }
     
         #title{
-            top: 65vh;
+            top: 74vh;
             font-size: 7em;
             transform: rotate(-12.5deg);
             text-align: center;
         }
 
         #slogan{
-            top: 68vh;
+            top: 74vh;
             font-size: 3em;
             text-align: right;
         }

@@ -11,13 +11,17 @@ class Intro extends Component {
         return(
         <div>
             <div className="One">
-              <div id="arrow-group">
-                        <img src={arrowLightBlue} height={"25"} width={"60"}/>
-                        <img src={arrowDarkBlue} height={"25"} width={"60"}/>
-                        <img src={arrowRed} height={"25"} width={"60"}/>
-              </div>
-              <h1 id="title">BMW M2</h1>
-              <h2 id="slogan">Freude am Fahren</h2>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs">
+                            <img src={arrowLightBlue} height={"25"} width={"60"}/>
+                            <img src={arrowDarkBlue} height={"25"} width={"60"}/>
+                            <img src={arrowRed} height={"25"} width={"60"}/>
+                        </div>
+                        <h1 id="title" className="col-xs-8 col-xs-offset-0 col-lg-7 col-lg-offset-1 text-right">BMW M2</h1>
+                        <h2 id="slogan" className="col-xs-4 col-xs-offset-8 col-lg-4 col-lg-offset-8 text-right">Freude am Fahren</h2>
+                    </div>
+                </div>
             </div>
             <div className="Two" id="arrow-dest">
                 <ul className="flex-container">

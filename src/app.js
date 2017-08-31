@@ -26,7 +26,7 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-$("#arrow-group").click(function() {
+$("#arrow-group > img").click(function() {
     $('html, body').animate({
         scrollTop: $(".Two").offset().top
     }, 2000);
@@ -39,23 +39,7 @@ $(window).scroll(function(){
     var largeDesktop = window.matchMedia( "(min-width: 1400px)" );
      
     
-    if(largeDesktop.matches){
-        
-        if(wScroll > 100){
-            $('#arrow-group img:nth-child(1)').css({
-                'transform' : 'rotateY(90deg)'
-            })
-            
-            $('#arrow-group img:nth-child(2)').css({
-                'transform' : 'rotateY(90deg)'
-            })
-            
-            $('#arrow-group img:nth-child(3)').css({
-                'transform' : 'rotateY(90deg)'
-            })
-        }
-        
-        
+    if(largeDesktop.matches){   
         
         $('.One, .Header').css({
             'background-size':  (1600 + (wScroll/3)) + 'px'

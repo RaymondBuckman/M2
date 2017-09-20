@@ -48,6 +48,14 @@ $(document).ready(function(){
         duration: '.App'
     })
     .setPin('.navbar')
+    //.setClassToggle('.navbar', 'black-nav')
+    .addTo(controller);
+    
+    var changeTopNavColorScene = new ScrollMagic.Scene({
+        triggerElement: '.Ten',
+        triggerHook: 0.5,
+        duration: '270%'
+    })
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
     

@@ -118,6 +118,7 @@ $(document).ready(function(){
         })*/
         .addTo(controller);
     })
+
     
     $('.scrollmagic-scale-flex-box').each(function(){
         var scaleFlexBoxScene = new ScrollMagic.Scene({

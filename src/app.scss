@@ -411,10 +411,6 @@ h1{
     transition: background 0.3s ease-in-out;
 }
 
-.black-nav{
-    background: #222;
-}
-
 .navbar-default .navbar-nav > li > a {
     position: relative;
     //top: -10px;
@@ -844,6 +840,8 @@ h1{
     }
 }
 
+/*----- Scrollmagic classes -----*/
+
 .fade-out{
     opacity: 0;
 }
@@ -851,6 +849,10 @@ h1{
 .come-to-center{
     opacity: 1 !important;
     transform: translateX(0px) !important;
+}
+
+.black-nav{
+    background: #000;
 }
 
 .scrollmagic-scale-flex-box{

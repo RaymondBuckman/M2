@@ -8,8 +8,8 @@ class Interior extends Component {
             <div className="Eight" id="Interior">
                 <div className="container">
                     <div className="row">
-                        <h1>Interior</h1>
-                        <p className="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">"The M2 has ‘raw’ carbon fibre, not set in any resin, around the door pulls and centre console. It’s a nice departure from the usual, shiny carbon and looks pleasantly understated."<br/><br/>- Evo</p>
+                        <h1 className="scrollmagic-enter-from-left">Interior</h1>
+                        <p className="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 scrollmagic-enter-from-left">"The M2 has ‘raw’ carbon fibre, not set in any resin, around the door pulls and centre console. It’s a nice departure from the usual, shiny carbon and looks pleasantly understated."<br/><br/>- Evo</p>
                     </div>
                 </div>
             </div>

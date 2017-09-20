@@ -25,11 +25,11 @@ class Intro extends Component {
             </div>
             <div className="Two" id="arrow-dest">
                 <ul className="flex-container">
-                    <li className="flex-item">
+                    <li className="flex-item scrollmagic-two-target">
                         <h1>Pure Adrenaline</h1><br/>
                         <p><b>As the newest addition to the M lineup, nothing defines the legacy of legendary performance better than the first-ever BMW M2 Coupe.</b> With four decades of high performance in its DNA, it continues to push the limits even further – delivering a perfected formula of chassis balance, steering response, and power-to-weight ratio. In short, it’s everything that makes BMW the Ultimate Driving Machine.</p>
                     </li>
-                    <li className="flex-item">
+                    <li className="flex-item scrollmagic-two-target">
                         <p><span>7:58</span> N&#252;rburgring Time</p>
                         <p><span>4.1</span> &#160;&#160;0-60 mph (in seconds)</p>
                         <p><span>365</span>&#160; horsepower</p>

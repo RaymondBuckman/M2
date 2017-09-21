@@ -48,7 +48,6 @@ $(document).ready(function(){
         duration: '.App'
     })
     .setPin('.navbar')
-    //.setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
     
     var changeTopNavColorScene = new ScrollMagic.Scene({
@@ -66,13 +65,6 @@ $(document).ready(function(){
         reverse: false
     })
     .setClassToggle('#arrow-group', 'fade-out')
-        
-    /*
-    .addIndicators({
-        name: 'div fadeout',
-        colorTrigger: 'yellow',
-        colorStart: '#75C695'
-    })*/
     .addTo(controller);
     
     var twoFlexBoxScene = new ScrollMagic.Scene({
@@ -82,13 +74,6 @@ $(document).ready(function(){
         reverse: false
     })
     .setClassToggle('.scrollmagic-two-target', 'come-to-center')
-        
-    /*
-    .addIndicators({
-        name: 'div fadeout',
-        colorTrigger: 'yellow',
-        colorStart: '#75C695'
-    })*/
     .addTo(controller);
     
     $('.scrollmagic-enter-from-right').each(function(){
@@ -99,13 +84,6 @@ $(document).ready(function(){
             reverse: false
         })
         .setClassToggle(this, 'come-to-center')
-
-        /*
-        .addIndicators({
-            name: 'div fadeout',
-            colorTrigger: 'yellow',
-            colorStart: '#75C695'
-        })*/
         .addTo(controller);
     })
     
@@ -117,13 +95,6 @@ $(document).ready(function(){
             reverse: false
         })
         .setClassToggle(this, 'come-to-center')
-
-        /*
-        .addIndicators({
-            name: 'div fadeout',
-            colorTrigger: 'yellow',
-            colorStart: '#75C695'
-        })*/
         .addTo(controller);
     })
 
@@ -136,15 +107,21 @@ $(document).ready(function(){
             reverse: false
         })
         .setClassToggle(this, 'shrink-on-appear')
-
-        /*
-        .addIndicators({
-            name: 'div fadeout',
-            colorTrigger: 'yellow',
-            colorStart: '#75C695'
-        })*/
         .addTo(controller);
     })
+    
+    /*----- navbar animations -----*/
+    
+    var navTween = TweenMax.staggerFrom(".navbar li", 0.7, { ease:  Power0.easeNone, opacity: 0, x:100, scale: 2}, 0.5);
+    
+    var navItemsAppearScene = new ScrollMagic.Scene({
+        triggerElement: '.navbar',
+        triggerHook: 0.8,
+        offset: 0,
+        reverse: false
+    })
+    .setTween(navTween)
+    .addTo(controller);
 })
 
 

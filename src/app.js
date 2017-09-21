@@ -48,6 +48,14 @@ $(document).ready(function(){
         duration: '.App'
     })
     .setPin('.navbar')
+    //.setClassToggle('.navbar', 'black-nav')
+    .addTo(controller);
+    
+    var changeTopNavColorScene = new ScrollMagic.Scene({
+        triggerElement: '.Ten',
+        triggerHook: 0.5,
+        duration: '270%'
+    })
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
     
@@ -86,7 +94,7 @@ $(document).ready(function(){
     $('.scrollmagic-enter-from-right').each(function(){
         var sixEnterFromRightScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.5,
+            triggerHook: 0.6,
             offset: 0,
             reverse: false
         })
@@ -104,7 +112,7 @@ $(document).ready(function(){
     $('.scrollmagic-enter-from-left').each(function(){
         var sixEnterFromLeftScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.5,
+            triggerHook: 0.6,
             offset: 0,
             reverse: false
         })
@@ -123,7 +131,7 @@ $(document).ready(function(){
     $('.scrollmagic-scale-flex-box').each(function(){
         var scaleFlexBoxScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.7,
+            triggerHook: 0.8,
             offset: 0,
             reverse: false
         })

@@ -411,10 +411,6 @@ h1{
     transition: background 0.3s ease-in-out;
 }
 
-.black-nav{
-    background: #222;
-}
-
 .navbar-default .navbar-nav > li > a {
     position: relative;
     //top: -10px;
@@ -844,6 +840,8 @@ h1{
     }
 }
 
+/*----- Scrollmagic classes -----*/
+
 .fade-out{
     opacity: 0;
 }
@@ -851,6 +849,10 @@ h1{
 .come-to-center{
     opacity: 1 !important;
     transform: translateX(0px) !important;
+}
+
+.black-nav{
+    background: #000;
 }
 
 .scrollmagic-scale-flex-box{
@@ -870,32 +872,32 @@ h1{
         height: 100vh;
         background-attachment: scroll;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         #arrow-group{   
             position: relative;
-            //background: red;
             top: 72vh;
             left: 0vw;
-            //width: 70px;
             opacity: 0;
         }
     
         #title{
             position: relative;
-            top: 82vh;
+            top: 72vh;
             color: $secondary-color;
             @include secondary-font;
-            font-size: 2.1em;
-            transform: rotate(-28deg);
+            font-size: 3em;
+            transform: rotate(0deg);
             //text-align: center;
         }
 
         #slogan{
             position: relative;
-            top: 82vh;
+            top: 72vh;
             color: $secondary-color;
             font-family: $main-font, Arial, Helvetica, serif;
-            font-size: 1.1em;
+            font-size: 1.5em;
             //text-align: right;
             //margin-right: 10vw;
             animation: occasionalBlurOnHover 4s infinite;
@@ -965,11 +967,13 @@ h1{
         background-attachment: scroll;
         background-position: 55% center;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 45vh;
+            top: 55vh;
             font-size: 1.3em;
-            transform: rotate(27deg);
+            transform: rotate(0deg);
             text-align: right;
         }
     }
@@ -1050,12 +1054,14 @@ h1{
     .Nine{
         background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 22vh;
+            top: 32vh;
             left: 2vw;
-            font-size: 1.3em;
-            transform: rotate(-27deg);
+            font-size: 1.5em;
+            transform: rotate(0deg);
             letter-spacing: 2px;    
         }
     }
@@ -1090,11 +1096,13 @@ h1{
         background-attachment: scroll;
         background-position: 65% center;
         background-size: cover; 
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
             top: 73vh;
             font-size: 2em;
-            transform: rotate(28deg);
+            transform: rotate(0deg);
             text-align: center;
             letter-spacing: 1px; 
         }
@@ -1116,10 +1124,11 @@ h1{
         height: 100vh;
         background-attachment: scroll;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         #arrow-group{   
             position: relative;
-            //background: red;
             top: 72vh;
             left: 0vw;
             width: 70px;
@@ -1131,8 +1140,8 @@ h1{
             top: 82vh;
             color: $secondary-color;
             @include secondary-font;
-            font-size: 2.4em;
-            transform: rotate(-27deg);
+            font-size: 3em;
+            transform: rotate(0deg);
             text-align: center;
         }
 
@@ -1141,7 +1150,7 @@ h1{
             top: 82vh;
             color: $secondary-color;
             font-family: $main-font, Arial, Helvetica, serif;
-            font-size: 1.2em;
+            font-size: 1.5em;
             text-align: right;
             //margin-right: 10vw;
             animation: occasionalBlurOnHover 4s infinite;
@@ -1210,11 +1219,13 @@ h1{
         background-attachment: scroll;
         background-position: 55% center;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 45vh;
+            top: 55vh;
             font-size: 1.3em;
-            transform: rotate(27deg);
+            transform: rotate(0deg);
             text-align: right;
         }
     }
@@ -1295,12 +1306,14 @@ h1{
     .Nine{
         background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 27vh;
+            top: 37vh;
             left: 2vw;
             font-size: 1.3em;
-            transform: rotate(-26.5deg);
+            transform: rotate(0deg);
             letter-spacing: 2px;    
         }
     }
@@ -1335,11 +1348,13 @@ h1{
         background-attachment: scroll;
         background-position: 65% center;
         background-size: cover; 
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
             top: 73vh;
             font-size: 2em;
-            transform: rotate(28deg);
+            transform: rotate(0deg);
             text-align: center;
             letter-spacing: 1px; 
         }
@@ -1362,6 +1377,8 @@ h1{
         background-position: 55% 50%;
         background-attachment: scroll;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         #arrow-group{   
             top: 72vh;
@@ -1371,14 +1388,14 @@ h1{
         }
     
         #title{
-            top: 72vh;
-            font-size: 4.5em;
-            transform: rotate(-22deg);
+            top: 70vh;
+            font-size: 6em;
+            transform: rotate(0deg);
             text-align: center;
         }
 
         #slogan{
-            top: 67vh;
+            top: 70vh;
             font-size: 2.5em;
             text-align: right;
         }
@@ -1447,11 +1464,13 @@ h1{
         background-attachment: scroll;
         background-position: 55% center;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 45vh;
+            top: 55vh;
             font-size: 2.5em;
-            transform: rotate(21deg);
+            transform: rotate(0deg);
             text-align: right;
         }
     }
@@ -1532,12 +1551,14 @@ h1{
     .Nine{
         background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 26vh;
+            top: 36vh;
             left: 2vw;
             font-size: 2em;
-            transform: rotate(-21deg);
+            transform: rotate(0deg);
             letter-spacing: 2px;    
         }
     }
@@ -1572,11 +1593,13 @@ h1{
         background-attachment: scroll;
         background-position: 65% 60%;
         background-size: cover; 
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 79vh;
+            top: 85vh;
             font-size: 2.5em;
-            transform: rotate(21deg);
+            transform: rotate(0deg);
             text-align: center;
             letter-spacing: 1px; 
         }
@@ -1599,6 +1622,8 @@ h1{
         background-position: 55% 50%;
         background-attachment: scroll;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         #arrow-group{   
             top: 72vh;
@@ -1608,22 +1633,16 @@ h1{
         }
     
         #title{
-            top: 70vh;
+            top: 65vh;
             font-size: 4em;
-            transform: rotate(-9.5deg);
+            transform: rotate(0deg);
             text-align: center;
         }
 
         #slogan{
-            top: 60vh;
+            top: 65vh;
             font-size: 1.5em;
             text-align: right;
-        }
-    }
-    
-    @media (min-width: 730px) and (max-width: 899px){
-        #title{
-           color: red; 
         }
     }
     
@@ -1692,11 +1711,13 @@ h1{
         background-attachment: scroll;
         background-position: 55% center;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 47vh;
+            top: 57vh;
             font-size: 1.2em;
-            transform: rotate(9deg);
+            transform: rotate(0deg);
             text-align: right;
         }
     }
@@ -1780,12 +1801,14 @@ h1{
     .Nine{
         background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 20vh;
+            top: 30vh;
             left: 2vw;
             font-size: 1.3em;
-            transform: rotate(-10deg);
+            transform: rotate(0deg);
             letter-spacing: 2px;    
         }
     }
@@ -1820,11 +1843,13 @@ h1{
         background-attachment: scroll;
         background-position: 65% 60%;
         background-size: cover; 
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 76vh;
+            top: 85vh;
             font-size: 1.5em;
-            transform: rotate(9deg);
+            transform: rotate(0deg);
             text-align: center;
             letter-spacing: 1px; 
         }
@@ -1847,6 +1872,8 @@ h1{
         background-position: 60% 50%;
         background-attachment: scroll;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         #arrow-group{   
             top: 72vh;
@@ -1856,9 +1883,9 @@ h1{
         }
     
         #title{
-            top: 74vh;
-            font-size: 6.5em;
-            transform: rotate(-21.5deg);
+            top: 70vh;
+            font-size: 8em;
+            transform: rotate(0deg);
             text-align: center;
         }
 
@@ -1932,11 +1959,13 @@ h1{
         background-attachment: scroll;
         background-position: 55% center;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 47vh;
+            top: 57vh;
             font-size: 2.5em;
-            transform: rotate(21deg);
+            transform: rotate(0deg);
             text-align: right;
         }
     }
@@ -2019,12 +2048,14 @@ h1{
     .Nine{
         background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 26vh;
+            top: 36vh;
             left: 2vw;
             font-size: 2em;
-            transform: rotate(-21deg);
+            transform: rotate(0deg);
             letter-spacing: 2px;    
         }
     }
@@ -2058,12 +2089,14 @@ h1{
         height: 98vh;
         background-attachment: scroll;
         background-position: 65% 60%;
-        background-size: cover; 
+        background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 79vh;
+            top: 85vh;
             font-size: 2.5em;
-            transform: rotate(21deg);
+            transform: rotate(0deg);
             text-align: center;
             letter-spacing: 1px; 
         }
@@ -2086,6 +2119,8 @@ h1{
         background-position: 60% 50%;
         background-attachment: scroll;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         #arrow-group{   
             top: 72vh;
@@ -2097,12 +2132,12 @@ h1{
         #title{
             top: 64vh;
             font-size: 6em;
-            transform: rotate(-12.5deg);
+            transform: rotate(0deg);
             text-align: center;
         }
 
         #slogan{
-            top: 60vh;
+            top: 62vh;
             font-size: 2.5em;
             text-align: right;
         }
@@ -2171,11 +2206,13 @@ h1{
         background-attachment: scroll;
         background-position: 55% center;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
             top: 48vh;
             font-size: 2.5em;
-            transform: rotate(12.5deg);
+            transform: rotate(0deg);
             text-align: right;
         }
     }
@@ -2259,12 +2296,14 @@ h1{
     .Nine{
         background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
         background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
-            top: 24vh;
+            top: 34vh;
             left: 2vw;
             font-size: 2em;
-            transform: rotate(-12deg);
+            transform: rotate(0deg);
             letter-spacing: 2px;    
         }
     }
@@ -2298,12 +2337,14 @@ h1{
         height: 98vh;
         background-attachment: scroll;
         background-position: 65% 60%;
-        background-size: cover; 
+        background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         
         h1{
             top: 79vh;
             font-size: 2.5em;
-            transform: rotate(12.5deg);
+            transform: rotate(0deg);
             text-align: center;
             letter-spacing: 1px; 
         }

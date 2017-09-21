@@ -3,9 +3,6 @@ import arrowRed from '../../img/arrow-red.png';
 import arrowLightBlue from '../../img/arrow-light-blue.png';
 import arrowDarkBlue from '../../img/arrow-dark-blue.png';
 
-
-
-
 class Intro extends Component {
     render() {
         return(
@@ -18,8 +15,8 @@ class Intro extends Component {
                             <img src={arrowDarkBlue} height={"25"} width={"60"}/>
                             <img src={arrowRed} height={"25"} width={"60"}/>
                         </div>
-                        <h1 id="title" className="col-xs-8 col-xs-offset-0 col-lg-7 col-lg-offset-1 text-right">BMW M2</h1>
-                        <h2 id="slogan" className="col-xs-4 col-xs-offset-8 col-lg-4 col-lg-offset-8 text-right">Freude am Fahren</h2>
+                        <h1 id="title" className="col-xs-12 col-xs-offset-0 col-lg-7 col-lg-offset-1 text-right">BMW M2</h1>
+                        <h2 id="slogan" className="col-xs-12 col-xs-offset-0 col-lg-4 col-lg-offset-8 text-right">Freude am Fahren</h2>
                     </div>
                 </div>
             </div>

@@ -58,13 +58,15 @@ $(document).ready(function(){
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
     
-    var downArrowScene = new ScrollMagic.Scene({
+    var arrowTween = TweenMax.staggerTo("#arrow-group img", 0.2, { ease:  Power0.easeNone, opacity: 0, scale: 0.5}, 0.2);
+    
+    var arrowDisappearScene = new ScrollMagic.Scene({
         triggerElement: '#arrow-group',
         triggerHook: 0.5,
         offset: 0,
         reverse: false
     })
-    .setClassToggle('#arrow-group', 'fade-out')
+    .setTween(arrowTween)
     .addTo(controller);
     
     var twoFlexBoxScene = new ScrollMagic.Scene({

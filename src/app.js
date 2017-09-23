@@ -142,17 +142,22 @@ $(document).ready(function(){
         ease: Linear.easeNone
     });*/
     
+    /* ----Background Scroll animations -----*/
+    
     var oneParallaxTween = TweenMax.to(".One", 1, {
       backgroundSize: "+=250px +=166.7px", 
       autoRound:false, 
       ease:Power1.ease0ut
     });
 
-	// build scene and set duration to window height
-	var oneParallaxscene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: "100%"})
-					.setTween(oneParallaxTween)
-					//.addIndicators()
-					.addTo(controller);
+	
+	var oneParallaxscene = new ScrollMagic.Scene({
+        triggerElement: "#trigger", 
+        duration: "100%"
+    })
+    .setTween(oneParallaxTween)
+    //.addIndicators()
+    .addTo(controller);
     
     var threeParallaxTween = TweenMax.to(".Three", 1, {
       backgroundPositionX: "-=50%", 
@@ -160,11 +165,15 @@ $(document).ready(function(){
       ease:Power1.ease0ut
     });
 
-	// build scene and set duration to window height
-	var threeParallaxScene = new ScrollMagic.Scene({triggerElement: ".Three", triggerHook: 1, duration: "150%"})
-					.setTween(threeParallaxTween)
-					//.addIndicators() 
-					.addTo(controller);
+	
+	var threeParallaxScene = new ScrollMagic.Scene({
+        triggerElement: ".Three", 
+        triggerHook: 1, 
+        duration: "150%"
+    })
+    .setTween(threeParallaxTween)
+    //.addIndicators() 
+    .addTo(controller);
     
     var fourParallaxTween = TweenMax.to(".Four", 1, {
       backgroundSize: "+=500px +=281.25px", 
@@ -172,11 +181,16 @@ $(document).ready(function(){
       ease:Power1.ease0ut
     });
 
-	// build scene and set duration to window height
-	var fourParallaxScene = new ScrollMagic.Scene({triggerElement: ".Four", triggerHook: 1, duration: "150%"})
-					.setTween(fourParallaxTween)
-					//.addIndicators()
-					.addTo(controller);
+	
+	var fourParallaxScene = new ScrollMagic.Scene({
+        triggerElement: ".Four", 
+        triggerHook: 1, 
+        duration: "150%"
+    })
+    
+    .setTween(fourParallaxTween)
+    //.addIndicators()
+    .addTo(controller);
     
     var elevenParallaxTween = TweenMax.from(".Eleven", 1, {
       backgroundSize: "+=200px +=149.84px", 
@@ -184,9 +198,51 @@ $(document).ready(function(){
       ease:Power1.ease0ut
     });
 
-	// build scene and set duration to window height
-	var elevenParallaxScene = new ScrollMagic.Scene({triggerElement: ".Eleven", triggerHook: 1, duration: "102%"})
-					.setTween(elevenParallaxTween)
-					//.addIndicators() // add indicators (requires plugin)
-					.addTo(controller);
+	
+	var elevenParallaxScene = new ScrollMagic.Scene({
+        triggerElement: ".Eleven", 
+        triggerHook: 1, 
+        duration: "102%"
+    })
+    .setTween(elevenParallaxTween)
+    //.addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+    
+    /*----- Navbar highlights -----*/
+    
+    new ScrollMagic.Scene({
+        triggerElement: ".Six",
+        triggerHook: 0.5,
+        duration: "140%"
+    })
+    .setClassToggle(".navbar-default .navbar-nav > li:nth-child(2)", "active") // add class toggle
+    .addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+    
+	new ScrollMagic.Scene({
+        triggerElement: ".Seven",
+        triggerHook: 0.5,
+        duration: "140%"
+    })
+    .setClassToggle(".navbar-default .navbar-nav > li:nth-child(3)", "active") // add class toggle
+    .addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+    
+	new ScrollMagic.Scene({
+        triggerElement: ".Eight",
+        triggerHook: 0.5,
+        duration: "140%"
+    })
+    .setClassToggle(".navbar-default .navbar-nav > li:nth-child(4)", "active") // add class toggle
+    .addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+    
+	new ScrollMagic.Scene({
+        triggerElement: ".Ten",
+        triggerHook: 0.5,
+        duration: "150%"
+    })
+    .setClassToggle(".navbar-default .navbar-nav > li:nth-child(5)", "active") // add class toggle
+    .addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
 })

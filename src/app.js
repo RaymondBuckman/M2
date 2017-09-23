@@ -165,7 +165,7 @@ $(document).ready(function(){
       ease:Power1.ease0ut
     });
 
-	/
+	
 	var threeParallaxScene = new ScrollMagic.Scene({
         triggerElement: ".Three", 
         triggerHook: 1, 

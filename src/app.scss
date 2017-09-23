@@ -19,6 +19,11 @@ $tertiary-color: #369ac2;
 $arrow-rotate-out: all 2.0s cubic-bezier(.37,1.01,.8,.99);
 $color-hover: color 0.3s ease-in-out;
 
+$one-height: 100vw * .6668; //Multiple based on image proportions
+$three-height: 120vw * .7492; //Multiple based on image proportions
+$four-height: 100vw * .5625; //Multiple based on image proportions
+$eleven-height: 100vw * .7492; //Multiple based on image proportions
+
 //keyframes
 @keyframes occasionalBlurOnHover{
 	20%, 52%	{-webkit-filter: blur(0px); -moz-filter: blur(0px);}
@@ -168,6 +173,7 @@ body {
 
 .App{
     position: relative;
+    width: 100%;
 }
 
 h1{
@@ -185,11 +191,19 @@ h1{
     height: 40px;
 }
 
+.One-background{
+    background-size: cover;
+}
+
+.One-background-parallax{
+    background-size: cover + 1000;
+}
+
 .One {
     position: relative;
     height: 100vh;
     background: url("./img/simonpuschmann-BMW-M2-03.jpg") $nrf 50% 50%;
-    background-size: 1600px;
+    background-size: 100vw $one-height; //replacement for "cover" property makes parallax background scrolling possible 
     -webkit-clip-path: polygon(20% 0%, 0 0, 0 46%, 0% 80%, 0 100%, 65% 81%, 28% 100%, 100% 100%, 100% 51%, 100% 0, 56% 0, 37% 0);
     clip-path: polygon(20% 0%, 0 0, 0 46%, 0% 80%, 0 100%, 65% 81%, 28% 100%, 100% 100%, 100% 51%, 100% 0, 56% 0, 37% 0);
     @include occasional-brightness;
@@ -366,7 +380,7 @@ h1{
     top: 0vh;
     height: 50vh;
     background: url("./img/simonpuschmann-BMW-M2-04.jpg") $nrf 90% 50%;
-    background-size: 1900px;
+    background-size: 120vw $three-height; //replacement for "cover" property makes parallax background scrolling possible 
     z-index: 17;
 }
 
@@ -375,7 +389,7 @@ h1{
     //top: -25px;
     height: 50vh;
     background: url("./img/simonpuschmann-BMW-M2-01.jpg") $nrf 50% 70%;
-    background-size: 1300px;
+    background-size: 100vw $four-height; //replacement for "cover" property makes parallax background scrolling possible 
     @include global-padding;
    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 99%, 29% 70%, 66% 100%, 24% 100%, 0 100%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 99%, 29% 70%, 66% 100%, 24% 100%, 0 100%);
@@ -796,11 +810,13 @@ h1{
     }
 }
 
+
+
 .Eleven{
     position: relative;
     height: 95vh;
     background: url("./img/simonpuschmann-BMW-M2-07.jpg") $nrf 50% 25%;
-    background-size: 2500px;
+    background-size: 100vw $eleven-height; //replacement for "cover" property makes parallax background scrolling possible 
     @include global-padding;    
     @include occasional-brightness;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 92% 100%, 10% 76%, 34% 100%, 0 100%);

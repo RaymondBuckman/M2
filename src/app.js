@@ -48,7 +48,6 @@ $(document).ready(function(){
         duration: '.App'
     })
     .setPin('.navbar')
-    //.setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
     
     var changeTopNavColorScene = new ScrollMagic.Scene({
@@ -59,20 +58,15 @@ $(document).ready(function(){
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
     
-    var downArrowScene = new ScrollMagic.Scene({
+    var arrowTween = TweenMax.staggerTo("#arrow-group img", 0.2, { ease:  Power0.easeNone, opacity: 0, scale: 0.5}, 0.2);
+    
+    var arrowDisappearScene = new ScrollMagic.Scene({
         triggerElement: '#arrow-group',
         triggerHook: 0.5,
         offset: 0,
         reverse: false
     })
-    .setClassToggle('#arrow-group', 'fade-out')
-        
-    /*
-    .addIndicators({
-        name: 'div fadeout',
-        colorTrigger: 'yellow',
-        colorStart: '#75C695'
-    })*/
+    .setTween(arrowTween)
     .addTo(controller);
     
     var twoFlexBoxScene = new ScrollMagic.Scene({
@@ -82,13 +76,6 @@ $(document).ready(function(){
         reverse: false
     })
     .setClassToggle('.scrollmagic-two-target', 'come-to-center')
-        
-    /*
-    .addIndicators({
-        name: 'div fadeout',
-        colorTrigger: 'yellow',
-        colorStart: '#75C695'
-    })*/
     .addTo(controller);
     
     $('.scrollmagic-enter-from-right').each(function(){
@@ -99,13 +86,6 @@ $(document).ready(function(){
             reverse: false
         })
         .setClassToggle(this, 'come-to-center')
-
-        /*
-        .addIndicators({
-            name: 'div fadeout',
-            colorTrigger: 'yellow',
-            colorStart: '#75C695'
-        })*/
         .addTo(controller);
     })
     
@@ -117,13 +97,6 @@ $(document).ready(function(){
             reverse: false
         })
         .setClassToggle(this, 'come-to-center')
-
-        /*
-        .addIndicators({
-            name: 'div fadeout',
-            colorTrigger: 'yellow',
-            colorStart: '#75C695'
-        })*/
         .addTo(controller);
     })
 
@@ -136,41 +109,84 @@ $(document).ready(function(){
             reverse: false
         })
         .setClassToggle(this, 'shrink-on-appear')
-
-        /*
-        .addIndicators({
-            name: 'div fadeout',
-            colorTrigger: 'yellow',
-            colorStart: '#75C695'
-        })*/
         .addTo(controller);
     })
-})
+    
+    /*----- navbar animations -----*/
+    
+    var navTween = TweenMax.staggerFrom(".navbar li", 0.6, { ease:  Power0.easeNone, opacity: 0, x:100, scale: 2}, 0.4);
+    
+    var navItemsAppearScene = new ScrollMagic.Scene({
+        triggerElement: '.navbar',
+        triggerHook: 0.9,
+        offset: 0,
+        reverse: false
+    })
+    .setTween(navTween)
+    .addTo(controller);
+    
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+    
+    console.log(`width is ${windowWidth} & the height is ${windowHeight}.`);
+    
+    // build tween
+    /*
+	var oneParallaxTween = TweenMax.fromTo(".One", 1, 
+    {
+        backgroundSize: '${windowWidth}px ${windowWidth*.6668}px',
+        ease: Linear.easeNone
+    },
+    {
+        backgroundSize: "+=25% +=25%", 
+        ease: Linear.easeNone
+    });*/
+    
+    var oneParallaxTween = TweenMax.to(".One", 1, {
+      backgroundSize: "+=250px +=166.7px", 
+      autoRound:false, 
+      ease:Power1.ease0ut
+    });
 
+	// build scene and set duration to window height
+	var oneParallaxscene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: "100%"})
+					.setTween(oneParallaxTween)
+					//.addIndicators()
+					.addTo(controller);
+    
+    var threeParallaxTween = TweenMax.to(".Three", 1, {
+      backgroundPositionX: "-=50%", 
+      autoRound:false, 
+      ease:Power1.ease0ut
+    });
 
-$(window).scroll(function(){
-    var wScroll = $(this).scrollTop();
-    console.log(wScroll);
-    var largeDesktop = window.matchMedia( "(min-width: 1400px)" );
-     
+	// build scene and set duration to window height
+	var threeParallaxScene = new ScrollMagic.Scene({triggerElement: ".Three", triggerHook: 1, duration: "150%"})
+					.setTween(threeParallaxTween)
+					//.addIndicators() 
+					.addTo(controller);
     
-    if(largeDesktop.matches){   
-        
-        $('.One, .Header').css({
-            'background-size':  (1600 + (wScroll/3)) + 'px'
-        })
+    var fourParallaxTween = TweenMax.to(".Four", 1, {
+      backgroundSize: "+=500px +=281.25px", 
+      autoRound:false, 
+      ease:Power1.ease0ut
+    });
+
+	// build scene and set duration to window height
+	var fourParallaxScene = new ScrollMagic.Scene({triggerElement: ".Four", triggerHook: 1, duration: "150%"})
+					.setTween(fourParallaxTween)
+					//.addIndicators()
+					.addTo(controller);
     
-        $('.Three').css({
-            'background-position': + (90+ wScroll/-50) + "% 50%"
-        })
-    
-        $('.Four').css({
-            'background-size':  (1300 + (wScroll/2.4)) + 'px'
-        })
-    
-        $('.Eleven').css({
-            'background-size': 2500 - (wScroll/8) + 'px'
-        })
-        
-        }
+    var elevenParallaxTween = TweenMax.from(".Eleven", 1, {
+      backgroundSize: "+=200px +=149.84px", 
+      autoRound:false, 
+      ease:Power1.ease0ut
+    });
+
+	// build scene and set duration to window height
+	var elevenParallaxScene = new ScrollMagic.Scene({triggerElement: ".Eleven", triggerHook: 1, duration: "102%"})
+					.setTween(elevenParallaxTween)
+					//.addIndicators() // add indicators (requires plugin)
+					.addTo(controller);
 })

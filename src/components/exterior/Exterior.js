@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {findDOMNode} from 'react-dom';
+import ReactTooltip from 'react-tooltip';
 
 
 class Exterior extends Component {
@@ -15,18 +17,48 @@ class Exterior extends Component {
             </div>
             <div className="Seven-blurred">
                 <ul className="flex-container">
-                    <li className="flex-item scrollmagic-scale-flex-box">Kidney grille with and M2 designation</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">M rear spoiler</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Center-aligned Quad Exhaust Pipes</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">M side gill with M2 badging</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">4 Paint Options (incl. Long Beach Metallic)</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Double Spoke forged alloy wheels</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Shadowline Exterior Trim</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">M Specific front & rear bumpers</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Blue Brake Calipers</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Extra Wide Rear Fenders</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="grille">Kidney grille with and M2 designation</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="spoiler">M rear spoiler</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="pipes">Center-aligned Quad Exhaust Pipes</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="gill">M side gill with M2 badging</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="paint">4 Paint Options (incl. Long Beach Metallic)</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="wheels">Double Spoke forged alloy wheels</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="shadowline">Shadowline Exterior Trim</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="bumpers">M Specific front & rear bumpers</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="calipers">Blue Brake Calipers</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="fenders">Extra Wide Rear Fenders</li>
                 </ul>
             </div>
+            <ReactTooltip id="grille" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">This is no ordinary 2-series.</span>
+            </ReactTooltip>
+            <ReactTooltip id="spoiler" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Provides extra downforce at high speed.</span>
+            </ReactTooltip>
+            <ReactTooltip id="pipes" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">The more, the merrier.</span>
+            </ReactTooltip>
+            <ReactTooltip id="gill" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Highlights the power<br/> lurking under the bonnet.</span>
+            </ReactTooltip>
+            <ReactTooltip id="paint" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Paint choices include:<br/> Alphine White<br/> Black Sapphire Metallic<br/> Mineral Gray Metallic<br/> Long Beach Blue Metallic.</span>
+            </ReactTooltip>
+            <ReactTooltip id="wheels" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">M-specific wheels give<br/> the M2 a special touch.</span>
+            </ReactTooltip>
+            <ReactTooltip id="shadowline" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">To emphasize the M2's sporty<br/> character, use of chrome is<br/> minimized on the exterior styling.</span>
+            </ReactTooltip>
+            <ReactTooltip id="bumpers" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">The M2 gets its own unique<br/> ground effects kit.</span>
+            </ReactTooltip>
+            <ReactTooltip id="calipers" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">The unique blue brake calipers<br/> stress the extra stopping<br/> power of the M2's brakes.</span>
+            </ReactTooltip>
+            <ReactTooltip id="fenders" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Gives the M2 an agreesive, hunkered<br/> down stance from the rear.</span>
+            </ReactTooltip>
         </div>
         );
     }

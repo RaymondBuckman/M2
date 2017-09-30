@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {findDOMNode} from 'react-dom';
+import ReactTooltip from 'react-tooltip';
 
 
 class Interior extends Component {
@@ -15,18 +17,48 @@ class Interior extends Component {
             </div>
             <div className="Eight-blurred">
                 <ul className="flex-container">
-                    <li className="flex-item scrollmagic-scale-flex-box">Black Dakota leather upholstery with blue highlight</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Leather wrapped multifunction M steering wheel</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Open pore carbon fiber trim</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Driver oriented cockpit with anthracite headliner</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">M door-sill finishers, footrest, & other design elements</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Rev matching (with 6-speed manual)</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">iDrive with optional Apple CarPlay compatibility</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">Aluminum paddle shfters (with Optional DCT)</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">BMW Online with MyInfo and BMW Apps</li>
-                    <li className="flex-item scrollmagic-scale-flex-box">360 watt Harman Kardon® sound system</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="upholstery">Black Dakota leather upholstery with blue highlight</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="steering-wheel">Leather wrapped multifunction M steering wheel</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="trim">Open pore carbon fiber trim</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="cockpit">Driver oriented cockpit with anthracite headliner</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="elements">M door-sill finishers, footrest, & other design elements</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="rev-matching">Rev matching (with 6-speed manual)</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="idrive">iDrive with optional Apple CarPlay compatibility</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="paddle-shifters">Aluminum paddle shfters (with Optional DCT)</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="online">BMW Online with MyInfo and BMW Apps</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="harmon-kardon">360 watt Harman Kardon® sound system</li>
                 </ul>
             </div>
+            <ReactTooltip id="upholstery" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Special touches for a special car.</span>
+            </ReactTooltip>
+            <ReactTooltip id="steering-wheel" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Never have to (or want to) take<br/> your hands off the wheel.</span>
+            </ReactTooltip>
+            <ReactTooltip id="trim" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Matte carbon fiber trim adds a<br/> unique feel to the interior ambiance.</span>
+            </ReactTooltip>
+            <ReactTooltip id="cockpit" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Let nothing distract you from the road.</span>
+            </ReactTooltip>
+            <ReactTooltip id="elements" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Little reminders that you<br/> bought something special.</span>
+            </ReactTooltip>
+            <ReactTooltip id="rev-matching" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Allows smooth transitions<br/> while downshifting.</span>
+            </ReactTooltip>
+            <ReactTooltip id="idrive" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">The best infotainment system in<br/> the industy is at your disposal.</span>
+            </ReactTooltip>
+            <ReactTooltip id="paddle-shifters" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Cool-to-the-touch aluminum<br/> paddle shifters allow your<br/> hands to stay on the wheel.</span>
+            </ReactTooltip>
+            <ReactTooltip id="online" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">Access news, weather, & other info.</span>
+            </ReactTooltip>
+            <ReactTooltip id="harmon-kardon" place="top" type="dark" effect="solid" delayShow={300}>
+                <span className="tooltip-span">For those rare times when the<br/> exhaust note won't suffice.</span>
+            </ReactTooltip>
         </div>
         );
     }

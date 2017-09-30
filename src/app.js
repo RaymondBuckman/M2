@@ -5,6 +5,7 @@ import scrollTo from '../node_modules/gsap/ScrollToPlugin';
 import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
+import ReactTooltip from 'react-tooltip'; 
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -38,13 +39,13 @@ $("#arrow-group > img").click(function() {
 });
 
 
-$(document).ready(function(){
-    
+$(document).ready(function(){    
     var controller = new ScrollMagic.Controller();
     
     var pinTopNavScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
         triggerHook: 0,
+        //triggerHook: 0.034,
         duration: '.App'
     })
     .setPin('.navbar')

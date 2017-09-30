@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import arrowRed from '../../img/arrow-red.png';
 import arrowLightBlue from '../../img/arrow-light-blue.png';
 import arrowDarkBlue from '../../img/arrow-dark-blue.png';
+import {findDOMNode} from 'react-dom';
+import ReactTooltip from 'react-tooltip';
 
 class Intro extends Component {
     render() {
@@ -10,7 +12,7 @@ class Intro extends Component {
             <div className="One">
                 <div className="container-fluid">
                     <div className="row">
-                        <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs">
+                        <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs" data-tip data-for="scroll-down">
                             <img src={arrowLightBlue} height={"25"} width={"60"}/>
                             <img src={arrowDarkBlue} height={"25"} width={"60"}/>
                             <img src={arrowRed} height={"25"} width={"60"}/>
@@ -38,7 +40,7 @@ class Intro extends Component {
                 <h1>Exclusive color: Long Beach Blue Metallic</h1>
             </div>
             <nav className="navbar navbar-default visible-lg" data-spy="affix" role="navigation">
-                <div className="container">
+                <div className="container-fluid">
                     <ul className="nav navbar-nav navbar-left">
                         <li><a href="#">invis</a></li>
                         <li><a href="#Performance">Performance</a></li>
@@ -48,6 +50,9 @@ class Intro extends Component {
                     </ul>
                 </div>
             </nav>
+            <ReactTooltip id="scroll-down" place="right" type="dark" effect="solid" delayShow={50}>
+                <span className="tooltip-span">Scroll down</span>
+            </ReactTooltip>
         </div>
         );
     }

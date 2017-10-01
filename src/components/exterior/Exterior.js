@@ -17,7 +17,7 @@ class Exterior extends Component {
             </div>
             <div className="Seven-blurred">
                 <ul className="flex-container">
-                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="grille">Kidney grille with and M2 designation</li>
+                    <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="grille">Kidney grille with M2 designation</li>
                     <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="spoiler">M rear spoiler</li>
                     <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="pipes">Center-aligned Quad Exhaust Pipes</li>
                     <li className="flex-item scrollmagic-scale-flex-box" data-tip data-for="gill">M side gill with M2 badging</li>

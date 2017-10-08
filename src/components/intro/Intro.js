@@ -12,12 +12,12 @@ class Intro extends Component {
             <div className="One">
                 <div className="container-fluid">
                     <div className="row">
-                        <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs" data-tip data-for="scroll-down">
+                        <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs" data-tip data-for="scroll-down" aria-describedby="scroll-down">
                             <img src={arrowLightBlue} height={"25"} width={"60"}/>
                             <img src={arrowDarkBlue} height={"25"} width={"60"}/>
                             <img src={arrowRed} height={"25"} width={"60"}/>
                         </div>
-                        <h1 id="title" className="col-xs-12 col-xs-offset-0 col-lg-7 col-lg-offset-1 text-right">BMW M2</h1>
+                        <h1 id="title" className="col-xs-12 col-xs-offset-0 col-lg-7 col-lg-offset-1 text-right" role="heading">BMW M2</h1>
                         <h2 id="slogan" className="col-xs-12 col-xs-offset-0 col-lg-4 col-lg-offset-8 text-right">Freude am Fahren</h2>
                     </div>
                 </div>
@@ -39,10 +39,10 @@ class Intro extends Component {
             <div className="Four">
                 <h1>Exclusive color: Long Beach Blue Metallic</h1>
             </div>
-            <nav className="navbar navbar-default visible-lg" data-spy="affix" role="navigation">
+            <nav className="navbar navbar-default visible-lg" role="navigation">
                 <div className="container-fluid">
                     <ul className="nav navbar-nav navbar-left">
-                        <li><a href="#">invis</a></li>
+                        <li><a href="#" data-tip data-for="logo" aria-describedby="logo">invis</a></li>
                         <li><a href="#Performance">Performance</a></li>
                         <li><a href="#Exterior">Exterior</a></li>
                         <li><a href="#Interior">Interior</a></li>
@@ -50,8 +50,13 @@ class Intro extends Component {
                     </ul>
                 </div>
             </nav>
-            <ReactTooltip id="scroll-down" place="right" type="dark" effect="solid" delayShow={50}>
+            <ReactTooltip id="scroll-down" place="right" type="dark"
+            effect="solid" delayShow={50} role="tooltip">
                 <span className="tooltip-span">Scroll down</span>
+            </ReactTooltip>
+            <ReactTooltip id="logo" place="bottom" type="dark"
+            effect="solid" delayShow={300} role="tooltip">
+                <span className="tooltip-span">Top of<br/> page</span>
             </ReactTooltip>
         </div>
         );

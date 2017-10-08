@@ -6,11 +6,11 @@ class Specs extends Component {
         return(
         <div>
             <div className="Nine">
-                <h1>M - The Most Powerful Letter in the World</h1>    
+                <h1>The Most Powerful Letter in the World</h1>    
             </div>
             <div className="Ten" id="Specs">
                 <ul className="flex-container">
-                    <li className="flex-item">Specifications</li>
+                    <li className="flex-item" role="heading">Specifications</li>
                     <li className="flex-item scrollmagic-scale-flex-box">
                         <header>Engine</header><br/>
                         Liters/Type - 3.0 liter M TwinPower Turbo inline 6<br/>
@@ -67,8 +67,8 @@ class Specs extends Component {
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
                         <header>Standard Features</header><br/>
-                        14-way power front sport seats with 4-way lumbar<br/>
-                        Memory system for driver's seat/outside mirrors<br/>
+                        14-way power front seats with 4-way lumbar<br/>
+                        Memory system for seat & outside mirrors<br/>
                         Automatic climate control with micro-filter<br/>
                         Comfort Access keyless entry<br/>
                         Ambient Interior Lighting<br/>

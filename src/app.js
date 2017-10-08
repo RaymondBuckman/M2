@@ -1,11 +1,11 @@
 const css = require('./app.scss');
-import Icon from './img/bmw.ico';
 import {TweenMax, Power2, TimelineLite} from "gsap";
 import scrollTo from '../node_modules/gsap/ScrollToPlugin';
 import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
 import ReactTooltip from 'react-tooltip'; 
+import mLogo from './img/BMW-M.png';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -21,7 +21,7 @@ import $ from "jquery";
 ReactDOM.render(
     <div className="App" data-spy="scroll"
         data-target=".navbar-default" data-offset="450">
-            <Icon glyph="star" />
+            {/*<img src={mLogo} height="70px" width="70px"/>*/}
             <Intro />
             <Performance />
             <Exterior />
@@ -59,7 +59,7 @@ $(document).ready(function(){
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
     
-    var arrowTween = TweenMax.staggerTo("#arrow-group img", 0.2, { ease:  Power0.easeNone, opacity: 0, scale: 0.5}, 0.2);
+    var arrowTween = TweenMax.staggerTo("#arrow-group img", 0.2, { ease:  Power0.easeNone, opacity: 0, scale: 0.5}, 0.1);
     
     var arrowDisappearScene = new ScrollMagic.Scene({
         triggerElement: '#arrow-group',
@@ -115,7 +115,7 @@ $(document).ready(function(){
     
     /*----- navbar animations -----*/
     
-    var navTween = TweenMax.staggerFrom(".navbar li", 0.6, { ease:  Power0.easeNone, opacity: 0, x:100, scale: 2}, 0.4);
+    var navTween = TweenMax.staggerFrom(".navbar li", 0.6, { ease:  Power0.easeNone, opacity: 0, x:100, scale: 2}, 0.3);
     
     var navItemsAppearScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
@@ -130,21 +130,8 @@ $(document).ready(function(){
     var windowHeight = window.innerHeight;
     
     console.log(`width is ${windowWidth} & the height is ${windowHeight}.`);
-    
-    // build tween
-    /*
-	var oneParallaxTween = TweenMax.fromTo(".One", 1, 
-    {
-        backgroundSize: '${windowWidth}px ${windowWidth*.6668}px',
-        ease: Linear.easeNone
-    },
-    {
-        backgroundSize: "+=25% +=25%", 
-        ease: Linear.easeNone
-    });*/
-    
-    /* ----Background Scroll animations -----*/
-    
+        
+    /* ----Background Scroll animations -----*/    
     var oneParallaxTween = TweenMax.to(".One", 1, {
       backgroundSize: "+=250px +=166.7px", 
       autoRound:false, 
@@ -157,13 +144,12 @@ $(document).ready(function(){
         duration: "100%"
     })
     .setTween(oneParallaxTween)
-    //.addIndicators()
     .addTo(controller);
     
     var threeParallaxTween = TweenMax.to(".Three", 1, {
-      backgroundPositionX: "-=50%", 
-      autoRound:false, 
-      ease:Power1.ease0ut
+        backgroundPositionX: "-=50%", 
+        autoRound:false, 
+        ease:Power1.ease0ut
     });
 
 	
@@ -172,25 +158,25 @@ $(document).ready(function(){
         triggerHook: 1, 
         duration: "150%"
     })
-    .setTween(threeParallaxTween)
-    //.addIndicators() 
+    .setTween(threeParallaxTween) 
     .addTo(controller);
     
     var fourParallaxTween = TweenMax.to(".Four", 1, {
-      backgroundSize: "+=500px +=281.25px", 
-      autoRound:false, 
-      ease:Power1.ease0ut
+        backgroundSize: "+=500px +=281.25px", 
+        backgroundPositionX: "-=300px",
+        autoRound:false, 
+        ease:Power1.ease0ut
     });
 
 	
 	var fourParallaxScene = new ScrollMagic.Scene({
         triggerElement: ".Four", 
         triggerHook: 1, 
+        autoRound:false,
         duration: "150%"
     })
     
     .setTween(fourParallaxTween)
-    //.addIndicators()
     .addTo(controller);
     
     var elevenParallaxTween = TweenMax.from(".Eleven", 1, {
@@ -206,7 +192,6 @@ $(document).ready(function(){
         duration: "102%"
     })
     .setTween(elevenParallaxTween)
-    //.addIndicators() // add indicators (requires plugin)
     .addTo(controller);
     
     /*----- Navbar highlights -----*/
@@ -217,7 +202,6 @@ $(document).ready(function(){
         duration: "140%"
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(2)", "active") // add class toggle
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
     
 	new ScrollMagic.Scene({
@@ -226,7 +210,6 @@ $(document).ready(function(){
         duration: "140%"
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(3)", "active") // add class toggle
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
     
 	new ScrollMagic.Scene({
@@ -235,7 +218,6 @@ $(document).ready(function(){
         duration: "140%"
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(4)", "active") // add class toggle
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
     
 	new ScrollMagic.Scene({
@@ -244,6 +226,5 @@ $(document).ready(function(){
         duration: "150%"
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(5)", "active") // add class toggle
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 })

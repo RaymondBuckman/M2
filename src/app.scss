@@ -170,9 +170,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    user-select: none;
     cursor: default;
     overflow-x: hidden;  
+}
+
+//modifies text highlight color
+::selection {
+  background: $tertiary-color; /* WebKit/Blink Browsers */
 }
 
 .App{
@@ -182,6 +186,10 @@ body {
 
 h1{
     color: #fff;
+}
+
+a:focus{
+    outline: 2px solid $tertiary-color;
 }
 
 .tooltip-span{
@@ -455,6 +463,10 @@ h1{
     color: transparent;
     background: url("./img/BMW-logo.png") $nrs center;
     background-size: 80px;
+    
+    &:focus{
+        color: transparent !important;
+    }
 }
     
 .navbar-default .navbar-nav > li:nth-child(n+2) > a {
@@ -463,9 +475,13 @@ h1{
     //height: 20px;
 }
 
-.navbar-default .navbar-nav>.active > a,
-.navbar-default .navbar-nav>.active > a:focus {
+.navbar-default .navbar-nav>.active > a {
     color: $tertiary-color;
+    background: transparent;
+}
+
+.navbar-default .navbar-nav> li:nth-child(n+2) > a:focus{
+    color: $secondary-color !important;
     background: transparent;
 }
 
@@ -479,6 +495,7 @@ h1{
     height: 100vh;
     background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrf 0% 0%;
     background-size: cover;
+    transition: filter 1s ease-in-out;
     
     h1{
         position: relative;
@@ -731,7 +748,7 @@ h1{
     position:relative;
     height: 50vh;
     //top: -105px;
-    background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrf 0% 52%;
+    background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrf 0% 52%;
     background-size: cover;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 100%, 58% 100%, 93% 48%, 0 100%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 100%, 58% 100%, 93% 48%, 0 100%);
@@ -857,11 +874,17 @@ h1{
     padding-top: 15px;
     padding-bottom: 10px;
     
-    h2{
+    a{
         color: $secondary-color;
         @include main-font;
         font-size: 1.5em;
         @include nav-color-change;
+        text-decoration: none;
+        
+        &:focus{
+            outline: 2px solid $tertiary-color; 
+        }
+        
     }
 }
 
@@ -1077,7 +1100,7 @@ h1{
 
     
     .Nine{
-        background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
+        background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1137,7 +1160,7 @@ h1{
         padding-top: 10px;
         padding-bottom: 10px;
 
-        h2{
+        a{
             font-size: 1em;
             border-radius: 20px;
         }
@@ -1329,7 +1352,7 @@ h1{
 
     
     .Nine{
-        background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
+        background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1389,7 +1412,7 @@ h1{
         padding-top: 10px;
         padding-bottom: 10px;
 
-        h2{
+        a{
             font-size: 1em;
             border-radius: 20px;
         }
@@ -1574,7 +1597,7 @@ h1{
     }
     
     .Nine{
-        background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
+        background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1634,7 +1657,7 @@ h1{
         padding-top: 10px;
         padding-bottom: 10px;
 
-        h2{
+        a{
             font-size: 1.5em;
             border-radius: 20px;
         }
@@ -1824,7 +1847,7 @@ h1{
     }
     
     .Nine{
-        background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
+        background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1884,7 +1907,7 @@ h1{
         padding-top: 10px;
         padding-bottom: 10px;
 
-        h2{
+        a{
             font-size: 1em;
             border-radius: 20px;
         }
@@ -2071,7 +2094,7 @@ h1{
     }
     
     .Nine{
-        background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
+        background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -2131,7 +2154,7 @@ h1{
         padding-top: 10px;
         padding-bottom: 10px;
 
-        h2{
+        a{
             font-size: 1.2em;
             border-radius: 20px;
         }
@@ -2319,7 +2342,7 @@ h1{
     }
     
     .Nine{
-        background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
+        background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -2379,7 +2402,7 @@ h1{
         padding-top: 10px;
         padding-bottom: 10px;
 
-        h2{
+        a{
             font-size: 1.2em;
             border-radius: 20px;
         }
@@ -2564,7 +2587,7 @@ h1{
     }
     
     .Nine{
-        background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrs 99% 80%;
+        background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         
         h1{
@@ -2620,7 +2643,7 @@ h1{
         padding-top: 20px;
         padding-bottom: 10px;
 
-        h2{
+        a{
             font-size: 2em;
             border-radius: 20px;
         }
@@ -3071,7 +3094,7 @@ h1{
 
     
     .Nine{
-        background: url("./img/906babb535d764da594617bc3b576605.jpg") $nrf 99% 80%;
+        background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrf 99% 80%;
         background-size: cover;
         
         h1{
@@ -3184,7 +3207,7 @@ h1{
         padding-top: 25px;
         padding-bottom: 10px;
 
-        h2{
+        a{
             color: $secondary-color;
             @include main-font;
             font-size: 1.5em;

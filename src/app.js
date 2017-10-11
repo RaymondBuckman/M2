@@ -179,6 +179,24 @@ $(document).ready(function(){
     .setTween(fourParallaxTween)
     .addTo(controller);
     
+    var nineParallaxTween = TweenMax.from(".Nine", 1, {
+        backgroundSize: "+=200px +=112.96875px",
+        backgroundPositionX: "-=100px",
+        autoRound:false, 
+        ease:Power0.ease0ut
+    });
+
+	
+	var nineParallaxScene = new ScrollMagic.Scene({
+        triggerElement: ".Nine", 
+        triggerHook: 1, 
+        autoRound:false,
+        duration: "150%"
+    })
+    
+    .setTween(nineParallaxTween)
+    .addTo(controller);
+    
     var elevenParallaxTween = TweenMax.from(".Eleven", 1, {
       backgroundSize: "+=200px +=149.84px", 
       autoRound:false, 

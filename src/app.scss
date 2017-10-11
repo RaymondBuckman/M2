@@ -17,11 +17,15 @@ $secondary-color: #fff;
 $tertiary-color: #369ac2;
 
 $arrow-rotate-out: all 2.0s cubic-bezier(.37,1.01,.8,.99);
-$color-hover: color 0.3s ease-in-out;
 
-$one-height: 100vw * .6668; //Multiple based on image proportions
+//These variable help replace background-size: cover while allowing background animations
+//background-size: 100vw $one-height replicates background-size: cover
+//and allows scrollmagic/gsap to alter background size
+//The multiple is based on each image's proportions. 
+$one-height: 100vw * .6668; 
 $three-height: 120vw * .7492; //Multiple based on image proportions
 $four-height: 100vw * .5625; //Multiple based on image proportions
+$nine-height: 100vw * 0.5648;
 $eleven-height: 100vw * .7492; //Multiple based on image proportions
 
 //keyframes
@@ -176,7 +180,8 @@ body {
 
 //modifies text highlight color
 ::selection {
-  background: $tertiary-color; /* WebKit/Blink Browsers */
+    color: $secondary-color;
+    background: $tertiary-color; /* WebKit/Blink Browsers */
 }
 
 .App{
@@ -195,7 +200,6 @@ a:focus{
 .tooltip-span{
     font-family: $main-font, Arial, Helvetica, serif;
     color: $secondary-color;
-    
 }
 
 #App-logo {
@@ -420,12 +424,6 @@ a:focus{
         font-size: 2.5em;
         transform: rotate(5.6deg);
         text-align: right;
-        transition: $color-hover;
-        
-        &:hover{
-            color: $tertiary-color;
-            //background: $secondary-color;
-        }
     }
 }
 
@@ -749,7 +747,7 @@ a:focus{
     height: 50vh;
     //top: -105px;
     background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrf 0% 52%;
-    background-size: cover;
+    background-size: 100vw $nine-height;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 100%, 58% 100%, 93% 48%, 0 100%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 100%, 58% 100%, 93% 48%, 0 100%);
     @include global-padding;
@@ -764,12 +762,6 @@ a:focus{
         color: $secondary-color;
         transform: rotate(-7deg);
         letter-spacing: 3px;    
-        transition: $color-hover;
-        
-        &:hover{
-            color: $tertiary-color;
-            //background: $secondary-color;
-        }
     }
 }
 
@@ -857,12 +849,6 @@ a:focus{
         transform: rotate(7.5deg);
         text-align: center;
         letter-spacing: 3px; 
-        transition: $color-hover;
-        
-        &:hover{
-            color: $tertiary-color;
-            //background: $secondary-color;
-        }
     }
 }
 
@@ -915,7 +901,11 @@ a:focus{
 }
 
 /*------------------------  BREAKPOINTS ------------------------*/
-@include for-small-phone-portrait {    
+@include for-small-phone-portrait {
+    .tooltip-span{
+        font-size: 0.8em;
+    }
+    
     .One{
         height: 100vh;
         background-attachment: scroll;
@@ -1167,7 +1157,11 @@ a:focus{
     }
 }
 
-@include for-large-phone-portrait {    
+@include for-large-phone-portrait {  
+    .tooltip-span{
+        font-size: 0.8em;
+    }
+    
     .One{
         height: 100vh;
         background-attachment: scroll;
@@ -1420,6 +1414,10 @@ a:focus{
 }
 
 @include for-small-tablet-portrait{
+    .tooltip-span{
+        font-size: 1.3em;
+    }
+    
     .One{
         height: 100vh;
         background-position: 55% 50%;
@@ -1665,6 +1663,10 @@ a:focus{
 }
 
 @include for-phone-landscape{
+    .tooltip-span{
+        font-size: 1em;
+    }
+    
     .One{
         height: 100vh;
         background-position: 55% 50%;
@@ -1915,6 +1917,10 @@ a:focus{
 }
 
 @include for-large-tablet-portrait{
+    .tooltip-span{
+        font-size: 1.4em;
+    }
+    
     .One{
         height: 100vh;
         background-position: 60% 50%;
@@ -2162,6 +2168,10 @@ a:focus{
 }
 
 @include for-tablet-landscape{
+    .tooltip-span{
+        font-size: 1.4em;
+    }
+    
     .One{
         height: 100vh;
         background-position: 60% 50%;
@@ -2410,6 +2420,10 @@ a:focus{
 }
 
 @include for-small-desktop-or-large-tablet-landscape{
+    .tooltip-span{
+        font-size: 1.5em;
+    }
+    
     .One{
         height: 100vh;
         background-position: 60% 50%;
@@ -2651,6 +2665,14 @@ a:focus{
 }
 
 @include for-2K-and-4K-desktop-landscape{
+    #Performance > div, #Exterior > div, #Interior > div{
+        width: 80vw;
+    }
+    
+    .tooltip-span{
+        font-size: 1.5em;
+    }
+    
     .One{
         height: 100vh;
         background-position: 60% 50%;
@@ -2779,12 +2801,6 @@ a:focus{
             font-size: 4em;
             transform: rotate(5.6deg);
             text-align: right;
-            transition: $color-hover;
-
-            &:hover{
-                color: $tertiary-color;
-                //background: $secondary-color;
-            }
         }
     }
 
@@ -2863,7 +2879,7 @@ a:focus{
         p{
             position: relative;
             top: 20vh;
-            left: 60px;
+            left: 10vw;
             color: $secondary-color;
             width: 300px;
             @include main-font;
@@ -3183,19 +3199,13 @@ a:focus{
 
         h1{
             position: relative;
-            top: 72vh;
+            top: 77vh;
             color: $secondary-color;
             @include secondary-font;
             font-size: 6em;
             transform: rotate(7.5deg);
             text-align: center;
             letter-spacing: 3px; 
-            transition: $color-hover;
-
-            &:hover{
-                color: $tertiary-color;
-                //background: $secondary-color;
-            }
         }
     }
 

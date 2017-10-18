@@ -9,7 +9,7 @@ import mLogo from './img/BMW-M.png';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Header from './components/header/Header';
+//import mLogo from '../../img/BMW-M.png';
 import Intro from './components/intro/Intro';
 import Performance from'./components/performance/Performance';
 import Exterior from './components/exterior/Exterior';
@@ -19,15 +19,14 @@ import Footer from './components/footer/Footer';
 import $ from "jquery";
 
 ReactDOM.render(
-    <div className="App" data-spy="scroll"
-        data-target=".navbar-default" data-offset="450">
-            {/*<img src={mLogo} height="70px" width="70px"/>*/}
-            <Intro />
-            <Performance />
-            <Exterior />
-            <Interior />
-            <Specs />   
-            <Footer />
+    <div className="App">
+        {/*<a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><img id="m-logo" src={mLogo} height="50px"></img></a>*/}
+        <Intro />
+        <Performance />
+        <Exterior />
+        <Interior />
+        <Specs />   
+        <Footer />
     </div>,
     document.getElementById('root')
 );
@@ -40,26 +39,45 @@ $("#arrow-group > img").click(function() {
 
 
 $(document).ready(function(){    
+    //Gives the exact distance between the top of two elements
+    //This is for navbar effects
+    //var navToElevenHeight = $('.Eleven').offset().top - $('.Six').offset().top; 
+    var heightOfSix = $('.Seven').offset().top - $('.Six').offset().top;
+    var heightOfSeven = $('.Eight').offset().top - $('.Seven').offset().top;
+    var heightOfEight = $('.Ten').offset().top - $('.Eight').offset().top;
+    var heightOfTen = $('.Eleven').offset().top - $('.Ten').offset().top;
+    
     var controller = new ScrollMagic.Controller();
     
     var pinTopNavScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
-        triggerHook: 0,
-        //triggerHook: 0.034,
-        duration: '.App'
+        triggerHook: 0
     })
     .setPin('.navbar')
+    
     .addTo(controller);
     
     var changeTopNavColorScene = new ScrollMagic.Scene({
         triggerElement: '.Ten',
-        triggerHook: 0.5,
-        duration: '270%'
+        triggerHook: 0.15,
+        duration: heightOfTen
     })
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
     
-    var arrowTween = TweenMax.staggerTo("#arrow-group img", 0.2, { ease:  Power0.easeNone, opacity: 0, scale: 0.5}, 0.1);
+    var pushNavUpTween = TweenMax.to(".navbar", 0.05, {
+        y: "-=50px",
+        autoRound:false
+    });
+    
+    var pushNavUpScene = new ScrollMagic.Scene({
+        triggerElement: '.Eleven',
+        triggerHook: 0.05
+    })
+    .setTween(pushNavUpTween)
+    .addTo(controller);
+    
+    var arrowTween = TweenMax.staggerTo("#arrow-group img", 0.1, { ease:  Power0.easeNone, opacity: 0, scale: 0.5}, 0.2);    
     
     var arrowDisappearScene = new ScrollMagic.Scene({
         triggerElement: '#arrow-group',
@@ -68,8 +86,9 @@ $(document).ready(function(){
         reverse: false
     })
     .setTween(arrowTween)
+    .setClassToggle('#arrow-group', 'disable-arrows') //disables arrows after disappearance
     .addTo(controller);
-    
+        
     var twoFlexBoxScene = new ScrollMagic.Scene({
         triggerElement: '.scrollmagic-two-target',
         triggerHook: 0.7,
@@ -128,8 +147,6 @@ $(document).ready(function(){
     
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
-    
-    console.log(`width is ${windowWidth} & the height is ${windowHeight}.`);
         
     /* ----Background Scroll animations -----*/    
     var oneParallaxTween = TweenMax.to(".One", 1, {
@@ -217,7 +234,7 @@ $(document).ready(function(){
     new ScrollMagic.Scene({
         triggerElement: ".Six",
         triggerHook: 0.5,
-        duration: "140%"
+        duration: heightOfSix
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(2)", "active") // add class toggle
     .addTo(controller);
@@ -225,7 +242,7 @@ $(document).ready(function(){
 	new ScrollMagic.Scene({
         triggerElement: ".Seven",
         triggerHook: 0.5,
-        duration: "140%"
+        duration: heightOfSeven
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(3)", "active") // add class toggle
     .addTo(controller);
@@ -233,15 +250,15 @@ $(document).ready(function(){
 	new ScrollMagic.Scene({
         triggerElement: ".Eight",
         triggerHook: 0.5,
-        duration: "140%"
+        duration: heightOfEight
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(4)", "active") // add class toggle
     .addTo(controller);
     
 	new ScrollMagic.Scene({
         triggerElement: ".Ten",
-        triggerHook: 0.5,
-        duration: "150%"
+        triggerHook: 0.15,
+        duration: heightOfTen
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(5)", "active") // add class toggle
     .addTo(controller);

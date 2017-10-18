@@ -202,6 +202,10 @@ a:focus{
     color: $secondary-color;
 }
 
+.disable-arrows{
+    pointer-events: none;
+}
+
 #App-logo {
     position: relative;
     top: 0;
@@ -212,13 +216,13 @@ a:focus{
     height: 40px;
 }
 
-.One-background{
-    background-size: cover;
-}
-
-.One-background-parallax{
-    background-size: cover + 1000;
-}
+/*
+#m-logo{
+    position:relative;
+    top:5px;
+    display:block;
+    margin:auto;
+}*/
 
 .One {
     position: relative;
@@ -242,7 +246,6 @@ a:focus{
         &:hover{
             cursor: pointer;
         }
-        
         
         img{        
             
@@ -437,7 +440,7 @@ a:focus{
     border-radius: 0px;
     margin-bottom: 0px;
     z-index: 16;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .navbar-default .navbar-nav > li > a {

@@ -5,11 +5,8 @@ import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
 import ReactTooltip from 'react-tooltip'; 
-import mLogo from './img/BMW-M.png';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import mLogo from '../../img/BMW-M.png';
 import Intro from './components/intro/Intro';
 import Performance from'./components/performance/Performance';
 import Exterior from './components/exterior/Exterior';
@@ -20,7 +17,6 @@ import $ from "jquery";
 
 ReactDOM.render(
     <div className="App">
-        {/*<a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><img id="m-logo" src={mLogo} height="50px"></img></a>*/}
         <Intro />
         <Performance />
         <Exterior />
@@ -39,15 +35,20 @@ $("#arrow-group > img").click(function() {
 
 
 $(document).ready(function(){    
-    //Gives the exact distance between the top of two elements
-    //This is for navbar effects
-    //var navToElevenHeight = $('.Eleven').offset().top - $('.Six').offset().top; 
     var heightOfSix = $('.Seven').offset().top - $('.Six').offset().top;
     var heightOfSeven = $('.Eight').offset().top - $('.Seven').offset().top;
     var heightOfEight = $('.Ten').offset().top - $('.Eight').offset().top;
     var heightOfTen = $('.Eleven').offset().top - $('.Ten').offset().top;
     
     var controller = new ScrollMagic.Controller();
+    
+    var pinMLogoScene = new ScrollMagic.Scene({
+        triggerElement: '#m-logo',
+        triggerHook: 0.02,
+        duration: '40%'
+    })
+    .setPin('#m-logo')
+    .addTo(controller);  
     
     var pinTopNavScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',

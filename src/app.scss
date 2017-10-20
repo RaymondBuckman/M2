@@ -235,18 +235,33 @@ a:focus{
     @include global-padding;
     z-index: 20;    
     
+    #m-logo{
+        position: absolute;
+        top: 0px;
+        padding-bottom: 2px;
+        margin: 10px auto 0px auto;
+        left: 0;
+        right: 0;
+        display: inline-block;
+        cursor: pointer;
+        transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+        z-index: 99;
+        
+        &:hover{      
+            transform: scale(1.2);
+        }
+        
+    }
+    
     #arrow-group{
         position: relative;
         top: 82vh;
         left: 0vw;
         width: 70px;
+        cursor: pointer;
         transition: opacity 1s ease-in-out;
         animation: moveArrows 3s infinite;
-        
-        &:hover{
-            cursor: pointer;
-        }
-        
+
         img{        
             
             &:nth-child(1){
@@ -829,6 +844,21 @@ a:focus{
             //animation: occasionalBlurOnHover 4s infinite;
         }
     }
+    
+    #executive-package{
+        display: inline-block;
+    }
+    
+    #executive-package-list{        
+        li{
+            position: relative;
+            top: 0px;
+            font-size: 0.7em;
+            display: block;       
+            min-width: 160px;        
+            z-index: 1; 
+        }
+    } 
 }
 
 

@@ -79,7 +79,15 @@ class Specs extends Component {
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
                         <header>Options</header><br/>
-                        Executive Package - $1,400<br/>
+                        <span id="executive-package">Executive Package - $1,400</span><br/>
+                        <ul id="executive-package-list">
+                            <li>Heated Steering Wheel</li>
+                            <li>Automatic High Beams</li>
+                            <li>Active Driving Assistant</li>
+                            <li>Speed Limit Info</li>
+                            <li>Wireless Charging & Wifi</li>
+                            <li>Park Distance Control</li>
+                        </ul>
                         M Driver's Package - $2,500<br/>
                         M Double-clutch Transmission - $2,900<br/>
                         Apple CarPlay Compatibility - $300<br/>

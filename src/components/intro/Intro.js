@@ -4,12 +4,14 @@ import arrowLightBlue from '../../img/arrow-light-blue.png';
 import arrowDarkBlue from '../../img/arrow-dark-blue.png';
 import {findDOMNode} from 'react-dom';
 import ReactTooltip from 'react-tooltip';
+import mLogo from '../../img/BMW-M.png';
 
 class Intro extends Component {
     render() {
         return(
         <div>
             <div className="One">
+                <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><img id="m-logo" src={mLogo} height="27px" data-tip data-for="m-logo" aria-describedby="m-logo"></img></a>
                 <div className="container-fluid">
                     <div className="row">
                         <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs" data-tip data-for="scroll-down" aria-describedby="scroll-down">
@@ -42,7 +44,7 @@ class Intro extends Component {
             <nav className="navbar navbar-default visible-lg" role="navigation">
                 <div className="container-fluid">
                     <ul className="nav navbar-nav navbar-left">
-                        <li><a href="#" data-tip data-for="logo" aria-describedby="logo">invis</a></li>
+                        <li><a href="#" data-tip data-for="bmw-logo" aria-describedby="bmw-logo">invis</a></li>
                         <li><a href="#Performance">Performance</a></li>
                         <li><a href="#Exterior">Exterior</a></li>
                         <li><a href="#Interior">Interior</a></li>
@@ -50,11 +52,15 @@ class Intro extends Component {
                     </ul>
                 </div>
             </nav>
+            <ReactTooltip id="m-logo" place="bottom" type="dark"
+            effect="solid" delayShow={300} role="tooltip">
+                <span className="tooltip-span">Go to BMW M website</span>
+            </ReactTooltip>
             <ReactTooltip id="scroll-down" place="right" type="dark"
             effect="solid" delayShow={50} role="tooltip">
                 <span className="tooltip-span">Scroll down</span>
             </ReactTooltip>
-            <ReactTooltip id="logo" place="bottom" type="dark"
+            <ReactTooltip id="bmw-logo" place="bottom" type="dark"
             effect="solid" delayShow={300} role="tooltip">
                 <span className="tooltip-span">Top of<br/> page</span>
             </ReactTooltip>

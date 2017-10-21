@@ -10,8 +10,8 @@ class Interior extends Component {
             <div className="Eight" id="Interior">
                 <div className="container">
                     <div className="row">
-                        <h1 className="scrollmagic-enter-from-left" role="heading">Interior</h1>
-                        <p className="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 scrollmagic-enter-from-left"><q>The M2 has raw carbon fibre, not set in any resin, around the door pulls and centre console. It’s a nice departure from the usual, shiny carbon and looks pleasantly understated.</q><br/><br/>- Evo</p>
+                        <h1 className="scrollmagic-enter-from-left" role="heading" tabIndex="0">Interior</h1>
+                        <p className="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 scrollmagic-enter-from-left"><q>The M2 has raw carbon fibre, not set in any resin, around the door pulls and centre console. It’s a nice departure from the usual, shiny carbon and looks pleasantly understated.</q><br/><br/>- Evo<br/><a href="http://www.evo.co.uk/bmw/m2" target="_blank" role="link" aria-label="Read more about Evo's review">Read more...</a></p>
                     </div>
                 </div>
             </div>

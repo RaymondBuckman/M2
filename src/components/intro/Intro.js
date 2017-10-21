@@ -11,7 +11,7 @@ class Intro extends Component {
         return(
         <div>
             <div className="One">
-                <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><img id="m-logo" src={mLogo} height="27px" data-tip data-for="m-logo" aria-describedby="m-logo"></img></a>
+                <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><img id="m-logo" src={mLogo} height="25px" data-tip data-for="m-logo" aria-describedby="m-logo"></img></a>
                 <div className="container-fluid">
                     <div className="row">
                         <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs" data-tip data-for="scroll-down" aria-describedby="scroll-down">

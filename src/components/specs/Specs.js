@@ -10,9 +10,9 @@ class Specs extends Component {
             </div>
             <div className="Ten" id="Specs">
                 <ul className="flex-container">
-                    <li className="flex-item" role="heading">Specifications</li>
+                    <li className="flex-item" role="heading" tabIndex="0">Specifications</li>
                     <li className="flex-item scrollmagic-scale-flex-box">
-                        <header>Engine</header><br/>
+                        <header role="heading">Engine</header><br/>
                         Liters/Type - 3.0 liter M TwinPower Turbo inline 6<br/>
                         Displacement - 2979cc<br/>
                         Horsepower - 365 hp @ 6500 rpm<br/>
@@ -20,7 +20,7 @@ class Specs extends Component {
                         Compression ratio - 10.2
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
-                        <header>Transmission</header><br/>
+                        <header role="heading">Transmission</header><br/>
                         Standard - 6 speed manual<br/>
                         Manual ratios (I/II/III) - 4.11 / 2.32 / 1.54<br/>
                         Manual ratios (IV/V/VI/R) - 1.18 / 1.00 / 0.85 / 3.73<br/>
@@ -31,7 +31,7 @@ class Specs extends Component {
                         Auto final drive ratio - 3.46<br/>
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
-                        <header>Exterior Dimensions</header><br/>
+                        <header role="heading">Exterior Dimensions</header><br/>
                         Length - 176.2 in<br/>
                         Wheelbase - 106.0 in<br/>
                         Width - 73.0 in<br/>
@@ -41,7 +41,7 @@ class Specs extends Component {
                         Weight (DCT) - 3505 lbs<br/>
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
-                        <header>Interior Dimensions</header><br/>
+                        <header role="heading">Interior Dimensions</header><br/>
                         Headroom (front)- 40.1 in<br/>
                         Headroom (rear) - 36.5 in<br/>
                         Legroom (front) - 41.5 in<br/>
@@ -52,7 +52,7 @@ class Specs extends Component {
                         Cargo Volume - 14.0 cu ft<br/>
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
-                        <header>Fuel Economy</header><br/>
+                        <header role="heading">Fuel Economy</header><br/>
                         Manual Combined (mpg) - 21<br/>
                         Manual City/Highway (mpg) - 18/26<br/>
                         Automatic Combined (mpg) - 22<br/>
@@ -60,13 +60,13 @@ class Specs extends Component {
                         Fuel Tank Capacity (gal) - 13.7<br/>
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
-                        <header>Performance</header><br/>
+                        <header role="heading">Performance</header><br/>
                         0-60 (manual) - 4.3 seconds <br/>
                         0-60 (automatic) - 4.1 seconds<br/>
                         Top Speed - 155 mph (168 unrestricted)
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
-                        <header>Standard Features</header><br/>
+                        <header role="heading">Standard Features</header><br/>
                         14-way power front seats with 4-way lumbar<br/>
                         Memory system for seat & outside mirrors<br/>
                         Automatic climate control with micro-filter<br/>
@@ -78,17 +78,17 @@ class Specs extends Component {
                         SiriusXM  Radio with 1-year substription<br/>
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
-                        <header>Options</header><br/>
-                        <span id="executive-package">Executive Package - $1,400</span><br/>
+                        <header role="heading">Options</header><br/>
+                        <span id="executive-package">Executive Package - $1,400 <span id="executive-arrow">&#9663;</span></span><br/>
                         <ul id="executive-package-list">
-                            <li>Heated Steering Wheel</li>
-                            <li>Automatic High Beams</li>
-                            <li>Active Driving Assistant</li>
-                            <li>Speed Limit Info</li>
-                            <li>Wireless Charging & Wifi</li>
-                            <li>Park Distance Control</li>
+                            <li>&#10004; Heated Steering Wheel</li>
+                            <li>&#10004;  Automatic High Beams</li>
+                            <li>&#10004; Active Driving Assistant</li>
+                            <li>&#10004; Wireless Charging & Wifi</li>
+                            <li>&#10004; Park Distance Control</li>
                         </ul>
-                        M Driver's Package - $2,500<br/>
+                        <span id="m-drivers-package">M Driver's Package - $2,500 <span id="m-drivers-arrow">&#9663;</span></span><br/>
+                        <p id="m-drivers-package-desc">A 1-day high performance driving class which is tailored to BMW M vehicles through various exercises on a racetrack, allowing you to explore the limits of the vehicle in a controlled environment.</p>
                         M Double-clutch Transmission - $2,900<br/>
                         Apple CarPlay Compatibility - $300<br/>
                     </li>

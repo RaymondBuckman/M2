@@ -5,11 +5,8 @@ import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
 import ReactTooltip from 'react-tooltip'; 
-import mLogo from './img/BMW-M.png';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import mLogo from '../../img/BMW-M.png';
 import Intro from './components/intro/Intro';
 import Performance from'./components/performance/Performance';
 import Exterior from './components/exterior/Exterior';
@@ -20,7 +17,6 @@ import $ from "jquery";
 
 ReactDOM.render(
     <div className="App">
-        {/*<a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><img id="m-logo" src={mLogo} height="50px"></img></a>*/}
         <Intro />
         <Performance />
         <Exterior />
@@ -37,17 +33,59 @@ $("#arrow-group > img").click(function() {
     }, 2000);
 });
 
+$(document).ready(function(){  
+    /*----- Handles DropDown menus -----*/
+    $('#executive-package').click( function(event){
+        /* 
+            Allows you to click on #executive-package without triggering document click event, which closes the dropdown
+        */
+        event.stopPropagation(); 
+        $('#executive-package-list').toggle();
+    });
+    
+     $('#executive-package-list').click( function(event){
+        /* 
+            Allows you to click on #executive-package-list without triggering document click event, which closes the dropdown
+        */
+        event.stopPropagation();
+    });
+    
 
-$(document).ready(function(){    
-    //Gives the exact distance between the top of two elements
-    //This is for navbar effects
-    //var navToElevenHeight = $('.Eleven').offset().top - $('.Six').offset().top; 
-    var heightOfSix = $('.Seven').offset().top - $('.Six').offset().top;
-    var heightOfSeven = $('.Eight').offset().top - $('.Seven').offset().top;
-    var heightOfEight = $('.Ten').offset().top - $('.Eight').offset().top;
-    var heightOfTen = $('.Eleven').offset().top - $('.Ten').offset().top;
+    $(document).click( function(){
+        $('#executive-package-list').hide();
+    });
+    
+    $('#m-drivers-package').click( function(event){
+        /* 
+            Allows you to click on #executive-package without triggering document click event, which closes the dropdown
+        */
+        event.stopPropagation(); 
+        $('#m-drivers-package-desc').toggle();
+    });
+    
+     $('#m-drivers-package-desc').click( function(event){
+        /* 
+            Allows you to click on #executive-package-list without triggering document click event, which closes the dropdown
+        */
+        event.stopPropagation();
+    });
+    
+
+    $(document).click( function(){
+        $('#executive-package-list').hide();
+        $('#m-drivers-package-desc').hide();
+    });
     
     var controller = new ScrollMagic.Controller();
+    
+    /*----- Pin animations -----*/
+    var pinMLogoScene = new ScrollMagic.Scene({
+        triggerElement: '#m-logo',
+        triggerHook: 0.02,
+        duration: '40%'
+    })
+    .setPin('#m-logo')
+    .addTo(controller);  
     
     var pinTopNavScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
@@ -57,6 +95,7 @@ $(document).ready(function(){
     
     .addTo(controller);
     
+    /*----- Nav color change & push-up animations -----*/
     var changeTopNavColorScene = new ScrollMagic.Scene({
         triggerElement: '.Ten',
         triggerHook: 0.15,
@@ -67,7 +106,7 @@ $(document).ready(function(){
     
     var pushNavUpTween = TweenMax.to(".navbar", 0.05, {
         y: "-=50px",
-        autoRound:false
+        autoRound: false
     });
     
     var pushNavUpScene = new ScrollMagic.Scene({
@@ -77,6 +116,7 @@ $(document).ready(function(){
     .setTween(pushNavUpTween)
     .addTo(controller);
     
+    /*----- Arrow shrink & fade-out animation -----*/
     var arrowTween = TweenMax.staggerTo("#arrow-group img", 0.1, { ease:  Power0.easeNone, opacity: 0, scale: 0.5}, 0.2);    
     
     var arrowDisappearScene = new ScrollMagic.Scene({
@@ -88,10 +128,11 @@ $(document).ready(function(){
     .setTween(arrowTween)
     .setClassToggle('#arrow-group', 'disable-arrows') //disables arrows after disappearance
     .addTo(controller);
-        
+    
+    /*----- Flexbox & content animations -----*/
     var twoFlexBoxScene = new ScrollMagic.Scene({
         triggerElement: '.scrollmagic-two-target',
-        triggerHook: 0.7,
+        triggerHook: 0.85,
         offset: 0,
         reverse: false
     })
@@ -124,7 +165,7 @@ $(document).ready(function(){
     $('.scrollmagic-scale-flex-box').each(function(){
         var scaleFlexBoxScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.8,
+            triggerHook: 0.95,
             offset: 0,
             reverse: false
         })
@@ -132,13 +173,12 @@ $(document).ready(function(){
         .addTo(controller);
     })
     
-    /*----- navbar animations -----*/
-    
+    /*----- navbar shrink-in animations -----*/    
     var navTween = TweenMax.staggerFrom(".navbar li", 0.6, { ease:  Power0.easeNone, opacity: 0, x:100, scale: 2}, 0.3);
     
     var navItemsAppearScene = new ScrollMagic.Scene({
         triggerElement: '.navbar',
-        triggerHook: 0.9,
+        triggerHook: 0.95,
         offset: 0,
         reverse: false
     })
@@ -224,13 +264,18 @@ $(document).ready(function(){
 	var elevenParallaxScene = new ScrollMagic.Scene({
         triggerElement: ".Eleven", 
         triggerHook: 1, 
-        duration: "102%"
+        duration: "150%"
     })
     .setTween(elevenParallaxTween)
     .addTo(controller);
     
-    /*----- Navbar highlights -----*/
+    /* Variables for nav highlight durations*/    
+    var heightOfSix = $('.Seven').offset().top - $('.Six').offset().top;
+    var heightOfSeven = $('.Eight').offset().top - $('.Seven').offset().top;
+    var heightOfEight = $('.Ten').offset().top - $('.Eight').offset().top;
+    var heightOfTen = $('.Eleven').offset().top - $('.Ten').offset().top;
     
+    /*----- Navbar highlight animations -----*/    
     new ScrollMagic.Scene({
         triggerElement: ".Six",
         triggerHook: 0.5,

@@ -10,8 +10,9 @@ class Performance extends Component {
             <div className="Six" id="Performance">
                 <div className="container">
                     <div className="row">
-                        <h1 className="scrollmagic-enter-from-right" role="heading">Performance</h1>
-                        <p className="col-xs-10 col-xs-offset-2 text-center col-md-4 col-md-offset-8 text-right col-lg-4 col-lg-offset-8 text-right scrollmagic-enter-from-right"> <q>With 0.99 g worth of grip available, quick and responsive steering, and front buckets that comfortably restrain the occupants, the BMW M2 is a 200-proof driving elixir.</q><br/><br/>&#160;&#160;&#160;- Car And Driver</p>
+                        <h1 className="scrollmagic-enter-from-right" role="heading" tabIndex="0">Performance</h1>
+                        <p className="col-xs-10 col-xs-offset-2 text-center col-md-4 col-md-offset-8 text-right col-lg-4 col-lg-offset-8 text-right scrollmagic-enter-from-right"> <q>With 0.99 g worth of grip available, quick and responsive steering, and front buckets that comfortably restrain the occupants, the BMW M2 is a 200-proof driving elixir.</q><br/><br/>&#160;&#160;&#160;- Car And Driver<br/><a href="https://www.caranddriver.com/reviews/2016-bmw-m2-automatic-test-review" target="_blank" role="link" aria-label="Read more about Car and Driver's review">Read more...</a></p>
+                        
                     </div>
                 </div>
             </div>

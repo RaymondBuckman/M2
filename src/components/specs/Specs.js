@@ -13,7 +13,7 @@ class Specs extends Component {
                     <li className="flex-item" role="heading" tabIndex="0">Specifications</li>
                     <li className="flex-item scrollmagic-scale-flex-box">
                         <header role="heading">Engine</header><br/>
-                        Liters/Type - 3.0 liter M TwinPower Turbo inline 6<br/>
+                        3.0 liter M TwinPower Turbo inline 6<br/>
                         Displacement - 2979cc<br/>
                         Horsepower - 365 hp @ 6500 rpm<br/>
                         Torque - 343 lb-ft @ 1400-5560 rpm<br/>
@@ -23,7 +23,7 @@ class Specs extends Component {
                         <header role="heading">Transmission</header><br/>
                         Standard - 6 speed manual<br/>
                         Manual ratios (I/II/III) - 4.11 / 2.32 / 1.54<br/>
-                        Manual ratios (IV/V/VI/R) - 1.18 / 1.00 / 0.85 / 3.73<br/>
+                        Manual ratios (IV/V/VI/R) - 1.18 / 1.00 / .85 / 3.73<br/>
                         Manual final drive radio - 3.46<br/>
                         Auto ratios (I/II/III) - 4.81 / 2.59 / 1.70<br/>
                         Auto ratios (IV/V/VI) - 1.28 / 1.00 / 0.84<br/>
@@ -81,11 +81,11 @@ class Specs extends Component {
                         <header role="heading">Options</header><br/>
                         <span id="executive-package">Executive Package - $1,400 <span id="executive-arrow">&#9663;</span></span><br/>
                         <ul id="executive-package-list">
-                            <li>&#10004; Heated Steering Wheel</li>
-                            <li>&#10004;  Automatic High Beams</li>
-                            <li>&#10004; Active Driving Assistant</li>
-                            <li>&#10004; Wireless Charging & Wifi</li>
-                            <li>&#10004; Park Distance Control</li>
+                            <li><span className="check">&#10004;</span> Heated Steering Wheel</li>
+                            <li><span className="check">&#10004;</span>  Automatic High Beams</li>
+                            <li><span className="check">&#10004;</span> Active Driving Assistant</li>
+                            <li><span className="check">&#10004;</span> Wireless Charging & Wifi</li>
+                            <li><span className="check">&#10004;</span> Park Distance Control</li>
                         </ul>
                         <span id="m-drivers-package">M Driver's Package - $2,500 <span id="m-drivers-arrow">&#9663;</span></span><br/>
                         <p id="m-drivers-package-desc">A 1-day high performance driving class which is tailored to BMW M vehicles through various exercises on a racetrack, allowing you to explore the limits of the vehicle in a controlled environment.</p>

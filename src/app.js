@@ -1,4 +1,5 @@
 const css = require('./app.scss');
+require('./img/favicon.ico');
 import {TweenMax, Power2, TimelineLite} from "gsap";
 import scrollTo from '../node_modules/gsap/ScrollToPlugin';
 import ScrollMagic from 'scrollmagic';
@@ -34,6 +35,12 @@ $("#arrow-group > img").click(function() {
 });
 
 $(document).ready(function(){  
+    /* Variables for nav highlight durations*/    
+    var heightOfSix = $('.Seven').offset().top - $('.Six').offset().top;
+    var heightOfSeven = $('.Eight').offset().top - $('.Seven').offset().top;
+    var heightOfEight = $('.Ten').offset().top - $('.Eight').offset().top;
+    var heightOfTen = $('.Eleven').offset().top - $('.Ten').offset().top;
+    
     /*----- Handles DropDown menus -----*/
     $('#executive-package').click( function(event){
         /* 
@@ -268,12 +275,6 @@ $(document).ready(function(){
     })
     .setTween(elevenParallaxTween)
     .addTo(controller);
-    
-    /* Variables for nav highlight durations*/    
-    var heightOfSix = $('.Seven').offset().top - $('.Six').offset().top;
-    var heightOfSeven = $('.Eight').offset().top - $('.Seven').offset().top;
-    var heightOfEight = $('.Ten').offset().top - $('.Eight').offset().top;
-    var heightOfTen = $('.Eleven').offset().top - $('.Ten').offset().top;
     
     /*----- Navbar highlight animations -----*/    
     new ScrollMagic.Scene({

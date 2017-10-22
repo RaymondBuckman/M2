@@ -202,6 +202,10 @@ a:focus{
     color: $secondary-color;
 }
 
+.check{
+    color: $tertiary-color !important;
+}
+
 .disable-arrows{
     pointer-events: none;
 }
@@ -840,13 +844,13 @@ a:focus{
     
     h1{
         position: relative;
-        top: 25vh;
+        top: 27vh;
         left: 2vw;
         //width: 250px;
         @include secondary-font;
         font-size: 2.5em;
         color: $secondary-color;
-        transform: rotate(-7deg);
+        transform: rotate(-7.5deg);
         letter-spacing: 3px;    
     }
 }
@@ -881,13 +885,14 @@ a:focus{
         //line-height: 150px;
         color: $secondary-color;
         @include main-font;
-        font-size: 1.3em;
+        font-size: 1.2em;
         text-align: center;
         
         
         header{
             font-weight: bold;
             font-size: 40px;
+            border-bottom: solid 2px $tertiary-color;
         }
         
         &:first-child{

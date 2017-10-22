@@ -98,7 +98,7 @@ class Performance extends Component {
             </ReactTooltip>
             <ReactTooltip id="redline" place="top" type="dark"
             effect="solid" delayShow={300} role="tooltip">
-                <span className="tooltip-span">Drama? &#10004; Check</span>
+                <span className="tooltip-span">Drama? <span className="check">&#10004;</span> Check</span>
             </ReactTooltip>
         </div>
         );

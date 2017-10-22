@@ -32,13 +32,8 @@ module.exports={
                 use: 'babel-loader' //translates JSX to javascript
             },
             {
-                test: /\.(jpe?g|png|ico|gif|svg)$/i, //checks for all image types
-                use: [
-                    //creates a production version of the file path
-                    'file-loader?name=[name].[ext]',
-                    //'file-loader?name=[name].[ext]&outputPath=images/',
-                    'image-webpack-loader'
-                ] 
+                test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+                loader: 'file-loader?name=[name].[ext]'  // <-- retain original file name
                 
             }
             
@@ -60,6 +55,7 @@ module.exports={
            },
            hash: true, 
            template: './src/index.html',
+           favicon: 'src/img/favicon.ico',
        }),
         new ExtractTextPlugin({
             filename: "app.css",

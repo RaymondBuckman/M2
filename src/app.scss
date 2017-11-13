@@ -658,6 +658,7 @@ a:focus{
         position: relative;
         top:0px;
         @include secondary-font;
+        color: $tertiary-color;
         font-size: 0.8em;
         text-decoration: none;
         transition: color 0.3s ease-in-out;
@@ -767,7 +768,7 @@ a:focus{
         position: relative;
         top:0px;
         @include secondary-font;
-        color: $main-color;
+        color: $tertiary-color;
         font-size: 0.8em;
         text-decoration: none;
         transition: color 0.3s ease-in-out;
@@ -3413,3 +3414,27 @@ a:focus{
     }
 }
 
+//targets Firefox
+@-moz-document url-prefix() {
+    .One, .Eleven{
+        background-attachment: scroll !important;
+    }
+    
+    .Six-blurred, .Seven-blurred, .Eight-blurred{
+        background-position: 50% 50% !important;
+        background-attachment: scroll !important;
+    }
+}
+
+//targets Microsoft Edge
+@supports (-ms-ime-align: auto) {
+    //fixes background image scaling problems on divs with parallax background sizes
+    .One, .Nine, .Twelve{
+        background-size: cover !important;
+    }
+    
+    //De-rotates text because clip-path doesn't show up in Edge
+    #title, .Four > h1, .Nine > h1, .Eleven > h1{
+        transform: rotate(0deg) !important;
+    }
+}

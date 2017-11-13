@@ -216,7 +216,6 @@ $(document).ready(function(){
         ease:Power1.ease0ut
     });
 
-	
 	var threeParallaxScene = new ScrollMagic.Scene({
         triggerElement: ".Three", 
         triggerHook: 1, 
@@ -225,56 +224,61 @@ $(document).ready(function(){
     .setTween(threeParallaxTween) 
     .addTo(controller);
     
-    var fourParallaxTween = TweenMax.to(".Four", 1, {
-        backgroundSize: "+=500px +=281.25px", 
-        backgroundPositionX: "-=300px",
-        autoRound:false, 
-        ease:Power1.ease0ut
-    });
-
+    //If the browser isn't IE10 or Edge...
+    if (!(/MSIE 10/i.test(navigator.userAgent)) && !(/Edge\/\d./i.test(navigator.userAgent))){
+    
+        var fourParallaxTween = TweenMax.to(".Four", 1, {
+            backgroundSize: "+=500px +=281.25px", 
+            backgroundPositionX: "-=300px",
+            autoRound:false, 
+            ease:Power1.ease0ut
+        });
 	
-	var fourParallaxScene = new ScrollMagic.Scene({
-        triggerElement: ".Four", 
-        triggerHook: 1, 
-        autoRound:false,
-        duration: "150%"
-    })
+        var fourParallaxScene = new ScrollMagic.Scene({
+            triggerElement: ".Four", 
+            triggerHook: 1, 
+            autoRound:false,
+            duration: "150%"
+        })
     
-    .setTween(fourParallaxTween)
-    .addTo(controller);
-    
-    var nineParallaxTween = TweenMax.from(".Nine", 1, {
-        backgroundSize: "+=200px +=112.96875px",
-        backgroundPositionX: "-=100px",
-        autoRound:false, 
-        ease:Power0.ease0ut
-    });
+        .setTween(fourParallaxTween)
+        .addTo(controller);
+        
+        var nineParallaxTween = TweenMax.from(".Nine", 1, {
+            backgroundSize: "+=200px +=112.96875px",
+            backgroundPositionX: "-=100px",
+            autoRound:false, 
+            ease:Power0.ease0ut
+        });
 
-	
-	var nineParallaxScene = new ScrollMagic.Scene({
-        triggerElement: ".Nine", 
-        triggerHook: 1, 
-        autoRound:false,
-        duration: "150%"
-    })
-    
-    .setTween(nineParallaxTween)
-    .addTo(controller);
-    
-    var elevenParallaxTween = TweenMax.from(".Eleven", 1, {
-      backgroundSize: "+=200px +=149.84px", 
-      autoRound:false, 
-      ease:Power1.ease0ut
-    });
 
-	
-	var elevenParallaxScene = new ScrollMagic.Scene({
-        triggerElement: ".Eleven", 
-        triggerHook: 1, 
-        duration: "150%"
-    })
-    .setTween(elevenParallaxTween)
-    .addTo(controller);
+        var nineParallaxScene = new ScrollMagic.Scene({
+            triggerElement: ".Nine", 
+            triggerHook: 1, 
+            autoRound:false,
+            duration: "150%"
+        })
+
+        .setTween(nineParallaxTween)
+        .addTo(controller);
+
+        var elevenParallaxTween = TweenMax.from(".Eleven", 1, {
+          backgroundSize: "+=200px +=149.84px", 
+          autoRound:false, 
+          ease:Power1.ease0ut
+        });
+
+
+        var elevenParallaxScene = new ScrollMagic.Scene({
+            triggerElement: ".Eleven", 
+            triggerHook: 1, 
+            duration: "150%"
+        })
+        .setTween(elevenParallaxTween)
+        .addTo(controller);
+    }
+    
+    
     
     /*----- Navbar highlight animations -----*/    
     new ScrollMagic.Scene({

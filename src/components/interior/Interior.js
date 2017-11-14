@@ -7,7 +7,7 @@ class Interior extends Component {
     render() {
         return(
         <div>
-            <div className="Eight" id="Interior">
+            <div className="Interior-1" id="Interior">
                 <div className="container">
                     <div className="row">
                         <h1 className="scrollmagic-enter-from-left" role="heading" tabIndex="0">Interior</h1>
@@ -15,7 +15,7 @@ class Interior extends Component {
                     </div>
                 </div>
             </div>
-            <div className="Eight-blurred">
+            <div className="Interior-2">
                 <ul className="flex-container">
                     <li className="flex-item scrollmagic-scale-flex-box" 
                     data-tip data-for="upholstery" aria-describedby="upholstery">

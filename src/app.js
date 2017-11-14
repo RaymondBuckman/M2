@@ -30,16 +30,16 @@ ReactDOM.render(
 
 $("#arrow-group > img").click(function() {
     $('html, body').animate({
-        scrollTop: $(".Two").offset().top
+        scrollTop: $(".Intro-2").offset().top
     }, 2000);
 });
 
 $(document).ready(function(){  
     /* Variables for nav highlight durations*/    
-    var heightOfSix = $('.Seven').offset().top - $('.Six').offset().top;
-    var heightOfSeven = $('.Eight').offset().top - $('.Seven').offset().top;
-    var heightOfEight = $('.Ten').offset().top - $('.Eight').offset().top;
-    var heightOfTen = $('.Eleven').offset().top - $('.Ten').offset().top;
+    var heightOfPerformance = $('.Exterior-1').offset().top - $('.Performance-1').offset().top;
+    var heightOfExterior = $('.Interior-1').offset().top - $('.Exterior-1').offset().top;
+    var heightOfInterior = $('.Specs-2').offset().top - $('.Interior-1').offset().top;
+    var heightOfSpecs = $('.Specs-3').offset().top - $('.Specs-2').offset().top;
     
     /*----- Handles DropDown menus -----*/
     $('#executive-package').click( function(event){
@@ -104,9 +104,9 @@ $(document).ready(function(){
     
     /*----- Nav color change & push-up animations -----*/
     var changeTopNavColorScene = new ScrollMagic.Scene({
-        triggerElement: '.Ten',
+        triggerElement: '.Specs-2',
         triggerHook: 0.15,
-        duration: heightOfTen
+        duration: heightOfSpecs
     })
     .setClassToggle('.navbar', 'black-nav')
     .addTo(controller);
@@ -117,7 +117,7 @@ $(document).ready(function(){
     });
     
     var pushNavUpScene = new ScrollMagic.Scene({
-        triggerElement: '.Eleven',
+        triggerElement: '.Specs-3',
         triggerHook: 0.05
     })
     .setTween(pushNavUpTween)
@@ -196,52 +196,52 @@ $(document).ready(function(){
     var windowHeight = window.innerHeight;
         
     /* ----Background Scroll animations -----*/    
-    var oneParallaxTween = TweenMax.to(".One", 1, {
+    var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
       backgroundSize: "+=250px +=166.7px", 
       autoRound:false, 
       ease:Power1.ease0ut
     });
 
 	
-	var oneParallaxscene = new ScrollMagic.Scene({
+	var intro1Parallaxscene = new ScrollMagic.Scene({
         triggerElement: "#trigger", 
         duration: "100%"
     })
-    .setTween(oneParallaxTween)
+    .setTween(intro1ParallaxTween)
     .addTo(controller);
     
-    var threeParallaxTween = TweenMax.to(".Three", 1, {
+    var intro3ParallaxTween = TweenMax.to(".Intro-3", 1, {
         backgroundPositionX: "-=50%", 
         autoRound:false, 
         ease:Power1.ease0ut
     });
 
-	var threeParallaxScene = new ScrollMagic.Scene({
-        triggerElement: ".Three", 
+	var intro3ParallaxScene = new ScrollMagic.Scene({
+        triggerElement: ".Intro-3", 
         triggerHook: 1, 
         duration: "150%"
     })
-    .setTween(threeParallaxTween) 
+    .setTween(intro3ParallaxTween) 
     .addTo(controller);
     
     //If the browser isn't IE10 or Edge...
     if (!(/MSIE 10/i.test(navigator.userAgent)) && !(/Edge\/\d./i.test(navigator.userAgent))){
     
-        var fourParallaxTween = TweenMax.to(".Four", 1, {
+        var intro4ParallaxTween = TweenMax.to(".Intro-4", 1, {
             backgroundSize: "+=500px +=281.25px", 
             backgroundPositionX: "-=300px",
             autoRound:false, 
             ease:Power1.ease0ut
         });
 	
-        var fourParallaxScene = new ScrollMagic.Scene({
-            triggerElement: ".Four", 
+        var intro4ParallaxScene = new ScrollMagic.Scene({
+            triggerElement: ".Intro-4", 
             triggerHook: 1, 
             autoRound:false,
             duration: "150%"
         })
     
-        .setTween(fourParallaxTween)
+        .setTween(intro4ParallaxTween)
         .addTo(controller);
         
         var nineParallaxTween = TweenMax.from(".Nine", 1, {
@@ -262,7 +262,7 @@ $(document).ready(function(){
         .setTween(nineParallaxTween)
         .addTo(controller);
 
-        var elevenParallaxTween = TweenMax.from(".Eleven", 1, {
+        var elevenParallaxTween = TweenMax.from(".Specs-3", 1, {
           backgroundSize: "+=200px +=149.84px", 
           autoRound:false, 
           ease:Power1.ease0ut
@@ -270,7 +270,7 @@ $(document).ready(function(){
 
 
         var elevenParallaxScene = new ScrollMagic.Scene({
-            triggerElement: ".Eleven", 
+            triggerElement: ".Specs-3", 
             triggerHook: 1, 
             duration: "150%"
         })
@@ -282,33 +282,33 @@ $(document).ready(function(){
     
     /*----- Navbar highlight animations -----*/    
     new ScrollMagic.Scene({
-        triggerElement: ".Six",
+        triggerElement: ".Performance-1",
         triggerHook: 0.5,
-        duration: heightOfSix
+        duration: heightOfPerformance
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(2)", "active") // add class toggle
     .addTo(controller);
     
 	new ScrollMagic.Scene({
-        triggerElement: ".Seven",
+        triggerElement: ".Exterior-1",
         triggerHook: 0.5,
-        duration: heightOfSeven
+        duration: heightOfExterior
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(3)", "active") // add class toggle
     .addTo(controller);
     
 	new ScrollMagic.Scene({
-        triggerElement: ".Eight",
+        triggerElement: ".Interior-1",
         triggerHook: 0.5,
-        duration: heightOfEight
+        duration: heightOfInterior
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(4)", "active") // add class toggle
     .addTo(controller);
     
 	new ScrollMagic.Scene({
-        triggerElement: ".Ten",
+        triggerElement: ".Specs-2",
         triggerHook: 0.15,
-        duration: heightOfTen
+        duration: heightOfSpecs
     })
     .setClassToggle(".navbar-default .navbar-nav > li:nth-child(5)", "active") // add class toggle
     .addTo(controller);

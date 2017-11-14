@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Footer extends Component {
     render() {
         return(
-        <div className="Twelve"> 
+        <div className="Footer-1"> 
             <ul className="flex-container">
                 <li className="flex-item scrollmagic-scale-flex-box">
                     <h2 tabIndex="0" role="heading">Customize</h2>

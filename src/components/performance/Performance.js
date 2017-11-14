@@ -7,7 +7,7 @@ class Performance extends Component {
     render() {
         return(
         <div>
-            <div className="Six" id="Performance">
+            <div className="Performance-1" id="Performance">
                 <div className="container">
                     <div className="row">
                         <h1 className="scrollmagic-enter-from-right" role="heading" tabIndex="0">Performance</h1>
@@ -16,7 +16,7 @@ class Performance extends Component {
                     </div>
                 </div>
             </div>
-            <div className="Six-blurred">
+            <div className="Performance-2">
                 <ul className="flex-container">
                     <li className="flex-item scrollmagic-scale-flex-box"
                     data-tip data-for="inline6" aria-describedby="inline6">

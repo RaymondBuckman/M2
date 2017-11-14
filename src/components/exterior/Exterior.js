@@ -7,7 +7,7 @@ class Exterior extends Component {
     render() {
         return(
         <div>
-            <div className="Seven" id="Exterior">
+            <div className="Exterior-1" id="Exterior">
                 <div className="container">   
                     <div className="row">
                         <h1 className="scrollmagic-enter-from-left" role="heading" tabIndex="0">Exterior</h1>
@@ -16,7 +16,7 @@ class Exterior extends Component {
                     </div>
                 </div>
             </div>
-            <div className="Seven-blurred">
+            <div className="Exterior-2">
                 <ul className="flex-container">
                     <li className="flex-item scrollmagic-scale-flex-box" data-tip 
                     data-for="grille" aria-describedby="grille">

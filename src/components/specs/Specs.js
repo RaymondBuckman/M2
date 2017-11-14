@@ -5,10 +5,10 @@ class Specs extends Component {
     render() {
         return(
         <div>
-            <div className="Nine">
+            <div className="Specs-1">
                 <h1>The Most Powerful Letter in the World</h1>    
             </div>
-            <div className="Ten" id="Specs">
+            <div className="Specs-2" id="Specs">
                 <ul className="flex-container">
                     <li className="flex-item" role="heading" tabIndex="0">Specifications</li>
                     <li className="flex-item scrollmagic-scale-flex-box">
@@ -94,7 +94,7 @@ class Specs extends Component {
                     </li>
                 </ul>    
             </div>
-            <div className="Eleven"> 
+            <div className="Specs-3"> 
                 <h1>What are you waiting for?</h1>
             </div>
         </div>

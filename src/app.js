@@ -35,6 +35,8 @@ $("#arrow-group > img").click(function() {
 });
 
 $(document).ready(function(){  
+    var navbarHeightAsWindowPercentage = 50/$(window).height();
+    
     /* Variables for nav highlight durations*/    
     var heightOfPerformance = $('.Exterior-1').offset().top - $('.Performance-1').offset().top;
     var heightOfExterior = $('.Interior-1').offset().top - $('.Exterior-1').offset().top;
@@ -95,11 +97,10 @@ $(document).ready(function(){
     .addTo(controller);  
     
     var pinTopNavScene = new ScrollMagic.Scene({
-        triggerElement: '.navbar',
-        triggerHook: 0
+        triggerElement: '.Performance-1',
+        triggerHook: navbarHeightAsWindowPercentage
     })
     .setPin('.navbar')
-    
     .addTo(controller);
     
     /*----- Nav color change & push-up animations -----*/
@@ -244,7 +245,7 @@ $(document).ready(function(){
         .setTween(intro4ParallaxTween)
         .addTo(controller);
         
-        var nineParallaxTween = TweenMax.from(".Nine", 1, {
+        var specs1ParallaxTween = TweenMax.from(".Specs-1", 1, {
             backgroundSize: "+=200px +=112.96875px",
             backgroundPositionX: "-=100px",
             autoRound:false, 
@@ -252,29 +253,29 @@ $(document).ready(function(){
         });
 
 
-        var nineParallaxScene = new ScrollMagic.Scene({
-            triggerElement: ".Nine", 
+        var specs1ParallaxScene = new ScrollMagic.Scene({
+            triggerElement: ".Specs-1", 
             triggerHook: 1, 
-            autoRound:false,
+            autoRound: false,
             duration: "150%"
         })
 
-        .setTween(nineParallaxTween)
+        .setTween(specs1ParallaxTween)
         .addTo(controller);
 
-        var elevenParallaxTween = TweenMax.from(".Specs-3", 1, {
+        var specs3ParallaxTween = TweenMax.from(".Specs-3", 1, {
           backgroundSize: "+=200px +=149.84px", 
           autoRound:false, 
           ease:Power1.ease0ut
         });
 
 
-        var elevenParallaxScene = new ScrollMagic.Scene({
+        var specs3ParallaxScene = new ScrollMagic.Scene({
             triggerElement: ".Specs-3", 
             triggerHook: 1, 
             duration: "150%"
         })
-        .setTween(elevenParallaxTween)
+        .setTween(specs3ParallaxTween)
         .addTo(controller);
     }
     

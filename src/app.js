@@ -125,7 +125,7 @@ $(document).ready(function(){
     .addTo(controller);
     
     /*----- Arrow shrink & fade-out animation -----*/
-    var arrowTween = TweenMax.staggerTo("#arrow-group img", 0.1, { ease:  Power0.easeNone, opacity: 0, scale: 0.5}, 0.2);    
+    var arrowTween = TweenMax.staggerTo("#arrow-group img", 0.1, { ease:  Power0.easeNone, opacity: 0, scale: 0.5}, 0.15);    
     
     var arrowDisappearScene = new ScrollMagic.Scene({
         triggerElement: '#arrow-group',

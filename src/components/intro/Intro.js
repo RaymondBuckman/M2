@@ -50,6 +50,7 @@ class Intro extends Component {
                         <li><a href="#Interior">Interior</a></li>
                         <li><a href="#Specs">Specs</a></li>
                     </ul>
+                    <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><div id="navbar-m-logo" data-tip data-for="m-logo" aria-describedby="m-logo"></div></a>
                 </div>
             </nav>
             <ReactTooltip id="m-logo" place="bottom" type="dark"

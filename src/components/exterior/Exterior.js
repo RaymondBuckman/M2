@@ -3,20 +3,20 @@ import {findDOMNode} from 'react-dom';
 import ReactTooltip from 'react-tooltip';
 
 
-class Exterior extends Component {
+export default class Exterior extends Component {
     render() {
         return(
         <div>
-            <div className="Exterior-1" id="Exterior">
+            <div className="exterior-div-1" id="Exterior">
                 <div className="container">   
                     <div className="row">
-                        <h1 className="scrollmagic-enter-from-left" role="heading" tabIndex="0">Exterior</h1>
+                        <h1 className="scrollmagic-enter-from-left" role="heading">Exterior</h1>
                         <p className="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 scrollmagic-enter-from-left"><q>It goes without staying (see what I did there?) that we love how the compact two-door looks ready to pounce, with its muscular, blistered fenders, and ready to suck the lane markers off the road with all those air intakes, cooling ports, and grille.</q><br/><br/>- MotorTrend<br/>
                         <a href="http://www.motortrend.com/cars/bmw/m2/2017/2017-bmw-m2-long-term-arrival-good-gets/" target="_blank" role="link" aria-label="Read more about Motortrend's review">Read more...</a></p>
                     </div>
                 </div>
             </div>
-            <div className="Exterior-2">
+            <div className="exterior-div-2">
                 <ul className="flex-container">
                     <li className="flex-item scrollmagic-scale-flex-box" data-tip 
                     data-for="grille" aria-describedby="grille">
@@ -104,5 +104,3 @@ class Exterior extends Component {
         );
     }
 }
-
-export default Exterior;

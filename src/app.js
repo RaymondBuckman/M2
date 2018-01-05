@@ -30,7 +30,7 @@ ReactDOM.render(
 
 $("#arrow-group > img").click(function() {
     $('html, body').animate({
-        scrollTop: $(".Intro-2").offset().top
+        scrollTop: $(".intro-div-2").offset().top
     }, 2000);
 });
 
@@ -38,10 +38,10 @@ $(document).ready(function(){
     var navbarHeightAsWindowPercentage = 50/$(window).height();
     
     /* Variables for nav highlight durations*/    
-    var heightOfPerformance = $('.Exterior-1').offset().top - $('.Performance-1').offset().top;
-    var heightOfExterior = $('.Interior-1').offset().top - $('.Exterior-1').offset().top;
-    var heightOfInterior = $('.Specs-2').offset().top - $('.Interior-1').offset().top;
-    var heightOfSpecs = $('.Specs-3').offset().top - $('.Specs-2').offset().top;
+    var heightOfPerformance = $('.exterior-div-1').offset().top - $('.performance-div-1').offset().top;
+    var heightOfExterior = $('.interior-div-1').offset().top - $('.exterior-div-1').offset().top;
+    var heightOfInterior = $('.specs-div-2').offset().top - $('.interior-div-1').offset().top;
+    var heightOfSpecs = $('.specs-div-3').offset().top - $('.specs-div-2').offset().top;
     
     /*----- Handles DropDown menus -----*/
     $('#executive-package').click( function(event){
@@ -97,7 +97,7 @@ $(document).ready(function(){
     .addTo(controller);  
     
     var pinTopNavScene = new ScrollMagic.Scene({
-        triggerElement: '.Performance-1',
+        triggerElement: '.performance-div-1',
         triggerHook: navbarHeightAsWindowPercentage
     })
     .setPin('.navbar')
@@ -105,7 +105,7 @@ $(document).ready(function(){
     
     /*----- Nav color change & push-up animations -----*/
     var changeTopNavColorScene = new ScrollMagic.Scene({
-        triggerElement: '.Specs-2',
+        triggerElement: '.specs-div-2',
         triggerHook: 0.15,
         duration: heightOfSpecs
     })
@@ -118,7 +118,7 @@ $(document).ready(function(){
     });
     
     var pushNavUpScene = new ScrollMagic.Scene({
-        triggerElement: '.Specs-3',
+        triggerElement: '.specs-div-3',
         triggerHook: 0.05
     })
     .setTween(pushNavUpTween)
@@ -148,9 +148,9 @@ $(document).ready(function(){
     .addTo(controller);
     
     $('.scrollmagic-enter-from-right').each(function(){
-        var sixEnterFromRightScene = new ScrollMagic.Scene({
+        var enterFromRightScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.6,
+            triggerHook: 0.8,
             offset: 0,
             reverse: false
         })
@@ -159,9 +159,9 @@ $(document).ready(function(){
     })
     
     $('.scrollmagic-enter-from-left').each(function(){
-        var sixEnterFromLeftScene = new ScrollMagic.Scene({
+        var enterFromLeftScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.6,
+            triggerHook: 0.8,
             offset: 0,
             reverse: false
         })
@@ -197,55 +197,55 @@ $(document).ready(function(){
     var windowHeight = window.innerHeight;
         
     /* ----Background Scroll animations -----*/    
-    var intro1ParallaxTween = TweenMax.to(".Intro-1", 1, {
+    var introDiv1ParallaxTween = TweenMax.to(".intro-div-1", 1, {
       backgroundSize: "+=250px +=166.7px", 
       autoRound:false, 
       ease:Power1.ease0ut
     });
 
 	
-	var intro1Parallaxscene = new ScrollMagic.Scene({
+	var introDiv1Parallaxscene = new ScrollMagic.Scene({
         triggerElement: "#trigger", 
         duration: "100%"
     })
-    .setTween(intro1ParallaxTween)
+    .setTween(introDiv1ParallaxTween)
     .addTo(controller);
     
-    var intro3ParallaxTween = TweenMax.to(".Intro-3", 1, {
+    var introDiv3ParallaxTween = TweenMax.to(".intro-div-3", 1, {
         backgroundPositionX: "-=50%", 
         autoRound:false, 
         ease:Power1.ease0ut
     });
 
-	var intro3ParallaxScene = new ScrollMagic.Scene({
-        triggerElement: ".Intro-3", 
+	var introDiv3ParallaxScene = new ScrollMagic.Scene({
+        triggerElement: ".intro-div-3", 
         triggerHook: 1, 
         duration: "150%"
     })
-    .setTween(intro3ParallaxTween) 
+    .setTween(introDiv3ParallaxTween) 
     .addTo(controller);
     
     //If the browser isn't IE10 or Edge...
     if (!(/MSIE 10/i.test(navigator.userAgent)) && !(/Edge\/\d./i.test(navigator.userAgent))){
     
-        var intro4ParallaxTween = TweenMax.to(".Intro-4", 1, {
+        var introDiv4ParallaxTween = TweenMax.to(".intro-div-4", 1, {
             backgroundSize: "+=500px +=281.25px", 
             backgroundPositionX: "-=300px",
             autoRound:false, 
             ease:Power1.ease0ut
         });
 	
-        var intro4ParallaxScene = new ScrollMagic.Scene({
-            triggerElement: ".Intro-4", 
+        var introDiv4ParallaxScene = new ScrollMagic.Scene({
+            triggerElement: ".intro-div-4", 
             triggerHook: 1, 
             autoRound:false,
             duration: "150%"
         })
     
-        .setTween(intro4ParallaxTween)
+        .setTween(introDiv4ParallaxTween)
         .addTo(controller);
         
-        var specs1ParallaxTween = TweenMax.from(".Specs-1", 1, {
+        var specs1ParallaxTween = TweenMax.from(".specs-div-1", 1, {
             backgroundSize: "+=200px +=112.96875px",
             backgroundPositionX: "-=100px",
             autoRound:false, 
@@ -254,7 +254,7 @@ $(document).ready(function(){
 
 
         var specs1ParallaxScene = new ScrollMagic.Scene({
-            triggerElement: ".Specs-1", 
+            triggerElement: ".specs-div-1", 
             triggerHook: 1, 
             autoRound: false,
             duration: "150%"
@@ -263,7 +263,7 @@ $(document).ready(function(){
         .setTween(specs1ParallaxTween)
         .addTo(controller);
 
-        var specs3ParallaxTween = TweenMax.from(".Specs-3", 1, {
+        var specs3ParallaxTween = TweenMax.from(".specs-div-3", 1, {
           backgroundSize: "+=200px +=149.84px", 
           autoRound:false, 
           ease:Power1.ease0ut
@@ -271,7 +271,7 @@ $(document).ready(function(){
 
 
         var specs3ParallaxScene = new ScrollMagic.Scene({
-            triggerElement: ".Specs-3", 
+            triggerElement: ".specs-div-3", 
             triggerHook: 1, 
             duration: "150%"
         })
@@ -283,7 +283,7 @@ $(document).ready(function(){
     
     /*----- Navbar highlight animations -----*/    
     new ScrollMagic.Scene({
-        triggerElement: ".Performance-1",
+        triggerElement: ".performance-div-1",
         triggerHook: 0.5,
         duration: heightOfPerformance
     })
@@ -291,7 +291,7 @@ $(document).ready(function(){
     .addTo(controller);
     
 	new ScrollMagic.Scene({
-        triggerElement: ".Exterior-1",
+        triggerElement: ".exterior-div-1",
         triggerHook: 0.5,
         duration: heightOfExterior
     })
@@ -299,7 +299,7 @@ $(document).ready(function(){
     .addTo(controller);
     
 	new ScrollMagic.Scene({
-        triggerElement: ".Interior-1",
+        triggerElement: ".interior-div-1",
         triggerHook: 0.5,
         duration: heightOfInterior
     })
@@ -307,7 +307,7 @@ $(document).ready(function(){
     .addTo(controller);
     
 	new ScrollMagic.Scene({
-        triggerElement: ".Specs-2",
+        triggerElement: ".specs-div-2",
         triggerHook: 0.15,
         duration: heightOfSpecs
     })

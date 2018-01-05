@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
 
-class Specs extends Component {
+export default class Specs extends Component {
     render() {
         return(
         <div>
-            <div className="Specs-1">
+            <div className="specs-div-1">
                 <h1>The Most Powerful Letter in the World</h1>    
             </div>
-            <div className="Specs-2" id="Specs">
+            <div className="specs-div-2" id="Specs">
                 <ul className="flex-container">
-                    <li className="flex-item" role="heading" tabIndex="0">Specifications</li>
+                    <li className="flex-item" role="heading">Specifications</li>
                     <li className="flex-item scrollmagic-scale-flex-box">
                         <header role="heading">Engine</header><br/>
                         3.0 liter M TwinPower Turbo inline 6<br/>
@@ -94,12 +94,10 @@ class Specs extends Component {
                     </li>
                 </ul>    
             </div>
-            <div className="Specs-3"> 
+            <div className="specs-div-3"> 
                 <h1>What are you waiting for?</h1>
             </div>
         </div>
         );
     }
 }
-
-export default Specs;

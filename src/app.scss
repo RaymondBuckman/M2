@@ -8,9 +8,9 @@ $secondary-font: "Audiowide";
 $nrf: no-repeat fixed;
 $nrs: no-repeat scroll;
 
-$main-color: #414445;
-$secondary-color: #fff;
-$tertiary-color: #369ac2;
+$gray: #414445;
+$white: #fff;
+$teal: #369ac2;
 
 $arrow-rotate-out: all 2.0s cubic-bezier(.37,1.01,.8,.99);
 
@@ -30,17 +30,17 @@ $specs-3-height: 100vw * .7492; //Multiple based on image proportions
 }
 
 @keyframes colorSwitch{
-    0%, 40% {color: $secondary-color; background-color: $tertiary-color;}
-    50%, 90% {color: $main-color; background-color: $secondary-color;}
+    0%, 40% {color: $white; background-color: $teal;}
+    50%, 90% {color: $gray; background-color: $white;}
 }
 
 @keyframes borderColorSwitch{
-    0%, 40% {border-bottom-color: $tertiary-color;}
-    50%, 90% {border-bottom-color: $main-color;}
+    0%, 40% {border-bottom-color: $teal;}
+    50%, 90% {border-bottom-color: $gray;}
 }
 
 @keyframes moveArrows{
-    0% { transform: translateY(0px);}
+    0% { transform: translateY(0);}
     50% {transform: translateY(10px);}
 }
 
@@ -56,7 +56,7 @@ $specs-3-height: 100vw * .7492; //Multiple based on image proportions
 @mixin underscore{
     display:block;
     content:  '';
-    border-bottom: solid 5px $tertiary-color;
+    border-bottom: solid 5px $teal;
     border-radius: 15px;
     transform: scaleX(0);
     transition: transform 500ms ease-in-out;
@@ -67,8 +67,8 @@ $specs-3-height: 100vw * .7492; //Multiple based on image proportions
     transition: all 0.3s ease-in;
         
     &:hover{
-        background: $secondary-color;
-        color: $tertiary-color;
+        background: $white;
+        color: $teal;
     }
 }
 
@@ -153,7 +153,7 @@ time, mark, audio, video {
 }
 
 body {
-    background: $main-color;
+    background: $gray;
     width: 100vw;
     margin: 0;
     padding: 0;
@@ -164,8 +164,8 @@ body {
 
 //modifies text highlight color
 ::selection {
-    color: $secondary-color;
-    background: $tertiary-color; /* WebKit/Blink Browsers */
+    color: $white;
+    background: $gray; /* WebKit/Blink Browsers */
 }
 
 .App{
@@ -178,16 +178,16 @@ h1{
 }
 
 a:focus{
-    outline: 2px solid $tertiary-color;
+    outline: 2px solid $teal;
 }
 
 .tooltip-span{
     font-family: $main-font, Arial, Helvetica, serif;
-    color: $secondary-color;
+    color: $white;
 }
 
 .check{
-    color: $tertiary-color !important;
+    color: $teal !important;
 }
 
 .disable-arrows{
@@ -212,7 +212,7 @@ a:focus{
     margin:auto;
 }*/
 
-.Intro-1 {
+.intro-div-1 {
     position: relative;
     height: 100vh;
     background: url("./img/simonpuschmann-BMW-M2-03.jpg") $nrf 50% 50%;
@@ -225,9 +225,9 @@ a:focus{
     
     #m-logo{
         position: absolute;
-        top: 0px;
+        top: 0;
         padding-bottom: 2px;
-        margin: 10px auto 0px auto;
+        margin: 10px auto 0 auto;
         left: 0;
         right: 0;
         display: inline-block;
@@ -244,7 +244,7 @@ a:focus{
     #arrow-group{
         position: relative;
         top: 82vh;
-        left: 0vw;
+        left: 0;
         width: 70px;
         cursor: pointer;
         transition: opacity 1s ease-in-out;
@@ -270,7 +270,7 @@ a:focus{
     #title{
         position: relative;
         top: 72vh;
-        color: $secondary-color;
+        color: $white;
         @include secondary-font;
         font-size: 6em;
         transform: rotate(-8deg);
@@ -281,7 +281,7 @@ a:focus{
     #slogan{
         position: relative;
         top: 66vh;
-        color: $secondary-color;
+        color: $white;
         font-family: $main-font, Arial, Helvetica, serif;
         font-size: 3em;
         //text-align: right;
@@ -289,12 +289,12 @@ a:focus{
     }
 }
 
-.Intro-2 {
+.intro-div-2 {
     position: relative;
     height: auto;
-    background: $main-color;
+    background: $gray;
     font-size: large;
-    color: $tertiary-color;
+    color: $teal;
     z-index: 19;
     
     .flex-container {
@@ -318,10 +318,10 @@ a:focus{
         padding: 5px;
         width: 700px;
         height: 320px;
-        margin: 20px 0px;
+        margin: 20px 0;
   
         line-height: 30px;
-        color: $secondary-color;
+        color: $white;
         font-family: $main-font, Arial, Helvetica, serif;
         //font-size: 3em;
         text-align: center;
@@ -339,7 +339,7 @@ a:focus{
         }
         
         &:nth-child(1){
-            background: $main-color;
+            background: $gray;
             border-radius: 80px;
             opacity: 0;
             transform: translateX(-100px);
@@ -352,20 +352,20 @@ a:focus{
             
             &:hover{
                 border-radius: 20px;
-                background: $secondary-color;
+                background: $white;
                 
                 h1{
-                    color: $tertiary-color;
+                    color: $teal;
                 }
                 
                 p{
-                    color: $main-color;
+                    color: $gray;
                 }
             }
         }
         
         &:nth-child(2){
-            background: $tertiary-color;
+            background: $teal;
             border-radius: 20px;
             opacity: 0;
             transform: translateX(100px);
@@ -376,41 +376,38 @@ a:focus{
                 top: 12vh;
                 left: 9vw;
                 font-size: 1.5em;
-                color: $main-color;
-                text-align: left;
-                //border-bottom: dashed $secondary-color 2px;             
+                color: $gray;
+                text-align: left;           
                  
                 span{
                     font-weight: bold;
-                    color: $secondary-color;
+                    color: $white;
                     transition: color 0.5s ease-in-out;
                 }
             }
             
             &:hover{
-                background: $secondary-color;
+                background: $white;
                 border-radius: 80px;
                 
                 span{
-                    color: $tertiary-color;
+                    color: $teal;
                 }
             }
         }
     }
 }
 
-.Intro-3{
+.intro-div-3{
     position: relative;
-    top: 0vh;
     height: 50vh;
     background: url("./img/simonpuschmann-BMW-M2-04.jpg") $nrf 90% 50%;
     background-size: 120vw $intro-3-height; //replacement for "cover" property makes parallax background scrolling possible 
     z-index: 17;
 }
 
-.Intro-4{
+.intro-div-4{
     position: relative;
-    //top: -25px;
     height: 50vh;
     background: url("./img/simonpuschmann-BMW-M2-01.jpg") $nrf 50% 70%;
     background-size: 100vw $intro-4-height; //replacement for "cover" property makes parallax background scrolling possible 
@@ -422,7 +419,7 @@ a:focus{
     h1{
         position: relative;
         top: 32vh;
-        color: $secondary-color;
+        color: $white;
         @include secondary-font;
         font-size: 2.5em;
         transform: rotate(5.6deg);
@@ -432,13 +429,13 @@ a:focus{
 
 .navbar{
     position: relative;
-    top: 0px !important;
+    top: 0 !important;
     height: 40px;
     width: 100vw;
-    background: $main-color;
+    background: $gray;
     border: none;
-    border-radius: 0px;
-    margin-bottom: 0px;
+    border-radius: 0;
+    margin-bottom: 0;
     z-index: 16;
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
     
@@ -448,22 +445,24 @@ a:focus{
 }
 
 .navbar-default .navbar-nav > li > a {
-    position: relative;
-    //top: -10px;
-        
+    position: relative;    
     text-decoration: none;
     display: block;
     padding: 0 1em;
-    color: $secondary-color;
+    margin: 0 3px;
+    color: $white;
     @include main-font;
     font-size: 1.2em;
     @include nav-color-change;
+    
+    &:hover{
+        color: $gray;
+    }
 }
     
 .navbar-default .navbar-nav > li:first-child > a {
     position: relative;
     top: 6px;
-    //padding-left: 5vw;
     height: 40px;
     color: transparent;
     background: url("./img/BMW-logo.png") $nrs center;
@@ -478,22 +477,24 @@ a:focus{
 .navbar-default .navbar-nav > li:nth-child(n+2) > a {
     position: relative;
     top: 15px;
-    //height: 20px;
 }
 
 .navbar-default .navbar-nav>.active > a {
-    color: $tertiary-color;
-    background: transparent;
+    color: $teal;
+    background: $white;
+    
+    &:hover{
+        color: $gray;
+    }
 }
 
 .navbar-default .navbar-nav> li:nth-child(n+2) > a:focus{
-    color: $secondary-color !important;
+    color: $white !important;
     background: transparent;
 }
 
 .navbar-default .navbar-nav>.active > a:hover{
-     color: $tertiary-color;
-     background: transparent;
+     
 }
 
 #navbar-m-logo{
@@ -512,7 +513,7 @@ a:focus{
     }
 }
 
-.Performance-1{
+.performance-div-1{
     position: relative;
     height: 100vh;
     background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrf 0% 0%;
@@ -525,7 +526,7 @@ a:focus{
         text-align: right;
         @include secondary-font;
         font-size: 3em;
-        color: $secondary-color;
+        color: $white;
         letter-spacing: 5px;
         opacity: 0;
         transform: translateX(100px);
@@ -540,9 +541,7 @@ a:focus{
     p{
         position: relative;
         top: 20vh;
-        //left: 60px;
-        color: $secondary-color;
-        //width: 300px;
+        color: $white;
         @include main-font;
         font-size: 1.5em;
         text-align: right;
@@ -553,23 +552,27 @@ a:focus{
     
     a{
         position: relative;
-        top: 0px;
+        top: 0;
         @include secondary-font;
+        color: $white;
         font-size: 0.8em;
         text-decoration: none;
-        transition: color 0.3s ease-in-out;
+        padding: 1px 10px;
+        border-radius: 20px;
+        transition: all 0.3s ease-in-out;
         
         &:active, &:visited{
-            color: $secondary-color;
+            color: $white;
         }
         
         &:hover{
-            color: $secondary-color;   
+            color: $gray;
+            background: $white;   
         }
     }    
 }
 
-.Performance-2{
+.performance-div-2{
     position: relative;
     height: auto;
     background: url("./img/simonpuschmann-BMW-M2-06-blurred.jpg") $nrf 0% 0%;
@@ -594,10 +597,8 @@ a:focus{
         padding: 5px;
         width: 250px;
         height: 100px;
-        margin: 50px 0px;
-  
-        //line-height: 150px;
-        color: $secondary-color;
+        margin: 50px 0;
+        color: $white;
         @include main-font;
         font-weight: bold;
         font-size: 1.7em;
@@ -616,10 +617,9 @@ a:focus{
     }
 }
 
-.Exterior-1{
+.exterior-div-1{
     position: relative;
-    height:100vh;
-    //top: -50px;
+    height: 100vh;
     background: url("./img/simonpuschmann-BMW-M2-05.jpg") $nrf 0% 0%;
     background-size: cover;
     
@@ -629,7 +629,7 @@ a:focus{
         text-align: left;
         @include secondary-font;
         font-size: 3em;
-        color: $secondary-color;
+        color: $white;
         //transform: rotate(-15deg);
         letter-spacing: 5px;
         opacity: 0;
@@ -644,9 +644,8 @@ a:focus{
     p{
         position: relative;
         top: 20vh;
-        left: 0px;
-        color: $secondary-color;
-        //width: 30vw;
+        left: 0;
+        color: $white;
         @include main-font;
         font-size: 1.5em;
         opacity: 0;
@@ -656,27 +655,29 @@ a:focus{
     
     a{
         position: relative;
-        top:0px;
+        top: 0;
         @include secondary-font;
-        color: $tertiary-color;
+        color: $white;
         font-size: 0.8em;
         text-decoration: none;
-        transition: color 0.3s ease-in-out;
+        padding: 1px 10px;
+        border-radius: 20px;
+        transition: all 0.3s ease-in-out;
         
         &:active, &:visited{
-            color: $secondary-color;
+            color: $white;
         }
         
         &:hover{
-            color: $secondary-color;
+            color: $gray;
+            background: $white;
         }
     }
 }
 
-.Exterior-2{
+.exterior-div-2{
     position: relative;
-    height:auto;
-    //top: -50px;
+    height: auto;
     background: url("./img/simonpuschmann-BMW-M2-05-blurred.jpg") $nrf 0% 0%;
     background-size: cover;
     @include occasional-brightness;
@@ -694,14 +695,11 @@ a:focus{
     }
 
     .flex-item {
-        //background: tomato;
         padding: 5px;
         width: 250px;
         height: 100px;
-        margin: 50px 0px;
-  
-        //line-height: 150px;
-        color: $secondary-color;
+        margin: 50px 0;
+        color: $white;
         @include main-font;
         font-weight: bold;
         font-size: 1.7em;
@@ -720,10 +718,9 @@ a:focus{
     }
 }
 
-.Interior-1{
+.interior-div-1{
     position: relative;
-    height:100vh;
-    //top: -50px;
+    height: 100vh;
     background: url("./img/simonpuschmann-BMW-M2-02.jpg") $nrf 0% 40%;
     background-size: cover;
     @include global-padding;
@@ -733,12 +730,9 @@ a:focus{
         position: relative;
         top: 17vh;
         text-align: left;
-        //left: 15vw;
-        //width: 250px;
         @include secondary-font;
         font-size: 3em;
-        color: $secondary-color;
-        //transform: rotate(-15deg);
+        color: $white;
         letter-spacing: 5px;
         opacity: 0;
         transform: translateX(-100px);
@@ -752,9 +746,7 @@ a:focus{
     p{
         position: relative;
         top: 20vh;
-        //left: 170px;
-        color: $secondary-color;
-        //width: 30vw;
+        color: $white;
         @include main-font;
         font-size: 1.5em;
         opacity: 0;
@@ -764,31 +756,32 @@ a:focus{
     
     a{
         position: relative;
-        top:0px;
+        top: 0;
         @include secondary-font;
-        color: $tertiary-color;
+        color: $white;
         font-size: 0.8em;
         text-decoration: none;
-        transition: color 0.3s ease-in-out;
+        padding: 1px 10px;
+        border-radius: 20px;
+        transition: all 0.3s ease-in-out;
         
         &:active, &:visited{
-            color: $secondary-color;
+            color: $white;
         }
         
         &:hover{
-            color: $secondary-color;     
+            color: $gray;
+            background: $white;   
         }
     }
 }
 
-.Interior-2{
+.interior-div-2{
     position: relative;
-    height:auto;
-    //top: -85px;
+    height: auto;
     background: url("./img/simonpuschmann-BMW-M2-02-blurred.jpg") $nrf 0% 40%;
     background-size: cover;
     @include occasional-brightness;
-    //@include global-padding;
     
     .flex-container {
         padding: 20px 5vw;
@@ -807,10 +800,8 @@ a:focus{
         padding: 5px;
         width: 250px;
         height: 100px;
-        margin: 50px 0px;
-  
-        //line-height: 150px;
-        color: $secondary-color;
+        margin: 50px 0;
+        color: $white;
         @include main-font;
         font-weight: bold;
         font-size: 1.7em;
@@ -829,10 +820,9 @@ a:focus{
     }
 }
 
-.Specs-1{
+.specs-div-1{
     position:relative;
     height: 50vh;
-    //top: -105px;
     background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrf 0% 52%;
     background-size: 100vw $specs-1-height;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 100%, 58% 100%, 93% 48%, 0 100%);
@@ -843,23 +833,20 @@ a:focus{
         position: relative;
         top: 27vh;
         left: 2vw;
-        //width: 250px;
         @include secondary-font;
         font-size: 2.5em;
-        color: $secondary-color;
+        color: $white;
         transform: rotate(-7.5deg);
         letter-spacing: 3px;    
     }
 }
 
-.Specs-2{
+.specs-div-2{
     position:relative;
     height: auto;
-    //top: -85px;
-    background: $main-color;
+    background: $gray;
     background-size: cover;
     padding: 15vh 10vw 15vh 10vw;
-    //@include global-padding;
     
     .flex-container {
         padding: 0;
@@ -876,11 +863,8 @@ a:focus{
     .flex-item {
         padding: 5px;
         width: 500px;
-        //height: 300px;
         margin-top: 50px;
-  
-        //line-height: 150px;
-        color: $secondary-color;
+        color: $white;
         @include main-font;
         font-size: 1.2em;
         text-align: center;
@@ -889,7 +873,7 @@ a:focus{
         header{
             font-weight: bold;
             font-size: 40px;
-            border-bottom: solid 2px $tertiary-color;
+            border-bottom: solid 2px $teal;
         }
         
         &:first-child{
@@ -898,13 +882,13 @@ a:focus{
             @include secondary-font;
             font-size: 4em;
             letter-spacing: 10px;
-            background: $tertiary-color;
+            background: $teal;
             border-radius: 20px;
             transition: color 0.3s ease-in-out, border-radius 0.3s ease-in-out, background-color 0.3s ease-in-out;
             
             &:hover{
-                background: $secondary-color;
-                color: $tertiary-color;
+                background: $white;
+                color: $teal;
                 border-radius: 70px;
             }
             
@@ -923,7 +907,7 @@ a:focus{
         }
         
         &:hover #executive-arrow{
-            color: $tertiary-color;
+            color: $teal;
         }
     }
     
@@ -935,7 +919,7 @@ a:focus{
         
         li{
             position: relative;
-            top: 0px;
+            top: 0;
             font-size: 0.7em;
             display: block;       
             min-width: 150px;        
@@ -951,7 +935,7 @@ a:focus{
         }
         
         &:hover #m-drivers-arrow{
-            color: $tertiary-color;
+            color: $teal;
         }
     }
     
@@ -965,7 +949,7 @@ a:focus{
 
 
 
-.Specs-3{
+.specs-div-3{
     position: relative;
     height: 95vh;
     background: url("./img/simonpuschmann-BMW-M2-07.jpg") $nrf 50% 40%;
@@ -978,7 +962,7 @@ a:focus{
     h1{
         position: relative;
         top: 74vh;
-        color: $secondary-color;
+        color: $white;
         @include secondary-font;
         font-size: 3.5em;
         transform: rotate(7.5deg);
@@ -987,10 +971,10 @@ a:focus{
     }
 }
 
-.Footer-1{
+.footer-div-1{
     position: relative;
     height: auto;
-    background: $main-color;
+    background: $gray;
     background-size: cover;
     
     .flex-container {
@@ -1009,8 +993,8 @@ a:focus{
         padding: 5px;
         width: 250px;
         height: auto;
-        margin: 5px 0px 5px 0px;
-        color: $secondary-color;
+        margin: 5px 0;
+        color: $white;
         
         text-align: center;
         border: transparent 2px solid !important;
@@ -1018,7 +1002,7 @@ a:focus{
         h2{
             font-size: 1.5em;
             @include secondary-font;
-            border-bottom: solid 2px $tertiary-color;
+            border-bottom: solid 2px $teal;
             
             &:focus{
                outline: none; 
@@ -1033,7 +1017,7 @@ a:focus{
             
             a{
                 position: relative;
-                color: $secondary-color;
+                color: $white;
                 padding: 3px 10px;
                 font-size: 0.8em;
                 @include main-font;
@@ -1041,11 +1025,11 @@ a:focus{
                 @include nav-color-change;
 
                 &:visited, &:active, &:focus{
-                    color: $secondary-color;
+                    color: $white;
                 }
                 
                 &:hover{
-                    color: $tertiary-color;
+                    color: $gray;
                 }
             }
         }
@@ -1061,7 +1045,7 @@ a:focus{
 
 .come-to-center{
     opacity: 1 !important;
-    transform: translateX(0px) !important;
+    transform: translateX(0) !important;
 }
 
 .black-nav{
@@ -1085,7 +1069,7 @@ a:focus{
         font-size: 0.8em;
     }
     
-    .Intro-1{
+    .intro-div-1{
         height: 100vh;
         background-attachment: scroll;
         background-size: cover;
@@ -1095,14 +1079,14 @@ a:focus{
         #arrow-group{   
             position: relative;
             top: 72vh;
-            left: 0vw;
+            left: 0;
             opacity: 0;
         }
     
         #title{
             position: relative;
             top: 72vh;
-            color: $secondary-color;
+            color: $white;
             @include secondary-font;
             font-size: 3em;
             transform: rotate(0deg);
@@ -1112,15 +1096,13 @@ a:focus{
         #slogan{
             position: relative;
             top: 72vh;
-            color: $secondary-color;
+            color: $white;
             font-family: $main-font, Arial, Helvetica, serif;
             font-size: 1.5em;
-            //text-align: right;
-            //margin-right: 10vw;
         }
     }
     
-    .Intro-2 {
+    .intro-div-2 {
         font-size: 0.9em;
         z-index: 19;
 
@@ -1128,7 +1110,7 @@ a:focus{
             padding: 30px 5px;
             width: 700px;
             height: auto;
-            margin: 10px 0px;
+            margin: 10px 0;
 
             line-height: 25px;
             text-align: center;
@@ -1140,7 +1122,7 @@ a:focus{
             } 
 
             p{
-                top: 0px;
+                top: 0;
                 font-size: 12px;
             }
 
@@ -1157,7 +1139,7 @@ a:focus{
                 border-radius: 20px;
 
                 p{
-                    top: 0vh;
+                    top: 0;
                     left: 40px;
                     font-size: 1.2em;
                     text-align: left;
@@ -1170,13 +1152,13 @@ a:focus{
         }
     }
     
-    .Intro-3{
+    .intro-div-3{
         height: 70vh;
         background: url("./img/simonpuschmann-BMW-M2-04-mini.jpg") $nrs center center;
         background-size: 100vh;
     }
     
-    .Intro-4{
+    .intro-div-4{
         height: 70vh;
         top: 0px;
         background: url("./img/simonpuschmann-BMW-M2-01.jpg") $nrs 55% center;
@@ -1192,7 +1174,7 @@ a:focus{
         }
     }
     
-    .Performance-1{
+    .performance-div-1{
         background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrs 58% 0%;
         background-size: cover;
         
@@ -1211,7 +1193,7 @@ a:focus{
         }
     }
 
-    .Exterior-1{
+    .exterior-div-1{
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-05.jpg") $nrs 100% 0%;
         background-size: cover;
@@ -1225,12 +1207,12 @@ a:focus{
 
         p{
             top: 9vh;
-            left: 0px;
+            left: 0;
             font-size: 1em;
         }
     }
     
-    .Interior-1{
+    .interior-div-1{
         position: relative;
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-02.jpg") $nrs 55% 40%;
@@ -1251,21 +1233,21 @@ a:focus{
         }
     }
     
-    .Performance-2, .Exterior-2, .Interior-2{
-        background: $main-color; 
+    .performance-div-2, .exterior-div-2, .interior-div-2{
+        background: $gray; 
 
         .flex-item {
             padding: 5px;
             width: 150px;
             height: auto;
-            margin: 20px 0px;
+            margin: 20px 0;
             font-weight: bold;
             font-size: 0.9em;
         }
     }
 
     
-    .Specs-1{
+    .specs-div-1{
         background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x-mini.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1280,8 +1262,8 @@ a:focus{
         }
     }
     
-    .Specs-2{
-        padding: 0vh 10vw 15vh 10vw;
+    .specs-div-2{
+        padding: 0 10vw 15vh 10vw;
         
         .flex-item {
             padding: 5px;
@@ -1305,7 +1287,7 @@ a:focus{
         }
     }
     
-    .Specs-3{
+    .specs-div-3{
         height: 98vh;
         background-attachment: scroll;
         background-position: 65% center;
@@ -1322,7 +1304,7 @@ a:focus{
         }
     }
     
-    .Footer-1{
+    .footer-div-1{
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -1338,7 +1320,7 @@ a:focus{
         font-size: 0.8em;
     }
     
-    .Intro-1{
+    .intro-div-1{
         height: 100vh;
         background-attachment: scroll;
         background-size: cover;
@@ -1348,7 +1330,7 @@ a:focus{
         #arrow-group{   
             position: relative;
             top: 72vh;
-            left: 0vw;
+            left: 0;
             width: 70px;
             opacity: 0;
         }
@@ -1356,7 +1338,7 @@ a:focus{
         #title{
             position: relative;
             top: 82vh;
-            color: $secondary-color;
+            color: $white;
             @include secondary-font;
             font-size: 3em;
             transform: rotate(0deg);
@@ -1366,15 +1348,14 @@ a:focus{
         #slogan{
             position: relative;
             top: 82vh;
-            color: $secondary-color;
+            color: $white;
             font-family: $main-font, Arial, Helvetica, serif;
             font-size: 1.5em;
             text-align: right;
-            //margin-right: 10vw;
         }
     }
     
-    .Intro-2 {
+    .intro-div-2 {
         font-size: 0.9em;
         z-index: 19;
 
@@ -1382,7 +1363,7 @@ a:focus{
             padding: 30px 5px;
             width: 700px;
             height: auto;
-            margin: 10px 0px;
+            margin: 10px 0;
 
             line-height: 25px;
             text-align: center;
@@ -1394,7 +1375,7 @@ a:focus{
             } 
 
             p{
-                top: 0px;
+                top: 0;
             }
 
             &:nth-child(1){
@@ -1410,7 +1391,7 @@ a:focus{
                 border-radius: 20px;
 
                 p{
-                    top: 0vh;
+                    top: 0;
                     left: 20px;
                     font-size: 1.4em;
                     text-align: left;
@@ -1423,15 +1404,14 @@ a:focus{
         }
     }
     
-    .Intro-3{
+    .intro-div-3{
         height: 70vh;
         background: url("./img/simonpuschmann-BMW-M2-04-mini.jpg") $nrs center center;
         background-size: 100vh;
     }
     
-    .Intro-4{
+    .intro-div-4{
         height: 70vh;
-        top: 0px;
         background: url("./img/simonpuschmann-BMW-M2-01.jpg") $nrs 55% center;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1445,7 +1425,7 @@ a:focus{
         }
     }
     
-    .Performance-1{
+    .performance-div-1{
         background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrs 58% 0%;
         background-size: cover;
         
@@ -1464,7 +1444,7 @@ a:focus{
         }
     }
 
-    .Exterior-1{
+    .exterior-div-1{
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-05.jpg") $nrs 100% 0%;
         background-size: cover;
@@ -1478,12 +1458,12 @@ a:focus{
 
         p{
             top: 9vh;
-            left: 0px;
+            left: 0;
             font-size: 1em;
         }
     }
     
-    .Interior-1{
+    .interior-div-1{
         position: relative;
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-02.jpg") $nrs 55% 40%;
@@ -1504,21 +1484,21 @@ a:focus{
         }
     }
     
-    .Performance-2, .Exterior-2, .Interior-2{
-        background: $main-color; 
+    .performance-div-2, .exterior-div-2, .interior-div-2{
+        background: $gray; 
 
         .flex-item {
             padding: 5px;
             width: 150px;
             height: auto;
-            margin: 20px 0px;
+            margin: 20px 0;
             font-weight: bold;
             font-size: 0.9em;
         }
     }
 
     
-    .Specs-1{
+    .specs-div-1{
         background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x-mini.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1533,8 +1513,8 @@ a:focus{
         }
     }
     
-    .Specs-2{
-        padding: 0vh 10vw 15vh 10vw;
+    .specs-div-2{
+        padding: 0 10vw 15vh 10vw;
         
         .flex-item {
             padding: 5px;
@@ -1558,7 +1538,7 @@ a:focus{
         }
     }
     
-    .Specs-3{
+    .specs-div-3{
         height: 98vh;
         background-attachment: scroll;
         background-position: 65% center;
@@ -1575,7 +1555,7 @@ a:focus{
         }
     }
     
-    .Footer-1{
+    .footer-div-1{
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -1591,7 +1571,7 @@ a:focus{
         font-size: 1.3em;
     }
     
-    .Intro-1{
+    .intro-div-1{
         height: 100vh;
         background-position: 55% 50%;
         background-attachment: scroll;
@@ -1601,7 +1581,7 @@ a:focus{
         
         #arrow-group{   
             top: 72vh;
-            left: 0vw;
+            left: 0;
             width: 70px;
             opacity: 0;
         }
@@ -1620,7 +1600,7 @@ a:focus{
         }
     }
     
-    .Intro-2{
+    .intro-div-2{
         font-size: 1.2em;
         z-index: 19;
 
@@ -1628,7 +1608,7 @@ a:focus{
             padding: 30px 5px;
             width: 700px;
             height: auto;
-            margin: 10px 0px;
+            margin: 10px 0;
 
             line-height: 40px;
             text-align: center;
@@ -1640,7 +1620,7 @@ a:focus{
             } 
 
             p{
-                top: 0px;
+                top: 0;
             }
 
             &:nth-child(1){
@@ -1657,7 +1637,7 @@ a:focus{
                 border-radius: 20px;
 
                 p{
-                    top: 0vh;
+                    top: 0;
                     left: 150px;
                     font-size: 1.4em;
                     text-align: left;
@@ -1670,15 +1650,14 @@ a:focus{
         }
     }
     
-    .Intro-3{
+    .intro-div-3{
         height: 70vh;
         background: url("./img/simonpuschmann-BMW-M2-04-mini.jpg") $nrs center center;
         background-size: 100vh;
     }
     
-    .Intro-4{
+    .intro-div-4{
         height: 70vh;
-        top: 0px;
         background: url("./img/simonpuschmann-BMW-M2-01.jpg") $nrs 55% center;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1692,7 +1671,7 @@ a:focus{
         }
     }
     
-    .Performance-1{
+    .performance-div-1{
         background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrs 58% 0%;
         background-size: cover;
         
@@ -1710,7 +1689,7 @@ a:focus{
         }
     }
 
-    .Exterior-1{
+    .exterior-div-1{
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-05.jpg") $nrs 100% 0%;
         background-size: cover;
@@ -1724,12 +1703,12 @@ a:focus{
 
         p{
             top: 9vh;
-            left: 0px;
+            left: 0;
             font-size: 1.5em;
         }
     }
     
-    .Interior-1{
+    .interior-div-1{
         position: relative;
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-02.jpg") $nrs 55% 40%;
@@ -1752,20 +1731,20 @@ a:focus{
         }
     }
     
-    .Performance-2, .Exterior-2, .Interior-2{
-        background: $main-color; 
+    .performance-div-2, .exterior-div-2, .interior-div-2{
+        background: $gray; 
 
         .flex-item {
             padding: 5px;
             width: 250px;
             height: auto;
-            margin: 20px 0px;
+            margin: 20px 0;
             font-weight: bold;
             font-size: 1.5em;
         }
     }
     
-    .Specs-1{
+    .specs-div-1{
         background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x-mini.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1780,8 +1759,8 @@ a:focus{
         }
     }
     
-    .Specs-2{
-        padding: 0vh 10vw 10vh 10vw;
+    .specs-div-2{
+        padding: 0 10vw 10vh 10vw;
         
         .flex-item {
             padding: 5px;
@@ -1805,7 +1784,7 @@ a:focus{
         }
     }
     
-    .Specs-3{
+    .specs-div-3{
         height: 98vh;
         background-attachment: scroll;
         background-position: 65% 60%;
@@ -1822,7 +1801,7 @@ a:focus{
         }
     }
     
-    .Footer-1{
+    .footer-div-1{
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -1838,7 +1817,7 @@ a:focus{
         font-size: 1em;
     }
     
-    .Intro-1{
+    .intro-div-1{
         height: 100vh;
         background-position: 55% 50%;
         background-attachment: scroll;
@@ -1848,7 +1827,7 @@ a:focus{
         
         #arrow-group{   
             top: 72vh;
-            left: 0vw;
+            left: 0;
             width: 70px;
             opacity: 0;
         }
@@ -1867,7 +1846,7 @@ a:focus{
         }
     }
     
-    .Intro-2 {
+    .intro-div-2 {
         font-size: 1.2em;
         z-index: 19;
 
@@ -1875,7 +1854,7 @@ a:focus{
             padding: 30px 5px;
             width: 700px;
             height: auto;
-            margin: 10px 0px;
+            margin: 10px 0;
 
             line-height: 40px;
             text-align: center;
@@ -1887,7 +1866,7 @@ a:focus{
             } 
 
             p{
-                top: 0px;
+                top: 0;
                 font-size: 12px;
                 line-height: 2em;
             }
@@ -1906,7 +1885,7 @@ a:focus{
                 border-radius: 20px;
 
                 p{
-                    top: 0vh;
+                    top: 0;
                     left: 100px;
                     font-size: 1.3em;
                     text-align: left;
@@ -1919,16 +1898,15 @@ a:focus{
         }
     }
     
-    .Intro-3{
+    .intro-div-3{
         height: 70vh;
         background-attachment: scroll;
         background-position: center center;
         background-size: cover;
     }
     
-    .Intro-4{
+    .intro-div-4{
         height: 70vh;
-        top: 0px;
         background: url("./img/simonpuschmann-BMW-M2-01.jpg") $nrs 55% center;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -1942,7 +1920,7 @@ a:focus{
         }
     }
     
-    .Performance-1{
+    .performance-div-1{
         background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrs 58% 0%;
         background-size: cover;
         
@@ -1962,7 +1940,7 @@ a:focus{
         }
     }
 
-    .Exterior-1{
+    .exterior-div-1{
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-05.jpg") $nrs 100% 0%;
         background-size: cover;
@@ -1976,13 +1954,13 @@ a:focus{
 
         p{
             top: 9vh;
-            left: 0px;
+            left: 0;
             font-size: 1em;
         }
     }
 
     
-    .Interior-1{
+    .interior-div-1{
         position: relative;
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-02.jpg") $nrs 55% 40%;
@@ -2005,20 +1983,20 @@ a:focus{
         }
     }
     
-    .Performance-2, .Exterior-2, .Interior-2{
-        background: $main-color; 
+    .performance-div-2, .exterior-div-2, .interior-div-2{
+        background: $gray; 
 
         .flex-item {
             padding: 5px;
             width: 250px;
             height: auto;
-            margin: 20px 0px;
+            margin: 20px 0;
             font-weight: bold;
             font-size: 1em;
         }
     }
     
-    .Specs-1{
+    .specs-div-1{
         background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x-mini.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -2033,8 +2011,8 @@ a:focus{
         }
     }
     
-    .Specs-2{
-        padding: 0vh 10vw 10vh 10vw;
+    .specs-div-2{
+        padding: 0 10vw 10vh 10vw;
         
         .flex-item {
             padding: 5px;
@@ -2058,7 +2036,7 @@ a:focus{
         }
     }
     
-    .Specs-3{
+    .specs-div-3{
         height: 98vh;
         background-attachment: scroll;
         background-position: 65% 60%;
@@ -2075,7 +2053,7 @@ a:focus{
         }
     }
     
-    .Footer-1{
+    .footer-div-1{
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -2091,7 +2069,7 @@ a:focus{
         font-size: 1.4em;
     }
     
-    .Intro-1{
+    .intro-div-1{
         height: 100vh;
         background-position: 60% 50%;
         background-attachment: scroll;
@@ -2101,7 +2079,7 @@ a:focus{
         
         #arrow-group{   
             top: 72vh;
-            left: 0vw;
+            left: 0;
             width: 70px;
             opacity: 0;
         }
@@ -2120,7 +2098,7 @@ a:focus{
         }
     }
     
-    .Intro-2 {
+    .intro-div-2 {
         font-size: 1.5em;
         z-index: 19;
 
@@ -2128,7 +2106,7 @@ a:focus{
             padding: 30px 5px;
             width: 700px;
             height: auto;
-            margin: 10px 0px;
+            margin: 10px 0;
 
             line-height: 40px;
             text-align: center;
@@ -2140,7 +2118,7 @@ a:focus{
             } 
 
             p{
-                top: 0px;
+                top: 0;
             }
 
             &:nth-child(1){
@@ -2157,7 +2135,7 @@ a:focus{
                 border-radius: 20px;
 
                 p{
-                    top: 0vh;
+                    top: 0;
                     left: 130px;
                     font-size: 1.4em;
                     text-align: left;
@@ -2170,16 +2148,15 @@ a:focus{
         }
     }
     
-    .Intro-3{
+    .intro-div-3{
         height: 70vh;
         background-attachment: scroll;
         background-position: center center;
         background-size: 100vh;
     }
     
-    .Intro-4{
+    .intro-div-4{
         height: 70vh;
-        top: 0px;
         background-attachment: scroll;
         background-position: 55% center;
         background-size: cover;
@@ -2194,7 +2171,7 @@ a:focus{
         }
     }
     
-    .Performance-1{
+    .performance-div-1{
         background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrs 58% 0%;
         background-size: cover;
         
@@ -2213,7 +2190,7 @@ a:focus{
         }
     }
 
-    .Exterior-1{
+    .exterior-div-1{
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-05.jpg") $nrs 100% 0%;
         background-size: cover;
@@ -2233,7 +2210,7 @@ a:focus{
         }
     }
     
-    .Interior-1{
+    .interior-div-1{
         position: relative;
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-02.jpg") $nrs 55% 40%;
@@ -2250,26 +2227,26 @@ a:focus{
 
         p{
             top: 12vh;
-            left: 0px;
+            left: 0;
             font-size: 1.5em;
             
         }
     }
     
-    .Performance-2, .Exterior-2, .Interior-2{
-        background: $main-color; 
+    .performance-div-2, .exterior-div-2, .interior-div-2{
+        background: $gray; 
 
         .flex-item {
             padding: 5px;
             width: 250px;
             height: auto;
-            margin: 20px 0px;
+            margin: 20px 0;
             font-weight: bold;
             font-size: 1.5em;
         }
     }
     
-    .Specs-1{
+    .specs-div-1{
         background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -2284,8 +2261,8 @@ a:focus{
         }
     }
     
-    .Specs-2{
-        padding: 0vh 10vw 10vh 10vw;
+    .specs-div-2{
+        padding: 0 10vw 10vh 10vw;
         
         .flex-item {
             padding: 5px;
@@ -2309,7 +2286,7 @@ a:focus{
         }
     }
     
-    .Specs-3{
+    .specs-div-3{
         height: 98vh;
         background-attachment: scroll;
         background-position: 65% 60%;
@@ -2326,7 +2303,7 @@ a:focus{
         }
     }
     
-    .Footer-1{
+    .footer-div-1{
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -2342,7 +2319,7 @@ a:focus{
         font-size: 1.4em;
     }
     
-    .Intro-1{
+    .intro-div-1{
         height: 100vh;
         background-position: 60% 50%;
         background-attachment: scroll;
@@ -2352,7 +2329,7 @@ a:focus{
         
         #arrow-group{   
             top: 72vh;
-            left: 0vw;
+            left: 0;
             width: 70px;
             opacity: 0;
         }
@@ -2371,7 +2348,7 @@ a:focus{
         }
     }
     
-    .Intro-2 {
+    .intro-div-2 {
         font-size: 1.5em;
         z-index: 19;
 
@@ -2379,7 +2356,7 @@ a:focus{
             padding: 30px 5px;
             width: 700px;
             height: auto;
-            margin: 10px 0px;
+            margin: 10px 0;
 
             line-height: 40px;
             text-align: center;
@@ -2391,7 +2368,7 @@ a:focus{
             } 
 
             p{
-                top: 0px;
+                top: 0;
             }
 
             &:nth-child(1){
@@ -2408,7 +2385,7 @@ a:focus{
                 border-radius: 20px;
 
                 p{
-                    top: 0vh;
+                    top: 0;
                     left: 130px;
                     font-size: 1.4em;
                     text-align: left;
@@ -2421,16 +2398,15 @@ a:focus{
         }
     }
     
-    .Intro-3{
+    .intro-div-3{
         height: 70vh;
         background-attachment: scroll;
         background-position: center center;
         background-size: cover;
     }
     
-    .Intro-4{
+    .intro-div-4{
         height: 70vh;
-        top: 0px;
         background-attachment: scroll;
         background-position: 55% center;
         background-size: cover;
@@ -2445,7 +2421,7 @@ a:focus{
         }
     }
     
-    .Performance-1{
+    .performance-div-1{
         background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrs 58% 0%;
         background-size: cover;
         
@@ -2464,7 +2440,7 @@ a:focus{
         }
     }
 
-    .Exterior-1{
+    .exterior-div-1{
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-05.jpg") $nrs 100% 0%;
         background-size: cover;
@@ -2485,7 +2461,7 @@ a:focus{
     }
 
     
-    .Interior-1{
+    .interior-div-1{
         position: relative;
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-02.jpg") $nrs 55% 40%;
@@ -2502,26 +2478,26 @@ a:focus{
 
         p{
             top: 15vh;
-            left: 0px;
+            left: 0;
             font-size: 1.5em;
             
         }
     }
     
-    .Performance-2, .Exterior-2, .Interior-2{
-        background: $main-color; 
+    .performance-div-2, .exterior-div-2, .interior-div-2{
+        background: $gray; 
 
         .flex-item {
             padding: 5px;
             width: 350px;
             height: auto;
-            margin: 20px 0px;
+            margin: 20px 0;
             font-weight: bold;
             font-size: 1.8em;
         }
     }
     
-    .Specs-1{
+    .specs-div-1{
         background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -2536,8 +2512,8 @@ a:focus{
         }
     }
     
-    .Specs-2{
-        padding: 0vh 10vw 10vh 10vw;
+    .specs-div-2{
+        padding: 0 10vw 10vh 10vw;
         
         .flex-item {
             padding: 5px;
@@ -2561,7 +2537,7 @@ a:focus{
         }
     }
     
-    .Specs-3{
+    .specs-div-3{
         height: 98vh;
         background-attachment: scroll;
         background-position: 65% 60%;
@@ -2578,7 +2554,7 @@ a:focus{
         }
     }
     
-    .Footer-1{
+    .footer-div-1{
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -2594,7 +2570,7 @@ a:focus{
         font-size: 1.5em;
     }
     
-    .Intro-1{
+    .intro-div-1{
         height: 100vh;
         background-position: 60% 50%;
         background-attachment: scroll;
@@ -2602,7 +2578,7 @@ a:focus{
         
         #arrow-group{   
             top: 72vh;
-            left: 0vw;
+            left: 0;
             width: 70px;
             opacity: 0;
         }
@@ -2621,7 +2597,7 @@ a:focus{
         }
     }
     
-    .Intro-2 {
+    .intro-div-2 {
         font-size: 1.5em;
         z-index: 19;
 
@@ -2629,7 +2605,7 @@ a:focus{
             padding: 30px 5px;
             width: 1000px;
             height: auto;
-            margin: 10px 0px;
+            margin: 10px 0;
 
             line-height: 40px;
             text-align: center;
@@ -2641,7 +2617,7 @@ a:focus{
             } 
 
             p{
-                top: 0px;
+                top: 0;
             }
 
             &:nth-child(1){
@@ -2658,7 +2634,7 @@ a:focus{
                 border-radius: 20px;
 
                 p{
-                    top: 0vh;
+                    top: 0;
                     left: 250px;
                     font-size: 1.4em;
                     text-align: left;
@@ -2671,16 +2647,16 @@ a:focus{
         }
     }
     
-    .Intro-3{
+    .intro-div-3{
         height: 70vh;
         background-attachment: scroll;
         background-position: center center;
         background-size: cover !important;
     }
     
-    .Intro-4{
+    .intro-div-4{
         height: 70vh;
-        top: 0px;
+        top: 0;
         background-attachment: scroll;
         background-position: 55% center;
         background-size: cover;
@@ -2693,7 +2669,7 @@ a:focus{
         }
     }
     
-    .Performance-1{
+    .performance-div-1{
         background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrs 58% 0%;
         background-size: cover;
         
@@ -2712,7 +2688,7 @@ a:focus{
         }
     }
 
-    .Exterior-1{
+    .exterior-div-1{
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-05.jpg") $nrs 100% 0%;
         background-size: cover;
@@ -2734,7 +2710,7 @@ a:focus{
     }
 
     
-    .Interior-1{
+    .interior-div-1{
         position: relative;
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-02.jpg") $nrs 55% 40%;
@@ -2751,26 +2727,26 @@ a:focus{
 
         p{
             top: 15vh;
-            left: 0px;
+            left: 0;
             font-size: 1.5em;
             
         }
     }
     
-    .Performance-2, .Exterior-2, .Interior-2{
-        background: $main-color; 
+    .performance-div-2, .exterior-div-2, .interior-div-2{
+        background: $gray; 
 
         .flex-item {
             padding: 5px;
             width: 500px;
             height: auto;
-            margin: 20px 0px;
+            margin: 20px 0;
             font-weight: bold;
             font-size: 1.8em;
         }
     }
     
-    .Specs-1{
+    .specs-div-1{
         background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrs 99% 80%;
         background-size: cover;
         
@@ -2783,8 +2759,8 @@ a:focus{
         }
     }
     
-    .Specs-2{
-        padding: 0vh 10vw 10vh 10vw;
+    .specs-div-2{
+        padding: 0 10vw 10vh 10vw;
         
         .flex-item {
             padding: 5px;
@@ -2808,7 +2784,7 @@ a:focus{
         }
     }
     
-    .Specs-3{
+    .specs-div-3{
         height: 98vh;
         background-attachment: scroll;
         background-position: 65% 60%;
@@ -2823,7 +2799,7 @@ a:focus{
         }
     }
     
-    .Footer-1{
+    .footer-div-1{
         padding-top: 20px;
         padding-bottom: 10px;
 
@@ -2843,7 +2819,7 @@ a:focus{
         font-size: 1.5em;
     }
     
-    .Intro-1{
+    .intro-div-1{
         height: 100vh;
         background-position: 60% 50%;
         background-attachment: scroll;
@@ -2852,7 +2828,7 @@ a:focus{
         #arrow-group{
             position: relative;
             top: 82vh;
-            left: 0vw;
+            left: 0;
             width: 70px;
             transition: opacity 1s ease-in-out;
             animation: moveArrows 3s infinite;
@@ -2893,7 +2869,7 @@ a:focus{
         }
     }
     
-    .Intro-2 {
+    .intro-div-2 {
         font-size: 1.5em;
         z-index: 19;
 
@@ -2901,7 +2877,7 @@ a:focus{
             padding: 30px 5px;
             width: 1000px;
             height: auto;
-            margin: 10px 0px;
+            margin: 10px 0;
 
             line-height: 40px;
             text-align: center;
@@ -2913,7 +2889,7 @@ a:focus{
             } 
 
             p{
-                top: 0px;
+                top: 0;
             }
 
             &:nth-child(1){
@@ -2930,7 +2906,7 @@ a:focus{
                 border-radius: 20px;
 
                 p{
-                    top: 0vh;
+                    top: 0;
                     left: 250px;
                     font-size: 1.7em;
                     text-align: left;
@@ -2943,18 +2919,16 @@ a:focus{
         }
     }
     
-    .Intro-3{
+    .intro-div-3{
         position: relative;
-        top: 0vh;
         height: 50vh;
         background: url("./img/simonpuschmann-BMW-M2-04.jpg") $nrf 90% 50%;
         background-size: 120vw $intro-3-height; //replacement for "cover" property makes parallax background scrolling possible 
         z-index: 17;
     }
 
-    .Intro-4{
+    .intro-div-4{
         position: relative;
-        //top: -25px;
         height: 50vh;
         background: url("./img/simonpuschmann-BMW-M2-01.jpg") $nrf 50% 70%;
         background-size: 100vw $intro-4-height; //replacement for "cover" property makes parallax background scrolling possible 
@@ -2966,7 +2940,7 @@ a:focus{
         h1{
             position: relative;
             top: 32vh;
-            color: $secondary-color;
+            color: $white;
             @include secondary-font;
             font-size: 4em;
             transform: rotate(5.6deg);
@@ -2976,25 +2950,22 @@ a:focus{
 
     .navbar{
         position: relative;
-        //top: -25px;
         height: 70px;
         width: 100vw;
-        background: $main-color;
+        background: $gray;
         border: none;
-        border-radius: 0px;
-        margin-bottom: 0px;
+        border-radius: 0;
+        margin-bottom: 0;
         z-index: 16;
         transition: background 0.3s ease-in-out;
     }
 
     .navbar-default .navbar-nav > li > a {
         position: relative;
-        //top: -10px;
-
         text-decoration: none;
         display: block;
         padding: 0 1em;
-        color: $secondary-color;
+        color: $white;
         @include main-font;
         font-size: 2em;
         @include nav-color-change;
@@ -3013,12 +2984,11 @@ a:focus{
     .navbar-default .navbar-nav > li:nth-child(n+2) > a {
         position: relative;
         top: 25px;
-        //height: 20px;
     }
 
     .navbar-default .navbar-nav>.active > a,
     .navbar-default .navbar-nav>.active > a:focus {
-        color: $tertiary-color;
+        color: $teal;
         background: transparent;
     }
 
@@ -3027,7 +2997,7 @@ a:focus{
          background: transparent;
     }
     
-    .Performance-1{
+    .performance-div-1{
         position: relative;
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-06.jpg") $nrf 0% 0%;
@@ -3039,7 +3009,7 @@ a:focus{
             text-align: right;
             @include secondary-font;
             font-size: 6em;
-            color: $secondary-color;
+            color: $white;
             letter-spacing: 5px;
             opacity: 0;
             transform: translateX(100px);
@@ -3050,7 +3020,7 @@ a:focus{
             position: relative;
             top: 20vh;
             left: 10vw;
-            color: $secondary-color;
+            color: $white;
             width: 300px;
             @include main-font;
             font-size: 1.5em;
@@ -3062,7 +3032,7 @@ a:focus{
 
     }
 
-    .Performance-2{
+    .performance-div-2{
         position: relative;
         height: auto;
         background: url("./img/simonpuschmann-BMW-M2-06-blurred.jpg") $nrf 0% 0%;
@@ -3083,14 +3053,11 @@ a:focus{
         }
 
         .flex-item {
-            //background: tomato;
             padding: 5px;
             width: 400px;
             height: 100px;
-            margin: 50px 0px;
-
-            //line-height: 150px;
-            color: $secondary-color;
+            margin: 50px 0;
+            color: $white;
             @include main-font;
             font-weight: bold;
             font-size: 2em;
@@ -3108,10 +3075,9 @@ a:focus{
         }
     }
 
-    .Exterior-1{
+    .exterior-div-1{
         position: relative;
         height:100vh;
-        //top: -50px;
         background: url("./img/simonpuschmann-BMW-M2-05.jpg") $nrf 0% 0%;
         background-size: cover;
 
@@ -3121,8 +3087,7 @@ a:focus{
             text-align: left;
             @include secondary-font;
             font-size: 6em;
-            color: $secondary-color;
-            //transform: rotate(-15deg);
+            color: $white;
             letter-spacing: 5px;
             opacity: 0;
             transform: translateX(-100px);
@@ -3132,9 +3097,8 @@ a:focus{
         p{
             position: relative;
             top: 20vh;
-            left: 0px;
-            color: $secondary-color;
-            //width: 30vw;
+            left: 0;
+            color: $white;
             @include main-font;
             font-size: 1.5em;
             opacity: 0;
@@ -3143,10 +3107,9 @@ a:focus{
         }
     }
 
-    .Exterior-2{
+    .exterior-div-2{
         position: relative;
-        height:auto;
-        //top: -50px;
+        height: auto;
         background: url("./img/simonpuschmann-BMW-M2-05-blurred.jpg") $nrf 0% 0%;
         background-size: cover;
         @include occasional-brightness;
@@ -3164,14 +3127,11 @@ a:focus{
         }
 
         .flex-item {
-            //background: tomato;
             padding: 5px;
             width: 400px;
             height: 100px;
-            margin: 50px 0px;
-
-            //line-height: 150px;
-            color: $secondary-color;
+            margin: 50px 0;
+            color: $white;
             @include main-font;
             font-weight: bold;
             font-size: 2em;
@@ -3189,10 +3149,9 @@ a:focus{
         }
     }
 
-    .Interior-1{
+    .interior-div-1{
         position: relative;
-        height:100vh;
-        //top: -50px;
+        height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-02.jpg") $nrf 0% 40%;
         background-size: cover;
         @include global-padding;
@@ -3202,12 +3161,9 @@ a:focus{
             position: relative;
             top: 17vh;
             text-align: left;
-            //left: 15vw;
-            //width: 250px;
             @include secondary-font;
             font-size: 6em;
-            color: $secondary-color;
-            //transform: rotate(-15deg);
+            color: $white;
             letter-spacing: 5px;
             opacity: 0;
             transform: translateX(-100px);
@@ -3217,9 +3173,7 @@ a:focus{
         p{
             position: relative;
             top: 20vh;
-            //left: 170px;
-            color: $secondary-color;
-            //width: 30vw;
+            color: $white;
             @include main-font;
             font-size: 1.5em;
             opacity: 0;
@@ -3228,14 +3182,12 @@ a:focus{
         }
     }
 
-    .Interior-2{
+    .interior-div-2{
         position: relative;
-        height:auto;
-        //top: -85px;
+        height: auto;
         background: url("./img/simonpuschmann-BMW-M2-02-blurred.jpg") $nrf 0% 40%;
         background-size: cover;
         @include occasional-brightness;
-        //@include global-padding;
 
         .flex-container {
             padding: 20px 5vw;
@@ -3250,14 +3202,11 @@ a:focus{
         }
 
         .flex-item {
-            //background: tomato;
             padding: 5px;
             width: 400px;
             height: 100px;
-            margin: 50px 0px;
-
-            //line-height: 150px;
-            color: $secondary-color;
+            margin: 50px 0;
+            color: $white;
             @include main-font;
             font-weight: bold;
             font-size: 2em;
@@ -3276,7 +3225,7 @@ a:focus{
     }
 
     
-    .Specs-1{
+    .specs-div-1{
         background: url("./img/_minflat__bmw_m_performance_wallpaper__4k__by_dakoder-d8ipt8x.jpg") $nrf 99% 80%;
         background-size: cover;
         
@@ -3289,11 +3238,10 @@ a:focus{
         }
     }
     
-    .Specs-2{
+    .specs-div-2{
         position:relative;
         height: auto;
-        //top: -85px;
-        background: $main-color;
+        background: $gray;
         background-size: cover;
         padding: 15vh 10vw 15vh 10vw;
         //@include global-padding;
@@ -3313,11 +3261,8 @@ a:focus{
         .flex-item {
             padding: 5px;
             width: 700px;
-            //height: 300px;
             margin-top: 50px;
-
-            //line-height: 150px;
-            color: $secondary-color;
+            color: $white;
             @include main-font;
             font-size: 1.5em;
             text-align: center;
@@ -3334,13 +3279,13 @@ a:focus{
                 @include secondary-font;
                 font-size: 6em;
                 letter-spacing: 10px;
-                background: $tertiary-color;
+                background: $teal;
                 border-radius: 20px;
                 transition: color 0.3s ease-in-out, border-radius 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
                 &:hover{
-                    background: $secondary-color;
-                    color: $tertiary-color;
+                    background: $white;
+                    color: $teal;
                     border-radius: 70px;
                 }
             }
@@ -3349,7 +3294,7 @@ a:focus{
 
 
 
-    .Specs-3{
+    .specs-div-3{
         position: relative;
         height: 100vh;
         background: url("./img/simonpuschmann-BMW-M2-07.jpg") $nrf 50% 25%;
@@ -3362,7 +3307,7 @@ a:focus{
         h1{
             position: relative;
             top: 77vh;
-            color: $secondary-color;
+            color: $white;
             @include secondary-font;
             font-size: 6em;
             transform: rotate(7.5deg);
@@ -3371,16 +3316,16 @@ a:focus{
         }
     }
 
-    .Footer-1{
+    .footer-div-1{
         position: relative;
         height: auto;
-        background: $main-color;
+        background: $gray;
         background-size: cover;
         padding-top: 25px;
         padding-bottom: 10px;
 
         a{
-            color: $secondary-color;
+            color: $white;
             @include main-font;
             font-size: 1.5em;
             @include nav-color-change;
@@ -3390,11 +3335,11 @@ a:focus{
 
 //targets Firefox
 @-moz-document url-prefix() {
-    .Intro-1, .Specs-3{
+    .intro-div-1, .specs-div-3{
         background-attachment: scroll !important;
     }
     
-    .Performance-2, .Exterior-2, .Interior-2{
+    .performance-div-2, .exterior-div-2, .interior-div-2{
         background-position: 50% 50% !important;
         background-attachment: scroll !important;
     }
@@ -3403,12 +3348,12 @@ a:focus{
 //targets Microsoft Edge
 @supports (-ms-ime-align: auto) {
     //fixes background image scaling problems on divs with parallax background sizes
-    .Intro-1, .Specs-1, .Footer-1{
+    .intro-div-1, .specs-div-1, .footer-div-1{
         background-size: cover !important;
     }
     
     //De-rotates text because clip-path doesn't show up in Edge
-    #title, .Intro-4 > h1, .Specs-1 > h1, .Specs-3 > h1{
+    #title, .intro-div-4 > h1, .specs-div-1 > h1, .specs-div-3 > h1{
         transform: rotate(0deg) !important;
     }
 }

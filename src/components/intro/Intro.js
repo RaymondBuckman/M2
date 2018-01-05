@@ -10,7 +10,7 @@ class Intro extends Component {
     render() {
         return(
         <div>
-            <div className="Intro-1">
+            <div className="intro-div-1">
                 <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><img id="m-logo" src={mLogo} height="25px" data-tip data-for="m-logo" aria-describedby="m-logo"></img></a>
                 <div className="container-fluid">
                     <div className="row">
@@ -24,7 +24,7 @@ class Intro extends Component {
                     </div>
                 </div>
             </div>
-            <div className="Intro-2" id="arrow-dest">
+            <div className="intro-div-2" id="arrow-dest">
                 <ul className="flex-container">
                     <li className="flex-item scrollmagic-two-target">
                         <h1>Pure Adrenaline</h1><br/>
@@ -37,8 +37,8 @@ class Intro extends Component {
                     </li>
                 </ul>
             </div>
-            <div className="Intro-3"></div>
-            <div className="Intro-4">
+            <div className="intro-div-3"></div>
+            <div className="intro-div-4">
                 <h1>Exclusive color: Long Beach Blue Metallic</h1>
             </div>
             <nav className="navbar navbar-default visible-lg" role="navigation">
@@ -48,7 +48,7 @@ class Intro extends Component {
                         <li><a href="#Performance">Performance</a></li>
                         <li><a href="#Exterior">Exterior</a></li>
                         <li><a href="#Interior">Interior</a></li>
-                        <li><a href="#Specs">Specs</a></li>
+                        <li><a href="#Specs">Specifications</a></li>
                     </ul>
                     <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><div id="navbar-m-logo" data-tip data-for="m-logo" aria-describedby="m-logo"></div></a>
                 </div>

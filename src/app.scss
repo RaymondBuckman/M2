@@ -24,11 +24,6 @@ $intro-4-height: 100vw * .5625; //Multiple based on image proportions
 $specs-1-height: 100vw * 0.5648;
 $specs-3-height: 100vw * .7492; //Multiple based on image proportions
 
-@keyframes occasional-brightness{
-    20%, 30%	{-webkit-filter: brightness(100%); -moz-filter: brightness(100%);}
-	25%		    {-webkit-filter: brightness(110%); -moz-filter: brightness(110%);}
-}
-
 @keyframes colorSwitch{
     0%, 40% {color: $white; background-color: $teal;}
     50%, 90% {color: $gray; background-color: $white;}
@@ -37,11 +32,6 @@ $specs-3-height: 100vw * .7492; //Multiple based on image proportions
 @keyframes borderColorSwitch{
     0%, 40% {border-bottom-color: $teal;}
     50%, 90% {border-bottom-color: $gray;}
-}
-
-@keyframes moveArrows{
-    0% { transform: translateY(0);}
-    50% {transform: translateY(10px);}
 }
 
 //mixins
@@ -70,10 +60,6 @@ $specs-3-height: 100vw * .7492; //Multiple based on image proportions
         background: $white;
         color: $teal;
     }
-}
-
-@mixin occasional-brightness{
-    animation: occasional-brightness 8s infinite;
 }
 
 @mixin global-padding{
@@ -219,7 +205,6 @@ a:focus{
     background-size: 100vw $intro-1-height; //replacement for "cover" property makes parallax background scrolling possible 
     -webkit-clip-path: polygon(20% 0%, 0 0, 0 46%, 0% 80%, 0 100%, 65% 81%, 28% 100%, 100% 100%, 100% 51%, 100% 0, 56% 0, 37% 0);
     clip-path: polygon(20% 0%, 0 0, 0 46%, 0% 80%, 0 100%, 65% 81%, 28% 100%, 100% 100%, 100% 51%, 100% 0, 56% 0, 37% 0);
-    @include occasional-brightness;
     @include global-padding;
     z-index: 20;    
     
@@ -248,7 +233,7 @@ a:focus{
         width: 70px;
         cursor: pointer;
         transition: opacity 1s ease-in-out;
-        animation: moveArrows 3s infinite;
+        //animation: moveArrows 3s infinite;
 
         img{        
             
@@ -577,7 +562,6 @@ a:focus{
     height: auto;
     background: url("./img/simonpuschmann-BMW-M2-06-blurred.jpg") $nrf 0% 0%;
     background-size: cover;
-    @include occasional-brightness;
     z-index: 5;  
     
     .flex-container {
@@ -680,7 +664,6 @@ a:focus{
     height: auto;
     background: url("./img/simonpuschmann-BMW-M2-05-blurred.jpg") $nrf 0% 0%;
     background-size: cover;
-    @include occasional-brightness;
     
     .flex-container {
         padding: 20px 5vw;
@@ -781,7 +764,6 @@ a:focus{
     height: auto;
     background: url("./img/simonpuschmann-BMW-M2-02-blurred.jpg") $nrf 0% 40%;
     background-size: cover;
-    @include occasional-brightness;
     
     .flex-container {
         padding: 20px 5vw;
@@ -955,7 +937,6 @@ a:focus{
     background: url("./img/simonpuschmann-BMW-M2-07.jpg") $nrf 50% 40%;
     background-size: 100vw $specs-3-height; //replacement for "cover" property makes parallax background scrolling possible 
     @include global-padding;    
-    @include occasional-brightness;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 92% 100%, 10% 76%, 34% 100%, 0 100%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 92% 100%, 10% 76%, 34% 100%, 0 100%);
     
@@ -3037,7 +3018,6 @@ a:focus{
         height: auto;
         background: url("./img/simonpuschmann-BMW-M2-06-blurred.jpg") $nrf 0% 0%;
         background-size: cover;
-        @include occasional-brightness;
         z-index: 5;  
 
         .flex-container {
@@ -3112,7 +3092,6 @@ a:focus{
         height: auto;
         background: url("./img/simonpuschmann-BMW-M2-05-blurred.jpg") $nrf 0% 0%;
         background-size: cover;
-        @include occasional-brightness;
 
         .flex-container {
             padding: 20px 5vw;
@@ -3187,7 +3166,6 @@ a:focus{
         height: auto;
         background: url("./img/simonpuschmann-BMW-M2-02-blurred.jpg") $nrf 0% 40%;
         background-size: cover;
-        @include occasional-brightness;
 
         .flex-container {
             padding: 20px 5vw;
@@ -3300,7 +3278,6 @@ a:focus{
         background: url("./img/simonpuschmann-BMW-M2-07.jpg") $nrf 50% 25%;
         background-size: 100vw $specs-3-height; //replacement for "cover" property makes parallax background scrolling possible 
         @include global-padding;    
-        @include occasional-brightness;
         -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 92% 100%, 10% 76%, 34% 100%, 0 100%);
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 92% 100%, 10% 76%, 34% 100%, 0 100%);
 

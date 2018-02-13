@@ -5,16 +5,22 @@ import arrowDarkBlue from '../../img/arrow-dark-blue.png';
 import {findDOMNode} from 'react-dom';
 import ReactTooltip from 'react-tooltip';
 import mLogo from '../../img/BMW-M.png';
+import $ from "jquery";
 
 class Intro extends Component {
     render() {
+        function scrollDown(e){
+            e.preventDefault();
+            $('html, body').animate({scrollTop: $(".intro-div-2").offset().top}, 2000);
+        }
+        
         return(
         <div>
             <div className="intro-div-1">
                 <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><img id="m-logo" src={mLogo} height="25px" data-tip data-for="m-logo" aria-describedby="m-logo"></img></a>
                 <div className="container-fluid">
                     <div className="row">
-                        <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs" data-tip data-for="scroll-down" aria-describedby="scroll-down">
+                        <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs" data-tip data-for="scroll-down" aria-describedby="scroll-down" onClick={scrollDown}>
                             <img src={arrowLightBlue} height={"25"} width={"60"}/>
                             <img src={arrowDarkBlue} height={"25"} width={"60"}/>
                             <img src={arrowRed} height={"25"} width={"60"}/>

@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
+import $ from "jquery";
 
 
 export default class Specs extends Component {
     render() {
+        function showExecutivePackageDropdown(e){
+            e.stopPropagation();
+            $('#executive-package-list').toggle();
+        }
+        
+        function showMDriversPackageDropdown(e){
+            e.stopPropagation();
+            $('#m-drivers-package-desc').toggle(); 
+        }
+        
+        function stopPropagation(e){
+            e.stopPropagation();            
+        }
+        
         return(
         <div>
             <div className="specs-div-1">
@@ -79,16 +94,16 @@ export default class Specs extends Component {
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box">
                         <header role="heading">Options</header><br/>
-                        <span id="executive-package">Executive Package - $1,400 <span id="executive-arrow">&#9663;</span></span><br/>
-                        <ul id="executive-package-list">
+                        <span id="executive-package" onClick={showExecutivePackageDropdown}>Executive Package - $1,400 <span id="executive-arrow">&#9663;</span></span><br/>
+                        <ul id="executive-package-list" onClick={stopPropagation}>
                             <li><span className="check">&#10004;</span> Heated Steering Wheel</li>
                             <li><span className="check">&#10004;</span>  Automatic High Beams</li>
                             <li><span className="check">&#10004;</span> Active Driving Assistant</li>
                             <li><span className="check">&#10004;</span> Wireless Charging & Wifi</li>
                             <li><span className="check">&#10004;</span> Park Distance Control</li>
                         </ul>
-                        <span id="m-drivers-package">M Driver's Package - $2,500 <span id="m-drivers-arrow">&#9663;</span></span><br/>
-                        <p id="m-drivers-package-desc">A 1-day high performance driving class which is tailored to BMW M vehicles through various exercises on a racetrack, allowing you to explore the limits of the vehicle in a controlled environment.</p>
+                        <span id="m-drivers-package" onClick={showMDriversPackageDropdown}>M Driver's Package - $2,500 <span id="m-drivers-arrow">&#9663;</span></span><br/>
+                        <p id="m-drivers-package-desc" onClick={stopPropagation}>A 1-day high performance driving class which is tailored to BMW M vehicles through various exercises on a racetrack, allowing you to explore the limits of the vehicle in a controlled environment.</p>
                         M Double-clutch Transmission - $2,900<br/>
                         Apple CarPlay Compatibility - $300<br/>
                     </li>

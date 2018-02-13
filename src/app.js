@@ -16,8 +16,12 @@ import Specs from './components/specs/Specs';
 import Footer from './components/footer/Footer';
 import $ from "jquery";
 
+function closeDropdowns(){
+    $('#executive-package-list, #m-drivers-package-desc').hide();
+}
+
 ReactDOM.render(
-    <div className="App">
+    <div className='App' onClick={closeDropdowns}>
         <Intro />
         <Performance />
         <Exterior />
@@ -28,14 +32,27 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-$("#arrow-group > img").click(function() {
-    $('html, body').animate({
-        scrollTop: $(".intro-div-2").offset().top
-    }, 2000);
-});
+
 
 $(document).ready(function(){  
     var navbarHeightAsWindowPercentage = 50/$(window).height();
+    
+    
+    var arrowGroup = $('#arrow-group');
+    var flashingDivs = $('.intro-div-1, .performance-div-2, .exterior-div-2, .interior-div-2, .specs-div-3');
+    
+     /*----- GSAP equivalent of former move-arrows css animation -----*/
+    var downArrowTimeline = new TimelineMax({delay:0.5, repeat:-1, repeatDelay:0.2});
+    
+    downArrowTimeline.to(arrowGroup, 1, {y:'10px', ease:Power3.easeIn})
+    downArrowTimeline.to(arrowGroup, 1, {y:'0px', ease:Power3.easeOut, delay:0})
+    
+    /*----- GSAP equivalent of former occasional-brightness css animation -----*/
+    var occasionalBrightnessTimeline = new TimelineMax({delay:0.5, repeat:-1, repeatDelay:0.2});
+    
+    occasionalBrightnessTimeline.to(flashingDivs, 0.5, {webkitFilter:'brightness(100%)', filter:'brightness(100%)', ease:Linear.easeNone})
+    occasionalBrightnessTimeline.to(flashingDivs, 2, {webkitFilter:'brightness(113%)', filter:'brightness(113%)',  ease:Power3.easeIn})
+    occasionalBrightnessTimeline.to(flashingDivs, 2, {webkitFilter:'brightness(100%)', filter:'brightness(100%)', ease:Power3.easeOut, delay:0})
     
     /* Variables for nav highlight durations*/    
     var heightOfPerformance = $('.exterior-div-1').offset().top - $('.performance-div-1').offset().top;
@@ -43,49 +60,8 @@ $(document).ready(function(){
     var heightOfInterior = $('.specs-div-2').offset().top - $('.interior-div-1').offset().top;
     var heightOfSpecs = $('.specs-div-3').offset().top - $('.specs-div-2').offset().top;
     
-    /*----- Handles DropDown menus -----*/
-    $('#executive-package').click( function(event){
-        /* 
-            Allows you to click on #executive-package without triggering document click event, which closes the dropdown
-        */
-        event.stopPropagation(); 
-        $('#executive-package-list').toggle();
-    });
-    
-     $('#executive-package-list').click( function(event){
-        /* 
-            Allows you to click on #executive-package-list without triggering document click event, which closes the dropdown
-        */
-        event.stopPropagation();
-    });
-    
-
-    $(document).click( function(){
-        $('#executive-package-list').hide();
-    });
-    
-    $('#m-drivers-package').click( function(event){
-        /* 
-            Allows you to click on #executive-package without triggering document click event, which closes the dropdown
-        */
-        event.stopPropagation(); 
-        $('#m-drivers-package-desc').toggle();
-    });
-    
-     $('#m-drivers-package-desc').click( function(event){
-        /* 
-            Allows you to click on #executive-package-list without triggering document click event, which closes the dropdown
-        */
-        event.stopPropagation();
-    });
-    
-
-    $(document).click( function(){
-        $('#executive-package-list').hide();
-        $('#m-drivers-package-desc').hide();
-    });
-    
-    var controller = new ScrollMagic.Controller();
+    /*----- ScrollMagic Section -----*/
+    var controller = new ScrollMagic.Controller();    
     
     /*----- Pin animations -----*/
     var pinMLogoScene = new ScrollMagic.Scene({
@@ -150,7 +126,7 @@ $(document).ready(function(){
     $('.scrollmagic-enter-from-right').each(function(){
         var enterFromRightScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.8,
+            triggerHook: 0.85,
             offset: 0,
             reverse: false
         })
@@ -161,7 +137,7 @@ $(document).ready(function(){
     $('.scrollmagic-enter-from-left').each(function(){
         var enterFromLeftScene = new ScrollMagic.Scene({
             triggerElement: this,
-            triggerHook: 0.8,
+            triggerHook: 0.85,
             offset: 0,
             reverse: false
         })
@@ -197,15 +173,15 @@ $(document).ready(function(){
     var windowHeight = window.innerHeight;
         
     /* ----Background Scroll animations -----*/    
-    var introDiv1ParallaxTween = TweenMax.to(".intro-div-1", 1, {
-      backgroundSize: "+=250px +=166.7px", 
+    var introDiv1ParallaxTween = TweenMax.to('.intro-div-1', 1, {
+      backgroundSize: '+=250px +=166.7px', 
       autoRound:false, 
       ease:Power1.ease0ut
     });
 
 	
 	var introDiv1Parallaxscene = new ScrollMagic.Scene({
-        triggerElement: "#trigger", 
+        triggerElement: '#trigger', 
         duration: "100%"
     })
     .setTween(introDiv1ParallaxTween)
@@ -218,7 +194,7 @@ $(document).ready(function(){
     });
 
 	var introDiv3ParallaxScene = new ScrollMagic.Scene({
-        triggerElement: ".intro-div-3", 
+        triggerElement: '.intro-div-3', 
         triggerHook: 1, 
         duration: "150%"
     })

@@ -36,6 +36,7 @@ ReactDOM.render(
 
 $(document).ready(function(){  
     //setTimeout(function(){ alert("Hello"); }, 3000);
+    var laptopsAndDesktops = window.matchMedia( "(min-width: 1420px)" );
     var navbarHeightAsWindowPercentage = 50/$(window).height();
     
     
@@ -188,87 +189,90 @@ $(document).ready(function(){
     //var windowHeight = window.innerHeight;
         
     /* ----Background Scroll animations -----*/    
-    var introDiv1ParallaxTween = TweenMax.to('.intro-div-1', 1, {
-      backgroundSize: '+=250px +=166.7px', 
-      autoRound:false, 
-      ease:Power1.ease0ut
-    });
-
-	
-	var introDiv1Parallaxscene = new ScrollMagic.Scene({
-        triggerElement: '#trigger', 
-        duration: "100%"
-    })
-    .setTween(introDiv1ParallaxTween)
-    .addTo(controller);
-    
-    var introDiv3ParallaxTween = TweenMax.to(".intro-div-3", 1, {
-        backgroundPositionX: "-=50%", 
-        autoRound:false, 
-        ease:Power1.ease0ut
-    });
-
-	var introDiv3ParallaxScene = new ScrollMagic.Scene({
-        triggerElement: '.intro-div-3', 
-        triggerHook: 1, 
-        duration: "150%"
-    })
-    .setTween(introDiv3ParallaxTween) 
-    .addTo(controller);
-    
-    //If the browser isn't IE10 or Edge...
-    if (!(/MSIE 10/i.test(navigator.userAgent)) && !(/Edge\/\d./i.test(navigator.userAgent))){
-    
-        var introDiv4ParallaxTween = TweenMax.to(".intro-div-4", 1, {
-            backgroundSize: "+=500px +=281.25px", 
-            backgroundPositionX: "-=300px",
-            autoRound:false, 
-            ease:Power1.ease0ut
-        });
-	
-        var introDiv4ParallaxScene = new ScrollMagic.Scene({
-            triggerElement: ".intro-div-4", 
-            triggerHook: 1, 
-            autoRound:false,
-            duration: "150%"
-        })
-    
-        .setTween(introDiv4ParallaxTween)
-        .addTo(controller);
-        
-        var specs1ParallaxTween = TweenMax.from(".specs-div-1", 1, {
-            backgroundSize: "+=200px +=112.96875px",
-            backgroundPositionX: "-=100px",
-            autoRound:false, 
-            ease:Power0.ease0ut
-        });
-
-
-        var specs1ParallaxScene = new ScrollMagic.Scene({
-            triggerElement: ".specs-div-1", 
-            triggerHook: 1, 
-            autoRound: false,
-            duration: "150%"
-        })
-
-        .setTween(specs1ParallaxTween)
-        .addTo(controller);
-
-        var specs3ParallaxTween = TweenMax.from(".specs-div-3", 1, {
-          backgroundSize: "+=200px +=149.84px", 
+    if(laptopsAndDesktops.matches){
+        var introDiv1ParallaxTween = TweenMax.to('.intro-div-1', 1, {
+          backgroundSize: '+=250px +=166.7px', 
           autoRound:false, 
           ease:Power1.ease0ut
         });
 
 
-        var specs3ParallaxScene = new ScrollMagic.Scene({
-            triggerElement: ".specs-div-3", 
+        var introDiv1Parallaxscene = new ScrollMagic.Scene({
+            triggerElement: '#trigger', 
+            duration: "100%"
+        })
+        .setTween(introDiv1ParallaxTween)
+        .addTo(controller);
+
+        var introDiv3ParallaxTween = TweenMax.to(".intro-div-3", 1, {
+            backgroundPositionX: "-=50%", 
+            autoRound:false, 
+            ease:Power1.ease0ut
+        });
+
+        var introDiv3ParallaxScene = new ScrollMagic.Scene({
+            triggerElement: '.intro-div-3', 
             triggerHook: 1, 
             duration: "150%"
         })
-        .setTween(specs3ParallaxTween)
+        .setTween(introDiv3ParallaxTween) 
         .addTo(controller);
+
+        //If the browser isn't IE10 or Edge...
+        if (!(/MSIE 10/i.test(navigator.userAgent)) && !(/Edge\/\d./i.test(navigator.userAgent))){
+
+            var introDiv4ParallaxTween = TweenMax.to(".intro-div-4", 1, {
+                backgroundSize: "+=500px +=281.25px", 
+                backgroundPositionX: "-=300px",
+                autoRound:false, 
+                ease:Power1.ease0ut
+            });
+
+            var introDiv4ParallaxScene = new ScrollMagic.Scene({
+                triggerElement: ".intro-div-4", 
+                triggerHook: 1, 
+                autoRound:false,
+                duration: "150%"
+            })
+
+            .setTween(introDiv4ParallaxTween)
+            .addTo(controller);
+
+            var specs1ParallaxTween = TweenMax.from(".specs-div-1", 1, {
+                backgroundSize: "+=200px +=112.96875px",
+                backgroundPositionX: "-=100px",
+                autoRound:false, 
+                ease:Power0.ease0ut
+            });
+
+
+            var specs1ParallaxScene = new ScrollMagic.Scene({
+                triggerElement: ".specs-div-1", 
+                triggerHook: 1, 
+                autoRound: false,
+                duration: "150%"
+            })
+
+            .setTween(specs1ParallaxTween)
+            .addTo(controller);
+
+            var specs3ParallaxTween = TweenMax.from(".specs-div-3", 1, {
+              backgroundSize: "+=200px +=149.84px", 
+              autoRound:false, 
+              ease:Power1.ease0ut
+            });
+
+
+            var specs3ParallaxScene = new ScrollMagic.Scene({
+                triggerElement: ".specs-div-3", 
+                triggerHook: 1, 
+                duration: "150%"
+            })
+            .setTween(specs3ParallaxTween)
+            .addTo(controller);
+        }
     }
+    
     
     
     

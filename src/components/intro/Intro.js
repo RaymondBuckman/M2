@@ -17,16 +17,16 @@ class Intro extends Component {
         return(
         <div>
             <div className="intro-div-1">
-                <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><img id="m-logo" src={mLogo} height="25px" data-tip data-for="m-logo" aria-describedby="m-logo"></img></a>
+                <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank" rel="noopener"><img id="m-logo" src={mLogo} height="25px" alt="Go to official M website" data-tip data-for="m-logo"></img></a>
                 <div className="container-fluid">
                     <div className="row">
-                        <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs" data-tip data-for="scroll-down" aria-describedby="scroll-down" onClick={scrollDown}>
+                        <div id="arrow-group" className="col-lg-1 col-lg-offset-0 hidden-xs" data-tip data-for="scroll-down" onClick={scrollDown}>
                             <img src={arrowLightBlue} height={"25"} width={"60"}/>
                             <img src={arrowDarkBlue} height={"25"} width={"60"}/>
                             <img src={arrowRed} height={"25"} width={"60"}/>
                         </div>
                         <h1 id="title" className="col-xs-12 col-xs-offset-0 col-lg-7 col-lg-offset-1 text-right" role="heading">BMW M2</h1>
-                        <h2 id="slogan" className="col-xs-12 col-xs-offset-0 col-lg-4 col-lg-offset-8 text-right">Freude am Fahren</h2>
+                        <h2 id="slogan" className="col-xs-12 col-xs-offset-0 col-lg-4 col-lg-offset-8 text-right" lang="de">Freude am Fahren</h2>
                     </div>
                 </div>
             </div>
@@ -50,13 +50,13 @@ class Intro extends Component {
             <nav className="navbar navbar-default visible-lg" role="navigation">
                 <div className="container-fluid">
                     <ul className="nav navbar-nav navbar-left">
-                        <li><a href="#" data-tip data-for="bmw-logo" aria-describedby="bmw-logo">invis</a></li>
+                        <li><a href="#" data-tip data-for="bmw-logo">invis</a></li>
                         <li><a href="#Performance">Performance</a></li>
                         <li><a href="#Exterior">Exterior</a></li>
                         <li><a href="#Interior">Interior</a></li>
                         <li><a href="#Specs">Specifications</a></li>
                     </ul>
-                    <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank"><div id="navbar-m-logo" data-tip data-for="m-logo" aria-describedby="m-logo"></div></a>
+                    <a href="https://www.bmwusa.com/vehicles/m.html" target="_blank" rel="noopener"><div id="navbar-m-logo" data-tip data-for="m-logo"></div></a>
                 </div>
             </nav>
             <ReactTooltip id="m-logo" place="bottom" type="dark"

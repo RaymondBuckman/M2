@@ -11,7 +11,7 @@ export default class Performance extends Component {
                 <div className="container">
                     <div className="row">
                         <h1 className="scrollmagic-enter-from-right" role="heading">Performance</h1>
-                        <p className="col-xs-10 col-xs-offset-2 text-center col-md-4 col-md-offset-8 text-right col-lg-4 col-lg-offset-8 text-right scrollmagic-enter-from-right"> <q>With 0.99 g worth of grip available, quick and responsive steering, and front buckets that comfortably restrain the occupants, the BMW M2 is a 200-proof driving elixir.</q><br/><br/>&#160;&#160;&#160;- Car And Driver<br/><a href="https://www.caranddriver.com/reviews/2016-bmw-m2-automatic-test-review" target="_blank" role="link" aria-label="Read more about Car and Driver's review">Read more...</a></p>
+                        <p className="col-xs-10 col-xs-offset-2 text-center col-md-4 col-md-offset-8 text-right col-lg-4 col-lg-offset-8 text-right scrollmagic-enter-from-right"> <q>With 0.99 g worth of grip available, quick and responsive steering, and front buckets that comfortably restrain the occupants, the BMW M2 is a 200-proof driving elixir.</q><br/><br/>&#160;&#160;&#160;- Car And Driver<br/><a href="https://www.caranddriver.com/reviews/2016-bmw-m2-automatic-test-review" target="_blank" rel="noopener" role="link" aria-label="Read more about Car and Driver's review">Read more...</a></p>
                         
                     </div>
                 </div>
@@ -19,43 +19,43 @@ export default class Performance extends Component {
             <div className="performance-div-2">
                 <ul className="flex-container">
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="inline6" aria-describedby="inline6">
+                    data-tip data-for="inline6">
                         Legendary N55 inline 6 engine
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="differential" aria-describedby="differential">
+                    data-tip data-for="differential">
                         Active M Differential
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="valvetronic" aria-describedby="valvetronic">
+                    data-tip data-for="valvetronic">
                         Double VANOS & VALVETRONIC
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="5050" aria-describedby="5050">
+                    data-tip data-for="5050">
                         Near 50:50 weight distribution
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="manual" aria-describedby="manual">
+                    data-tip data-for="manual">
                         Manual Transmission
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="exhaust" aria-describedby="exhaust">
+                    data-tip data-for="exhaust">
                         M-tuned exhaust & brakes
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="dct" aria-describedby="dct">
+                    data-tip data-for="dct">
                         Available 7-speed DCT with Drivelogic
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="launch" aria-describedby="launch">
+                    data-tip data-for="launch">
                         Launch Control
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="axles" aria-describedby="axles">
+                    data-tip data-for="axles">
                         M4-Derived Front & Rear Axles
                     </li>
                     <li className="flex-item scrollmagic-scale-flex-box"
-                    data-tip data-for="redline" aria-describedby="redline">
+                    data-tip data-for="redline">
                         7000rpm redline
                     </li>
                 </ul>
